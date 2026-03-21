@@ -1,5 +1,51 @@
 {
+  "name": "erebus-api",
+  "version": "0.0.1",
+  "description": "O Erebus Api é o servidor Web API do Sistema Erebus.",
+  "productName": "Erebus Api Server",
+  "author": "Pedro 'Ratto' Paixão <rattopedro@gmail.com>",
+  "license": "GPL-2.0-only",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsc"
+  },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "@eslint/css": "^1.0.0",
+    "@eslint/js": "^10.0.1",
+    "@eslint/markdown": "^7.5.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.5.0",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.1"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.2",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "better-sqlite3": "^12.8.0",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "inversify": "^8.1.0",
+    "morgan": "^1.10.1",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.3.6"
   }
 }
