@@ -6,9 +6,12 @@ import { swaggerSpec } from './infrastructure/swagger/swaggerOptions.ts';
 import { container } from './infrastructure/container/container.ts';
 import { DiceController } from './controllers/dice.controller.ts';
 import { TYPES } from './infrastructure/container/types.ts';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local', override: true });
 
 const app = express();
-const port = Number(process.env['PORT'] ?? 3000);
+const port = Number(process.env['EREBUS_SERVER_PORT'] ?? 3000);
 
 app.use(express.json());
 app.use(morgan('dev'));
