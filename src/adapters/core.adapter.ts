@@ -14,7 +14,7 @@ export class CoreAdapter implements ICoreAdapter {
   private readonly binaryPath: string;
 
   constructor() {
-    this.binaryPath = path.resolve(process.env['CORE_PATH'] ?? './core/build/erebus');
+    this.binaryPath = path.resolve(process.env['EREBUS_CORE_PATH'] ?? './core/build/Development/erebus.exe');
   }
 
   rollDice(diceType: DiceType, count: number): Promise<DiceRoll> {
@@ -24,8 +24,12 @@ export class CoreAdapter implements ICoreAdapter {
       let stdout = '';
       let stderr = '';
 
-      proc.stdout.on('data', (chunk: Buffer) => { stdout += chunk.toString(); });
-      proc.stderr.on('data', (chunk: Buffer) => { stderr += chunk.toString(); });
+      proc.stdout.on('data', (chunk: Buffer) => {
+        stdout += chunk.toString();
+      });
+      proc.stderr.on('data', (chunk: Buffer) => {
+        stderr += chunk.toString();
+      });
 
       proc.on('close', (code) => {
         if (code !== 0) {
@@ -38,7 +42,9 @@ export class CoreAdapter implements ICoreAdapter {
         }
       });
 
-      proc.on('error', (err) => reject(new Error(`Failed to spawn core binary at "${this.binaryPath}": ${err.message}`)));
+      proc.on('error', (err) =>
+        reject(new Error(`Failed to spawn core binary at "${this.binaryPath}": ${err.message}`)),
+      );
 
       const command = JSON.stringify({ command: 'dice.roll', diceType, count });
       proc.stdin.write(command);
