@@ -20,6 +20,10 @@ module.exports = {
       },
     }],
   },
+  // Allow Jest to transform ESM-only packages in node_modules
+  transformIgnorePatterns: [
+    'node_modules/(?!(inversify|@inversifyjs|drizzle-orm|better-sqlite3)/)',
+  ],
   testMatch: [
     '<rootDir>/tests/**/*.test.ts',
   ],
