@@ -15,6 +15,75 @@ const swaggerOptions: swaggerJSDoc.Options = {
       },
     ],
     paths: {
+      '/api/v1/skills': {
+        get: {
+          summary: 'Listar perícias',
+          description: 'Retorna todas as 195 perícias do Sistema Daemon em formato JSON.',
+          tags: ['Skills'],
+          responses: {
+            '200': {
+              description: 'Lista de perícias retornada com sucesso',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      skills: {
+                        type: 'array',
+                        items: {
+                          type: 'object',
+                          required: ['id', 'nome', 'descricao', 'apenasComTreinamento'],
+                          properties: {
+                            id: {
+                              type: 'integer',
+                              example: 1,
+                              description: 'Identificador único da perícia',
+                            },
+                            nome: {
+                              type: 'string',
+                              example: 'Espada',
+                              description: 'Nome da perícia',
+                            },
+                            grupo: {
+                              type: 'string',
+                              nullable: true,
+                              example: 'Combate',
+                              description: 'Grupo ao qual a perícia pertence',
+                            },
+                            atributoBase: {
+                              type: 'string',
+                              nullable: true,
+                              enum: ['FR', 'DEX', 'AGI', 'CON', 'INT', 'PER', 'CAR', 'WILL'],
+                              example: 'DEX',
+                              description: 'Atributo base da perícia',
+                            },
+                            apenasComTreinamento: {
+                              type: 'boolean',
+                              example: true,
+                              description: 'Indica se a perícia requer treinamento formal',
+                            },
+                            sinergia: {
+                              type: 'string',
+                              nullable: true,
+                              example: 'Conhecimento Arcano (Arcano)',
+                              description: 'Perícia de sinergia relacionada',
+                            },
+                            descricao: {
+                              type: 'string',
+                              example: 'Habilidade no uso de espadas em combate.',
+                              description: 'Descrição detalhada da perícia',
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       '/api/v1/dice/roll': {
         post: {
           summary: 'Rolar dados',

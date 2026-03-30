@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import { swaggerSpec } from './infrastructure/swagger/swaggerOptions.ts';
 import { container } from './infrastructure/container/container.ts';
 import { DiceController } from './controllers/dice.controller.ts';
+import { SkillController } from './controllers/skill.controller.ts';
 import { TYPES } from './infrastructure/container/types.ts';
 import dotenv from 'dotenv';
 
@@ -19,6 +20,9 @@ app.use(morgan('dev'));
 // Routes
 const diceController = container.get<DiceController>(TYPES.DiceController);
 app.post('/api/v1/dice/roll', (req, res) => diceController.roll(req, res));
+
+const skillController = container.get<SkillController>(TYPES.SkillController);
+app.get('/api/v1/skills', (req, res) => skillController.list(req, res));
 
 // Swagger UI
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
