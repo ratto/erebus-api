@@ -1,0 +1,1757 @@
+[
+  {
+    "id": 1,
+    "nome": "Treinamento de animais",
+    "grupo": "Animais",
+    "atributoBase": null,
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de ensinar comandos, truques e comportamentos complexos a criaturas domesticadas ou semidomesticadas."
+  },
+  {
+    "id": 2,
+    "nome": "Montaria",
+    "grupo": "Animais",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Treinamento de animais (Animais)",
+    "descricao": "Habilidade de cavalgar ou conduzir animais de sela e tração com equilíbrio, controle e precisão em diferentes terrenos."
+  },
+  {
+    "id": 3,
+    "nome": "Doma",
+    "grupo": "Animais",
+    "atributoBase": null,
+    "apenasComTreinamento": false,
+    "sinergia": "Treinamento de animais (Animais)",
+    "descricao": "Perícia em acalmar feras selvagens, reduzir a agressividade de criaturas ariscas e estabelecer laços de confiança."
+  },
+  {
+    "id": 4,
+    "nome": "Veterinária",
+    "grupo": "Animais",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento técnico para estancar sangramentos, imobilizar membros e tratar enfermidades básicas em seres animais."
+  },
+  {
+    "id": 5,
+    "nome": "Armadilhas",
+    "grupo": null,
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Detecção, montagem e desarmamento de mecanismos de captura."
+  },
+  {
+    "id": 6,
+    "nome": "Arquitetura",
+    "grupo": "Artes",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de projetar e edificar estruturas e edifícios."
+  },
+  {
+    "id": 7,
+    "nome": "Atuação",
+    "grupo": "Artes",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade de interpretar personagens e fingir emoções de forma convincente."
+  },
+  {
+    "id": 8,
+    "nome": "Canto",
+    "grupo": "Artes",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Domínio da voz para interpretar melodias, transmitir emoções e projetar o som com técnica e harmonia."
+  },
+  {
+    "id": 9,
+    "nome": "Crítica de Arte",
+    "grupo": "Artes",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de analisar, interpretar e avaliar o valor estético, técnico e histórico de obras artísticas."
+  },
+  {
+    "id": 10,
+    "nome": "Culinária",
+    "grupo": "Artes",
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Conhecimento técnico sobre o preparo e a combinação de alimentos."
+  },
+  {
+    "id": 11,
+    "nome": "Dança",
+    "grupo": "Artes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Expressão corporal rítmica e domínio de coreografias."
+  },
+  {
+    "id": 12,
+    "nome": "Desenho",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade manual para representar formas e figuras em superfícies."
+  },
+  {
+    "id": 13,
+    "nome": "Escapismo",
+    "grupo": "Artes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade técnica para se libertar de amarras, algemas, celas e outros tipos de contenção física."
+  },
+  {
+    "id": 14,
+    "nome": "Escultura",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Arte de modelar ou entalhar formas em três dimensões."
+  },
+  {
+    "id": 15,
+    "nome": "Fotografia",
+    "grupo": "Artes",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Domínio de luz, enquadramento e tecnologia para capturar e eternizar imagens de forma técnica ou artística."
+  },
+  {
+    "id": 16,
+    "nome": "Ilusionismo",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Perícia em criar efeitos visuais enganosos, truques de palco e manipulação da percepção do público."
+  },
+  {
+    "id": 17,
+    "nome": "Instrumentos Musicais",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": "Canto (Artes)",
+    "descricao": "Proficiência técnica na execução de instrumentos específicos para compor ou interpretar peças musicais."
+  },
+  {
+    "id": 18,
+    "nome": "Pintura",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": "Desenho (Artes)",
+    "descricao": "Domínio do uso de cores e pigmentos para representação artística."
+  },
+  {
+    "id": 19,
+    "nome": "Joalheria",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Conhecimento para criar, consertar e avaliar pedras preciosas e metais finos, produzindo adornos detalhados."
+  },
+  {
+    "id": 20,
+    "nome": "Prestidigitação",
+    "grupo": "Artes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade manual extrema para truques rápidos, furtos leves e manipulação de pequenos objetos sem ser notado."
+  },
+  {
+    "id": 21,
+    "nome": "Redação",
+    "grupo": "Artes",
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de estruturar ideias, narrativas e informações de forma clara, coesa e persuasiva através da escrita."
+  },
+  {
+    "id": 22,
+    "nome": "Artífice",
+    "grupo": null,
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade manual para criar, reparar ou modificar objetos complexos, ferramentas e mecanismos diversos."
+  },
+  {
+    "id": 23,
+    "nome": "Gemas",
+    "grupo": "Avaliação de Objetos",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de determinar a autenticidade, qualidade, procedência e valor comercial de gemas e pedras preciosas."
+  },
+  {
+    "id": 24,
+    "nome": "Antiguidades",
+    "grupo": "Avaliação de Objetos",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de determinar a autenticidade, qualidade, procedência e valor comercial de objetos antigos e peças históricas."
+  },
+  {
+    "id": 25,
+    "nome": "Ourives",
+    "grupo": "Avaliação de Objetos",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de determinar a autenticidade, qualidade, procedência e valor comercial de ouro, prata e metais preciosos."
+  },
+  {
+    "id": 26,
+    "nome": "Obras de Arte",
+    "grupo": "Avaliação de Objetos",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de determinar a autenticidade, qualidade, procedência e valor comercial de obras criadas por pintores, escultores e artistas."
+  },
+  {
+    "id": 27,
+    "nome": "Camuflagem",
+    "grupo": null,
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Técnica de utilizar o ambiente e materiais para ocultar a própria presença ou objetos da visão alheia."
+  },
+  {
+    "id": 28,
+    "nome": "Agricultura",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Botânica (Ciências)",
+    "descricao": "Conhecimento sobre cultivo de solo, ciclos de colheita, gestão de pragas e técnicas para otimizar a produção de alimentos."
+  },
+  {
+    "id": 29,
+    "nome": "Anatomia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Compreensão detalhada da estrutura física, órgãos e sistemas biológicos de seres vivos."
+  },
+  {
+    "id": 30,
+    "nome": "Antropologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo das culturas humanas, comportamentos sociais, origens étnicas e evolução das civilizações."
+  },
+  {
+    "id": 31,
+    "nome": "Astronomia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Física (Ciências)",
+    "descricao": "Estudo dos corpos celestes, astros e fenômenos do universo."
+  },
+  {
+    "id": 32,
+    "nome": "Botânica",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento profundo sobre o reino vegetal e suas propriedades."
+  },
+  {
+    "id": 33,
+    "nome": "Direito",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento das leis, normas jurídicas e processos legais."
+  },
+  {
+    "id": 34,
+    "nome": "Ecologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Entendimento das relações entre seres vivos e seu meio ambiente, incluindo equilíbrio de ecossistemas e biomas."
+  },
+  {
+    "id": 35,
+    "nome": "Filosofia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo crítico sobre o pensamento humano, ética e existência."
+  },
+  {
+    "id": 36,
+    "nome": "Física",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo das leis da natureza, matéria e energia."
+  },
+  {
+    "id": 37,
+    "nome": "Genética",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo da hereditariedade, DNA e manipulação biológica de características transmitidas entre gerações."
+  },
+  {
+    "id": 38,
+    "nome": "Geografia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Geologia (Ciências)",
+    "descricao": "Conhecimento sobre o relevo, clima e divisões do globo terrestre."
+  },
+  {
+    "id": 39,
+    "nome": "Geologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo da composição da Terra, rochas e minerais."
+  },
+  {
+    "id": 40,
+    "nome": "Heráldica",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia em identificar e interpretar brasões, linhagens nobres, selos familiares e protocolos de nobreza."
+  },
+  {
+    "id": 41,
+    "nome": "Herbalismo",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Botânica (Ciências)",
+    "descricao": "Conhecimento prático sobre propriedades medicinais, tóxicas e misturas de plantas, fungos e ervas."
+  },
+  {
+    "id": 42,
+    "nome": "História",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo dos eventos passados e da evolução das civilizações."
+  },
+  {
+    "id": 43,
+    "nome": "Literatura",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio sobre obras clássicas, estilos narrativos, história da escrita e análise crítica de textos."
+  },
+  {
+    "id": 44,
+    "nome": "Matemática",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio de cálculos complexos, lógica e geometria."
+  },
+  {
+    "id": 45,
+    "nome": "Metereologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Física (Ciências)",
+    "descricao": "Capacidade de prever fenômenos climáticos e interpretar variações atmosféricas e mudanças de tempo."
+  },
+  {
+    "id": 46,
+    "nome": "Pedagogia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Psicologia (Ciências)",
+    "descricao": "Conhecimento de métodos de ensino, processos de aprendizagem e técnicas de transmissão de conhecimento."
+  },
+  {
+    "id": 47,
+    "nome": "Psicologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Análise do comportamento humano e dos processos mentais."
+  },
+  {
+    "id": 48,
+    "nome": "Química",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo das substâncias, suas reações e transformações."
+  },
+  {
+    "id": 49,
+    "nome": "Sociologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Análise das estruturas sociais e comportamentos de grupo."
+  },
+  {
+    "id": 50,
+    "nome": "Teologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Clero (Etiqueta)",
+    "descricao": "Estudo das religiões, dogmas divinos, mitologias, textos sagrados e hierarquias eclesiásticas."
+  },
+  {
+    "id": 51,
+    "nome": "Ufologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Investigação sobre fenômenos aéreos não identificados e alienígenas."
+  },
+  {
+    "id": 52,
+    "nome": "Zoologia",
+    "grupo": "Ciências",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo específico sobre a biologia e comportamento animal."
+  },
+  {
+    "id": 53,
+    "nome": "Alquimia",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Ciência mística voltada para a transmutação e criação de elixires."
+  },
+  {
+    "id": 54,
+    "nome": "Anjos",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo de hierarquias celestiais, nomes de poder e linguagens sagradas para comunicação com entidades angelicais."
+  },
+  {
+    "id": 55,
+    "nome": "Astrologia",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Interpretação da influência dos astros na vida humana."
+  },
+  {
+    "id": 56,
+    "nome": "Búzios",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Prática divinatória através do lançamento de conchas para interpretar o destino ou a vontade de divindades."
+  },
+  {
+    "id": 57,
+    "nome": "Demônios",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo sobre entidades infernais e planos de existência obscuros."
+  },
+  {
+    "id": 58,
+    "nome": "Oculto",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento sobre sociedades secretas e rituais místicos."
+  },
+  {
+    "id": 59,
+    "nome": "Psionismo",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Compreensão das capacidades latentes da mente para manipular a realidade e interagir com outras consciências."
+  },
+  {
+    "id": 60,
+    "nome": "Rituais",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento de cerimônias complexas e sacrifícios necessários para invocar energias ou alterar leis naturais."
+  },
+  {
+    "id": 61,
+    "nome": "Tarot",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Uso de cartas simbólicas para leitura de arquétipos, previsão de eventos futuros e análise introspectiva."
+  },
+  {
+    "id": 62,
+    "nome": "Teoria da Magia",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo acadêmico sobre o funcionamento das energias arcanas."
+  },
+  {
+    "id": 63,
+    "nome": "Vampiros",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo da fisiologia, fraquezas, linhagens e poderes das criaturas que se alimentam de essência vital."
+  },
+  {
+    "id": 64,
+    "nome": "Viagem Astral",
+    "grupo": "Ciências Proibidas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Técnicas para projetar a consciência fora do corpo físico para explorar planos espirituais ou distâncias remotas."
+  },
+  {
+    "id": 65,
+    "nome": "Automóvel",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de operar veículos leves de passeio em ambientes urbanos e rodoviários."
+  },
+  {
+    "id": 66,
+    "nome": "Ônibus",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Caminhão (Condução)",
+    "descricao": "Condução de veículos de transporte coletivo, considerando dimensões amplas e segurança dos passageiros."
+  },
+  {
+    "id": 67,
+    "nome": "Caminhão",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Automóvel (Condução)",
+    "descricao": "Perícia em veículos pesados de carga, incluindo controle de tração, frenagem e manobras com reboque."
+  },
+  {
+    "id": 68,
+    "nome": "Empilhadeira",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade técnica para operar máquinas de elevação e transporte de carga em armazéns e pátios."
+  },
+  {
+    "id": 69,
+    "nome": "Guindaste",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Controle de precisão em maquinário pesado para içamento e posicionamento de cargas em grandes alturas."
+  },
+  {
+    "id": 70,
+    "nome": "Carruagem",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Montaria (Animais)",
+    "descricao": "Capacidade de conduzir veículos de tração animal, controlando rédeas e a estabilidade em terrenos variados."
+  },
+  {
+    "id": 71,
+    "nome": "Motocicleta",
+    "grupo": "Condução",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de conduzir veículos de duas rodas motorizados, mantendo o equilíbrio e a agilidade no tráfego."
+  },
+  {
+    "id": 72,
+    "nome": "Carro de Corrida",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Automóvel (Condução)",
+    "descricao": "Perícia em condução competitiva, dominando curvas em alta velocidade e limites de aderência."
+  },
+  {
+    "id": 73,
+    "nome": "Motocicleta de Corrida",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Motocicleta (Condução)",
+    "descricao": "Controle extremo de inclinação e aceleração em motocicletas de alta cilindrada em circuitos."
+  },
+  {
+    "id": 74,
+    "nome": "Helicóptero",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio da decolagem vertical, voo pairado e controle de rotores em aeronaves de asas rotativas."
+  },
+  {
+    "id": 75,
+    "nome": "Avião Comercial",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Navegação de aeronaves de grande porte, seguindo protocolos de segurança e aviação civil."
+  },
+  {
+    "id": 76,
+    "nome": "Avião Militar",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Avião Comercial (Pilotagem)",
+    "descricao": "Habilidade em manobras evasivas, combate aéreo e operação de sistemas de armas em caças ou aviões de ataque."
+  },
+  {
+    "id": 77,
+    "nome": "Ônibus Espacial",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": "Avião Militar (Pilotagem)",
+    "descricao": "Conhecimento técnico para operar naves em órbita, procedimentos de reentrada e acoplagem espacial."
+  },
+  {
+    "id": 78,
+    "nome": "Lancha",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Condução de embarcações motorizadas rápidas, controlando a estabilidade em águas agitadas."
+  },
+  {
+    "id": 79,
+    "nome": "Iate",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Gestão de embarcações de luxo ou lazer de grande porte, unindo navegação e sistemas de bordo."
+  },
+  {
+    "id": 80,
+    "nome": "Veleiro",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Arte de navegar utilizando a força do vento nas velas e o controle do leme."
+  },
+  {
+    "id": 81,
+    "nome": "Navio Cargueiro",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Comando de embarcações transoceânicas de imenso porte, lidando com inércia e rotas globais."
+  },
+  {
+    "id": 82,
+    "nome": "Ultraleve",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Controle de aeronaves recreativas de pequeno porte com foco em voo visual e vento."
+  },
+  {
+    "id": 83,
+    "nome": "Asa Delta",
+    "grupo": "Pilotagem",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de voar sem motor, utilizando correntes de ar térmicas e o peso do corpo para direção."
+  },
+  {
+    "id": 84,
+    "nome": "Disfarce",
+    "grupo": null,
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de alterar a aparência física e o comportamento para assumir uma identidade falsa ou passar despercebido."
+  },
+  {
+    "id": 85,
+    "nome": "Eletrônica",
+    "grupo": null,
+    "atributoBase": null,
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade prática para montar, testar e reparar circuitos, placas e dispositivos eletrônicos de pequeno porte."
+  },
+  {
+    "id": 86,
+    "nome": "Eng. Aeronáutica",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento avançado em design, manutenção e operação de aeronaves, incluindo aerodinâmica e sistemas de propulsão."
+  },
+  {
+    "id": 87,
+    "nome": "Eng. dos Alimentos",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo dos processos de industrialização, conservação, transporte e controle de qualidade de produtos alimentícios."
+  },
+  {
+    "id": 88,
+    "nome": "Eng.  da Computação",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": "Computação (Informática)",
+    "descricao": "Integração de conhecimentos de hardware e software para o desenvolvimento de sistemas computacionais complexos."
+  },
+  {
+    "id": 89,
+    "nome": "Eng. de Demolições",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia técnica no cálculo estrutural e uso estratégico de explosivos para derrubar edifícios e grandes estruturas."
+  },
+  {
+    "id": 90,
+    "nome": "Eng. Elétrica",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo e aplicação de sistemas de geração, transmissão e distribuição de energia elétrica em larga escala."
+  },
+  {
+    "id": 91,
+    "nome": "Eng. Eletrônica",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Design e desenvolvimento de componentes e sistemas que utilizam eletricidade para processar informação e sinais."
+  },
+  {
+    "id": 92,
+    "nome": "Eng. de Materiais",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Pesquisa e aplicação de propriedades físicas e químicas de metais, polímeros e cerâmicas para criação de novos produtos."
+  },
+  {
+    "id": 93,
+    "nome": "Eng. Mecânica",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Projeto e manutenção de máquinas, motores, ferramentas e sistemas mecânicos de força e movimento."
+  },
+  {
+    "id": 94,
+    "nome": "Eng. Mecatrônica",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Combinação de mecânica, eletrônica e computação para o desenvolvimento de sistemas automatizados e robóticos."
+  },
+  {
+    "id": 95,
+    "nome": "Eng. Naval",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento técnico em design, construção e reparo de embarcações, plataformas offshore e estruturas marítimas."
+  },
+  {
+    "id": 96,
+    "nome": "Eng. Química",
+    "grupo": "Engenharia",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Aplicação de processos químicos em escala industrial para a transformação de matéria-prima em produtos úteis."
+  },
+  {
+    "id": 97,
+    "nome": "Escutar",
+    "grupo": null,
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Acuidade auditiva para detectar sons sutis, conversas distantes ou movimentos furtivos atrás de obstáculos."
+  },
+  {
+    "id": 98,
+    "nome": "Esquiva",
+    "grupo": null,
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Reflexos e agilidade para evitar ataques físicos, projéteis ou perigos iminentes através de movimentação corporal."
+  },
+  {
+    "id": 99,
+    "nome": "Acrobacia",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade em realizar contorções, saltos mortais, piruetas e manter o equilíbrio em situações precárias."
+  },
+  {
+    "id": 100,
+    "nome": "Alpinismo",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de escalar paredões rochosos, gelo ou estruturas verticais utilizando força e equipamentos de segurança."
+  },
+  {
+    "id": 101,
+    "nome": "Arremesso",
+    "grupo": "Esportes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Precisão e força para lançar objetos, como dardos, pedras ou esferas, em direção a um alvo específico."
+  },
+  {
+    "id": 102,
+    "nome": "Artes Marciais",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio de técnicas de combate corpo a corpo, envolvendo chutes, socos e imobilizações sistemáticas."
+  },
+  {
+    "id": 103,
+    "nome": "Basquete",
+    "grupo": "Esportes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Perícia em quicar, passar e arremessar bolas em cestas, além de posicionamento tático em quadra."
+  },
+  {
+    "id": 104,
+    "nome": "Boxe",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Técnica de combate focada no uso dos punhos, esquivas rápidas e resistência a impactos diretos."
+  },
+  {
+    "id": 105,
+    "nome": "Caça",
+    "grupo": "Esportes",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade de rastrear, emboscar e abater animais selvagens para fins de subsistência ou controle."
+  },
+  {
+    "id": 106,
+    "nome": "Canoagem",
+    "grupo": "Esportes",
+    "atributoBase": "CONS",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de navegar e manobrar pequenas embarcações a remo em rios, lagos ou corredeiras."
+  },
+  {
+    "id": 107,
+    "nome": "Corrida",
+    "grupo": "Esportes",
+    "atributoBase": "CONS",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Domínio da passada, fôlego e velocidade para percorrer distâncias a pé no menor tempo possível."
+  },
+  {
+    "id": 108,
+    "nome": "Esqui",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade de deslizar sobre a neve utilizando pranchas nos pés, mantendo o controle em descidas íngremes."
+  },
+  {
+    "id": 109,
+    "nome": "Futebol",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Perícia no controle da bola com os pés, passes estratégicos e finalizações ao gol em esportes coletivos."
+  },
+  {
+    "id": 110,
+    "nome": "Mergulho",
+    "grupo": "Esportes",
+    "atributoBase": "CONS",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Técnica de submersão e nado em profundidade utilizando controle de respiração ou equipamentos autônomos."
+  },
+  {
+    "id": 111,
+    "nome": "Paraquedismo",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento técnico para realizar saltos de aeronaves, controlar a queda livre e operar o paraquedas."
+  },
+  {
+    "id": 112,
+    "nome": "Pesca",
+    "grupo": "Esportes",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Habilidade no uso de varas, redes ou arpões para capturar criaturas aquáticas em diversos ambientes."
+  },
+  {
+    "id": 113,
+    "nome": "Natação",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de deslocar-se na água com eficiência utilizando diferentes estilos de nado."
+  },
+  {
+    "id": 114,
+    "nome": "Salto",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Potência muscular para transpor obstáculos verticais ou alcançar distâncias horizontais a partir de um impulso."
+  },
+  {
+    "id": 115,
+    "nome": "Salto Ornamental",
+    "grupo": "Esportes",
+    "atributoBase": "AGI",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Técnica de saltar de plataformas em direção à água realizando movimentos estéticos e precisos."
+  },
+  {
+    "id": 116,
+    "nome": "Tênis",
+    "grupo": "Esportes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Domínio de raquetes para rebater bolas sobre uma rede, aplicando efeitos e precisão em quadra."
+  },
+  {
+    "id": 117,
+    "nome": "Voleibol",
+    "grupo": "Esportes",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Perícia em fundamentos de saque, manchete e bloqueio para manter a bola no ar e marcar pontos."
+  },
+  {
+    "id": 118,
+    "nome": "Clero",
+    "grupo": "Etiqueta",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Conhecimento de protocolos religiosos, tratamentos formais de ordens sagradas e ritos de conduta em templos."
+  },
+  {
+    "id": 119,
+    "nome": "Comercial",
+    "grupo": "Etiqueta",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Domínio de normas de negociação, contratos, apertos de mão e o comportamento esperado no mundo corporativo."
+  },
+  {
+    "id": 120,
+    "nome": "Diplomacia",
+    "grupo": "Etiqueta",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Perícia em protocolos internacionais, mediação de conflitos e comunicação polida entre representantes de estados."
+  },
+  {
+    "id": 121,
+    "nome": "Mercado Negro",
+    "grupo": "Etiqueta",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": "Submundo (Etiqueta)",
+    "descricao": "Compreensão dos códigos de conduta, gírias e protocolos de segurança em transações de mercadorias ilegais."
+  },
+  {
+    "id": 122,
+    "nome": "Nobreza",
+    "grupo": "Etiqueta",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio de linhagens, precedências reais, jantares formais e as complexas normas de conduta da alta sociedade."
+  },
+  {
+    "id": 123,
+    "nome": "Submundo",
+    "grupo": "Etiqueta",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento das hierarquias criminosas, leis de silêncio e as regras de respeito vigentes entre gangues e mafiosos."
+  },
+  {
+    "id": 124,
+    "nome": "Escutar",
+    "grupo": "",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade auditiva para notar ruídos sutis ou conversas distantes."
+  },
+  {
+    "id": 125,
+    "nome": "Explosivos",
+    "grupo": null,
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Conhecimento técnico para armar, desarmar, posicionar e detonar substâncias explosivas com segurança."
+  },
+  {
+    "id": 126,
+    "nome": "Documentos",
+    "grupo": "Falsificação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de replicar caligrafias, selos oficiais e papéis governamentais para criar registros fraudulentos."
+  },
+  {
+    "id": 127,
+    "nome": "Escultura",
+    "grupo": "Falsificação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia em reproduzir estátuas e monumentos, simulando o estilo de artistas mestres e o desgaste do tempo."
+  },
+  {
+    "id": 128,
+    "nome": "Fotografia",
+    "grupo": "Falsificação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Técnica de manipular negativos ou imagens digitais para criar provas visuais enganosas ou registros alterados."
+  },
+  {
+    "id": 129,
+    "nome": "Joalheria",
+    "grupo": "Falsificação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de criar réplicas de joias famosas e imitar pedras preciosas usando materiais de menor valor."
+  },
+  {
+    "id": 130,
+    "nome": "Pinturas",
+    "grupo": "Falsificação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de mimetizar pinceladas, pigmentos históricos e estilos de grandes pintores para criar obras falsas."
+  },
+  {
+    "id": 131,
+    "nome": "Furtar",
+    "grupo": null,
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade manual e discrição para subtrair objetos de terceiros ou de locais protegidos sem ser detectado."
+  },
+  {
+    "id": 132,
+    "nome": "Furtividade",
+    "grupo": null,
+    "atributoBase": "AGI",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de se mover silenciosamente e permanecer oculto."
+  },
+  {
+    "id": 133,
+    "nome": "Chinês",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em chinês tradicional e mandarim, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 134,
+    "nome": "Inglês",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em inglês, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 135,
+    "nome": "Espanhol",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em espanhol, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 136,
+    "nome": "Hindu",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em hindu, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 137,
+    "nome": "Russo",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em russo, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 138,
+    "nome": "Árabe",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em árabe, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 139,
+    "nome": "Japonês",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em japonês, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 140,
+    "nome": "Alemão",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em alemão, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 141,
+    "nome": "Francês",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente em francês, compreendendo gírias e contextos culturais."
+  },
+  {
+    "id": 142,
+    "nome": "Outros",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de falar, ler e escrever fluentemente outros idiomas não listados."
+  },
+  {
+    "id": 143,
+    "nome": "Braile",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de ler textos através do sistema de escrita tátil baseado em pontos em relevo, utilizado por pessoas com deficiência visual."
+  },
+  {
+    "id": 144,
+    "nome": "Código Morse",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia em transmitir e decifrar mensagens utilizando sequências de pulsos curtos e longos (pontos e traços), seja por som ou luz."
+  },
+  {
+    "id": 145,
+    "nome": "Criptografia",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de criar códigos complexos para proteger informações e decodificar mensagens cifradas sem o uso da chave original."
+  },
+  {
+    "id": 146,
+    "nome": "Linguagem de Sinais",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio da comunicação visual-gestual utilizada por comunidades surdas para transmitir ideias, sentimentos e conceitos."
+  },
+  {
+    "id": 147,
+    "nome": "Leitura Labial",
+    "grupo": "Idiomas",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de interpretar falas apenas observando os movimentos dos lábios, dentes e língua do interlocutor, sem auxílio do som."
+  },
+  {
+    "id": 148,
+    "nome": "Cartas",
+    "grupo": "Jogos",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Domínio de regras, probabilidade e técnicas de blefe em jogos de baralho tradicionais ou colecionáveis."
+  },
+  {
+    "id": 149,
+    "nome": "Tabuleiro",
+    "grupo": "Jogos",
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Conhecimento de estratégias complexas, táticas de posicionamento e mecânicas de jogos de mesa clássicos ou modernos."
+  },
+  {
+    "id": 150,
+    "nome": "Videogames",
+    "grupo": "Jogos",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Proficiência em reflexos, coordenação e lógica aplicados a ambientes virtuais e plataformas digitais."
+  },
+  {
+    "id": 151,
+    "nome": "RPG",
+    "grupo": "Jogos",
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade em improvisação narrativa, interpretação de personagens e compreensão de sistemas de regras de jogos cooperativos."
+  },
+  {
+    "id": 152,
+    "nome": "Computação",
+    "grupo": "Informática",
+    "atributoBase": null,
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Compreensão teórica e prática sobre o funcionamento de hardware, sistemas operacionais e arquitetura de dados."
+  },
+  {
+    "id": 153,
+    "nome": "Internet",
+    "grupo": "Informática",
+    "atributoBase": null,
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade em navegação avançada, busca de informações ocultas e gestão de redes de comunicação global."
+  },
+  {
+    "id": 154,
+    "nome": "Hacker",
+    "grupo": "Informática",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia em invasão de sistemas, quebra de criptografia e exploração de vulnerabilidades em redes protegidas."
+  },
+  {
+    "id": 155,
+    "nome": "Manutenção",
+    "grupo": "Informática",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade técnica para diagnosticar falhas, substituir componentes físicos e reparar danos em equipamentos eletrônicos."
+  },
+  {
+    "id": 156,
+    "nome": "Programação",
+    "grupo": "Informática",
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Domínio de linguagens de código para criar softwares, automatizar tarefas e desenvolver aplicações complexas."
+  },
+  {
+    "id": 157,
+    "nome": "Empatia",
+    "grupo": "Manipulação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de perceber sentimentos e intenções reais de terceiros."
+  },
+  {
+    "id": 158,
+    "nome": "Hipnose",
+    "grupo": "Manipulação",
+    "atributoBase": null,
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Uso de sugestão verbal e foco para induzir estados alterados de consciência e acessar o subconsciente alheio."
+  },
+  {
+    "id": 159,
+    "nome": "Impressionar",
+    "grupo": "Manipulação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Talento para cativar atenções, ostentar autoridade ou charme e influenciar a percepção imediata das pessoas."
+  },
+  {
+    "id": 160,
+    "nome": "Interrogatório",
+    "grupo": "Manipulação",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Técnicas para extrair informações de pessoas sob pressão."
+  },
+  {
+    "id": 161,
+    "nome": "Intimidação",
+    "grupo": "Manipulação",
+    "atributoBase": "WILL",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Uso de presença física ou psicológica para coagir alguém."
+  },
+  {
+    "id": 162,
+    "nome": "Lábia",
+    "grupo": "Manipulação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de convencer pessoas através de conversa fluida e mentiras."
+  },
+  {
+    "id": 163,
+    "nome": "Liderança",
+    "grupo": "Manipulação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de inspirar confiança, coordenar grupos e motivar indivíduos a seguirem ordens ou objetivos comuns."
+  },
+  {
+    "id": 164,
+    "nome": "Manha",
+    "grupo": "Manipulação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Conhecimento das \"regras das ruas\", malícia social e habilidade de obter informações através de contatos informais."
+  },
+  {
+    "id": 165,
+    "nome": "Sedução",
+    "grupo": "Manipulação",
+    "atributoBase": "CAR",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Uso de charme e atratividade para influenciar o comportamento alheio."
+  },
+  {
+    "id": 166,
+    "nome": "Tortura",
+    "grupo": "Manipulação",
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Uso metódico de dor física ou psicológica para extrair informações, quebrar a vontade ou intimidar o alvo."
+  },
+  {
+    "id": 167,
+    "nome": "Manuseio de Fechaduras",
+    "grupo": null,
+    "atributoBase": null,
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia técnica no uso de ferramentas para abrir ou trancar mecanismos de segurança e portas sem a chave original."
+  },
+  {
+    "id": 168,
+    "nome": "Cirurgia",
+    "grupo": "Medicina",
+    "atributoBase": "DEX",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de realizar intervenções invasivas, suturas complexas e procedimentos de reparação interna de tecidos e órgãos."
+  },
+  {
+    "id": 169,
+    "nome": "Primeiros Socorros",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade de prestar atendimento emergencial básico, estancar hemorragias e estabilizar feridos em situações críticas."
+  },
+  {
+    "id": 170,
+    "nome": "Oftamologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo e tratamento de patologias oculares, correção da visão e cuidados com o sistema visual."
+  },
+  {
+    "id": 171,
+    "nome": "Dermatologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Diagnóstico e tratamento de doenças da pele, cabelos e unhas, além de pequenas cirurgias cutâneas."
+  },
+  {
+    "id": 172,
+    "nome": "Psiquiatria",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Especialidade focada no diagnóstico e tratamento medicamentoso de transtornos mentais, emocionais e comportamentais."
+  },
+  {
+    "id": 173,
+    "nome": "Cardiologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo e cuidado do coração e do sistema circulatório, prevenindo e tratando insuficiências e patologias vasculares."
+  },
+  {
+    "id": 174,
+    "nome": "Neurologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Diagnóstico e tratamento de distúrbios do sistema nervoso, incluindo cérebro, medula e nervos periféricos."
+  },
+  {
+    "id": 175,
+    "nome": "Urologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Cuidado do sistema urinário e do sistema reprodutor masculino, tratando infecções, cálculos e disfunções."
+  },
+  {
+    "id": 176,
+    "nome": "Ortopedia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Especialidade dedicada à correção e tratamento de lesões nos ossos, articulações, ligamentos e músculos."
+  },
+  {
+    "id": 177,
+    "nome": "Oncologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Estudo, diagnóstico e tratamento de tumores malignos e cuidados paliativos em pacientes com câncer."
+  },
+  {
+    "id": 178,
+    "nome": "Gastrologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Diagnóstico e tratamento de doenças do aparelho digestivo, desde o esôfago até os órgãos abdominais."
+  },
+  {
+    "id": 179,
+    "nome": "Otorringolaringologia",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Cuidados com as patologias que afetam ouvidos, nariz, garganta e estruturas correlatas da face e pescoço."
+  },
+  {
+    "id": 180,
+    "nome": "Veterinária",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": "Veterinária (Animais)",
+    "descricao": "Aplicação de conhecimentos médicos para o diagnóstico, prevenção e cura de doenças em animais de diversas espécies."
+  },
+  {
+    "id": 181,
+    "nome": "Outras Especialidades",
+    "grupo": "Medicina",
+    "atributoBase": "INT",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Outras especialidades médicas não listadas."
+  },
+  {
+    "id": 182,
+    "nome": "Investigação",
+    "grupo": null,
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Habilidade de coletar evidências, analisar cenas de crime e conectar pistas para desvendar mistérios ou fatos ocultos."
+  },
+  {
+    "id": 183,
+    "nome": "Procura",
+    "grupo": "",
+    "atributoBase": "PER",
+    "apenasComTreinamento": false,
+    "sinergia": null,
+    "descricao": "Capacidade de encontrar objetos escondidos ou pistas em um local."
+  },
+  {
+    "id": 184,
+    "nome": "Deserto",
+    "grupo": "Rastreio",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de encontrar e seguir trilhas em ambientes de calor extremo e areia movediça, onde o vento e o clima apagam evidências rapidamente."
+  },
+  {
+    "id": 185,
+    "nome": "Floresta",
+    "grupo": "Rastreio",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de identificar ramos quebrados, folhas reviradas e pegadas em solo úmido ou coberto por vegetação temperada."
+  },
+  {
+    "id": 186,
+    "nome": "Gelo",
+    "grupo": "Rastreio",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de seguir marcas na neve e no gelo, interpretando a profundidade das pegadas e resistindo à cegueira branca."
+  },
+  {
+    "id": 187,
+    "nome": "Montanha",
+    "grupo": "Rastreio",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Perícia em localizar trilhas em solo rochoso, identificar marcas de escalada e prever deslizamentos em terrenos íngremes."
+  },
+  {
+    "id": 188,
+    "nome": "Planície",
+    "grupo": "Rastreio",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Capacidade de notar grama pisoteada e poeira deslocada em vastos campos abertos, onde a visibilidade é alta, mas os rastros são sutis."
+  },
+  {
+    "id": 189,
+    "nome": "Selva",
+    "grupo": "Rastreio",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": null,
+    "descricao": "Habilidade de navegar por vegetação densa e fechada, identificando sinais de passagem em meio ao lodo e ao crescimento vegetal acelerado."
+  },
+  {
+    "id": 190,
+    "nome": "Deserto",
+    "grupo": "Sobrevivência",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Capacidade de localizar água oculta, gerir o consumo de recursos sob calor extremo e encontrar abrigo contra o sol e tempestades de areia."
+  },
+  {
+    "id": 191,
+    "nome": "Floresta",
+    "grupo": "Sobrevivência",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Habilidade de identificar plantas comestíveis, montar acampamentos seguros e obter lenha seca em ambientes de vegetação temp"
+  },
+  {
+    "id": 192,
+    "nome": "Gelo",
+    "grupo": "Sobrevivência",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Perícia em evitar a hipotermia, construir abrigos térmicos e caçar em condições de frio intenso e escassez de recursos."
+  },
+  {
+    "id": 193,
+    "nome": "Montanha",
+    "grupo": "Sobrevivência",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Capacidade de lidar com a altitude, encontrar caminhos seguros contra quedas e prever mudanças bruscas de temperatura em picos rochosos."
+  },
+  {
+    "id": 194,
+    "nome": "Planície",
+    "grupo": "Sobrevivência",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Habilidade de navegar por grandes distâncias sem pontos de referência, identificar perigos climáticos abertos e encontrar fontes de água em campos vastos."
+  },
+  {
+    "id": 195,
+    "nome": "Selva",
+    "grupo": "Sobrevivência",
+    "atributoBase": "PER",
+    "apenasComTreinamento": true,
+    "sinergia": "Ecologia (Ciências)",
+    "descricao": "Perícia em evitar insetos e plantas venenosas, tratar ferimentos em ambientes húmidos e navegar por terrenos densos com visibilidade reduzida."
+  }
+]
