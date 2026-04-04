@@ -9,3 +9,21 @@ export const skills = sqliteTable('skills', {
   sinergia: text('sinergia'),
   descricao: text('descricao').notNull(),
 });
+
+export const weapons = sqliteTable('weapons', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  nome: text('nome').notNull(),
+  categoria: text('categoria').notNull(),
+  dano: text('dano').notNull(),
+  iniciativa: text('iniciativa').notNull(),
+  fonte: text('fonte').notNull(),
+  tipo: text('tipo').notNull(),
+  tipoDano: text('tipo_dano'),
+  ocultabilidade: text('ocultabilidade'),
+  alcanceMedio: text('alcance_medio'),
+  alcanceMax: text('alcance_max'),
+  calibre: text('calibre'),
+  alcanceEfetivo: text('alcance_efetivo'),
+  rof: text('rof'),
+  pente: text('pente'),
+});
