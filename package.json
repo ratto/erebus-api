@@ -13,7 +13,8 @@
     "lint:fix": "eslint . --fix",
     "build": "tsc",
     "db:migrate": "drizzle-kit migrate",
-    "db:seed": "tsx src/infrastructure/database/seeds/skills.seed.ts"
+    "db:seed": "tsx src/infrastructure/database/seeds/skills.seed.ts",
+    "db:seed:weapons": "tsx src/infrastructure/database/seeds/weapons.seed.ts"
   },
   "devDependencies": {
     "@eslint/css": "^1.0.0",

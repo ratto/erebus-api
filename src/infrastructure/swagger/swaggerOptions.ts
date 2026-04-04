@@ -84,6 +84,80 @@ const swaggerOptions: swaggerJSDoc.Options = {
           },
         },
       },
+      '/api/v1/weapons': {
+        get: {
+          summary: 'Listar armas',
+          description: 'Retorna as 129 armas do Sistema Daemon. Filtre por tipo com o parâmetro opcional ?tipo.',
+          tags: ['Weapons'],
+          parameters: [
+            {
+              name: 'tipo',
+              in: 'query',
+              required: false,
+              description: 'Filtra armas pelo tipo',
+              schema: {
+                type: 'string',
+                enum: ['branca', 'branca_distancia', 'fogo'],
+              },
+            },
+          ],
+          responses: {
+            '200': {
+              description: 'Lista de armas retornada com sucesso',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      weapons: {
+                        type: 'array',
+                        items: {
+                          type: 'object',
+                          required: ['id', 'nome', 'categoria', 'dano', 'iniciativa', 'fonte', 'tipo'],
+                          properties: {
+                            id: { type: 'integer', example: 1 },
+                            nome: { type: 'string', example: 'Faca' },
+                            categoria: { type: 'string', example: 'Adaga' },
+                            dano: { type: 'string', example: '1d3' },
+                            iniciativa: { type: 'string', example: '-3' },
+                            fonte: { type: 'string', example: 'Módulo Básico v1.01' },
+                            tipo: { type: 'string', enum: ['branca', 'branca_distancia', 'fogo'] },
+                            tipoDano: { type: 'string', nullable: true, example: 'Corte/Perfuração' },
+                            ocultabilidade: { type: 'string', nullable: true, example: 'Bolso' },
+                            alcanceMedio: { type: 'string', nullable: true, example: '30m' },
+                            alcanceMax: { type: 'string', nullable: true, example: '70m' },
+                            calibre: { type: 'string', nullable: true, example: '9mm' },
+                            alcanceEfetivo: { type: 'string', nullable: true, example: '25m' },
+                            rof: { type: 'string', nullable: true, example: '1' },
+                            pente: { type: 'string', nullable: true, example: '15' },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            '400': {
+              description: 'Parâmetro tipo inválido',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      errors: {
+                        type: 'array',
+                        items: { type: 'string' },
+                        example: ["Invalid enum value. Expected 'branca' | 'branca_distancia' | 'fogo', received 'invalido'"],
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       '/api/v1/dice/roll': {
         post: {
           summary: 'Rolar dados',
