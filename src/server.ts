@@ -6,6 +6,7 @@ import { swaggerSpec } from './infrastructure/swagger/swaggerOptions.ts';
 import { container } from './infrastructure/container/container.ts';
 import { DiceController } from './controllers/dice.controller.ts';
 import { SkillController } from './controllers/skill.controller.ts';
+import { WeaponController } from './controllers/weapon.controller.ts';
 import { TYPES } from './infrastructure/container/types.ts';
 import dotenv from 'dotenv';
 
@@ -23,6 +24,9 @@ app.post('/api/v1/dice/roll', (req, res) => diceController.roll(req, res));
 
 const skillController = container.get<SkillController>(TYPES.SkillController);
 app.get('/api/v1/skills', (req, res) => skillController.list(req, res));
+
+const weaponController = container.get<WeaponController>(TYPES.WeaponController);
+app.get('/api/v1/weapons', (req, res) => weaponController.list(req, res));
 
 // Swagger UI
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
