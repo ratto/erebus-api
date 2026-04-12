@@ -36,7 +36,7 @@ app.get('/api/v1/logs/stream', (req, res) => logsController.stream(req, res));
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(port, () => {
-  console.log(`Erebus API listening on port ${port}`);
+  process.stdout.write(`Erebus API listening on port ${port}\n`);
 });
 
 export { app };
