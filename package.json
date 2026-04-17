@@ -14,7 +14,8 @@
     "build": "tsc",
     "db:migrate": "drizzle-kit migrate",
     "db:seed": "tsx src/infrastructure/database/seeds/skills.seed.ts",
-    "db:seed:weapons": "tsx src/infrastructure/database/seeds/weapons.seed.ts"
+    "db:seed:weapons": "tsx src/infrastructure/database/seeds/weapons.seed.ts",
+    "db:seed:enhancements": "tsx src/infrastructure/database/seeds/enhancements.seed.ts"
   },
   "devDependencies": {
     "@eslint/css": "^1.0.0",

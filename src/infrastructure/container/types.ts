@@ -6,7 +6,10 @@ export const TYPES = {
   ISkillRepository:  Symbol.for('ISkillRepository'),
   ISkillService:     Symbol.for('ISkillService'),
   SkillController:   Symbol.for('SkillController'),
-  IWeaponRepository: Symbol.for('IWeaponRepository'),
-  IWeaponService:    Symbol.for('IWeaponService'),
-  WeaponController:  Symbol.for('WeaponController'),
+  IWeaponRepository:      Symbol.for('IWeaponRepository'),
+  IWeaponService:         Symbol.for('IWeaponService'),
+  WeaponController:       Symbol.for('WeaponController'),
+  IEnhancementRepository: Symbol.for('IEnhancementRepository'),
+  IEnhancementService:    Symbol.for('IEnhancementService'),
+  EnhancementController:  Symbol.for('EnhancementController'),
 };

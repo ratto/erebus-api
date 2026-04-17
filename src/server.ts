@@ -7,6 +7,7 @@ import { container } from './infrastructure/container/container.ts';
 import { DiceController } from './controllers/dice.controller.ts';
 import { SkillController } from './controllers/skill.controller.ts';
 import { WeaponController } from './controllers/weapon.controller.ts';
+import { EnhancementController } from './controllers/enhancement.controller.ts';
 import { TYPES } from './infrastructure/container/types.ts';
 import dotenv from 'dotenv';
 
@@ -27,6 +28,9 @@ app.get('/api/v1/skills', (req, res) => skillController.list(req, res));
 
 const weaponController = container.get<WeaponController>(TYPES.WeaponController);
 app.get('/api/v1/weapons', (req, res) => weaponController.list(req, res));
+
+const enhancementController = container.get<EnhancementController>(TYPES.EnhancementController);
+app.get('/api/v1/enhancements', (req, res) => enhancementController.list(req, res));
 
 // Swagger UI
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));

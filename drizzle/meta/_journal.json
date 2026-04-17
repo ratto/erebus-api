@@ -15,6 +15,13 @@
       "when": 1775319265817,
       "tag": "0001_aberrant_marten_broadcloak",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1776469477065,
+      "tag": "0002_reflective_red_wolf",
+      "breakpoints": true
     }
   ]
 }

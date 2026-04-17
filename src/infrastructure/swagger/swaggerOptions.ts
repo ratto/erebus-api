@@ -158,6 +158,88 @@ const swaggerOptions: swaggerJSDoc.Options = {
           },
         },
       },
+      '/api/v1/enhancements': {
+        get: {
+          summary: 'Listar aprimoramentos',
+          description: 'Retorna lista paginada de aprimoramentos (vantagens e desvantagens) do Sistema Daemon. Suporta filtro por tipo e busca por nome.',
+          tags: ['Enhancements'],
+          parameters: [
+            {
+              name: 'page',
+              in: 'query',
+              required: false,
+              description: 'Página atual (default: 1)',
+              schema: { type: 'integer', minimum: 1, default: 1 },
+            },
+            {
+              name: 'limit',
+              in: 'query',
+              required: false,
+              description: 'Itens por página (default: 20)',
+              schema: { type: 'integer', minimum: 1, default: 20 },
+            },
+            {
+              name: 'tipo',
+              in: 'query',
+              required: false,
+              description: "Filtra por tipo: 'positivo' (vantagens) ou 'negativo' (desvantagens)",
+              schema: { type: 'string', enum: ['positivo', 'negativo'] },
+            },
+            {
+              name: 'search',
+              in: 'query',
+              required: false,
+              description: 'Busca parcial por nome (case-insensitive)',
+              schema: { type: 'string' },
+            },
+          ],
+          responses: {
+            '200': {
+              description: 'Lista de aprimoramentos retornada com sucesso',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      total: { type: 'integer', example: 63 },
+                      page: { type: 'integer', example: 1 },
+                      limit: { type: 'integer', example: 20 },
+                      data: {
+                        type: 'array',
+                        items: {
+                          type: 'object',
+                          required: ['id', 'nome', 'descricao', 'tipo', 'custo'],
+                          properties: {
+                            id: { type: 'integer', example: 1 },
+                            nome: { type: 'string', example: 'Ambidestria' },
+                            descricao: { type: 'string', example: 'O personagem pode usar ambas as mãos com igual habilidade.' },
+                            tipo: { type: 'string', enum: ['positivo', 'negativo'], example: 'positivo' },
+                            custo: { type: 'integer', example: 5, description: 'Negativo para desvantagens (ex: -3)' },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            '400': {
+              description: 'Query param inválido',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      error: { type: 'string', example: 'Validation error' },
+                      details: { type: 'object' },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       '/api/v1/dice/roll': {
         post: {
           summary: 'Rolar dados',

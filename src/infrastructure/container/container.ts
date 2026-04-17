@@ -15,6 +15,11 @@ import { WeaponRepository } from '../../repositories/weapon.repository.ts';
 import type { IWeaponService } from '../../services/weapon.service.ts';
 import { WeaponService } from '../../services/weapon.service.ts';
 import { WeaponController } from '../../controllers/weapon.controller.ts';
+import type { IEnhancementRepository } from '../../repositories/enhancement.repository.ts';
+import { EnhancementRepository } from '../../repositories/enhancement.repository.ts';
+import type { IEnhancementService } from '../../services/enhancement.service.ts';
+import { EnhancementService } from '../../services/enhancement.service.ts';
+import { EnhancementController } from '../../controllers/enhancement.controller.ts';
 
 const container = new Container();
 
@@ -34,5 +39,10 @@ container.bind<SkillController>(TYPES.SkillController).to(SkillController).inTra
 container.bind<IWeaponRepository>(TYPES.IWeaponRepository).to(WeaponRepository).inSingletonScope();
 container.bind<IWeaponService>(TYPES.IWeaponService).to(WeaponService).inTransientScope();
 container.bind<WeaponController>(TYPES.WeaponController).to(WeaponController).inTransientScope();
+
+// Enhancements
+container.bind<IEnhancementRepository>(TYPES.IEnhancementRepository).to(EnhancementRepository).inSingletonScope();
+container.bind<IEnhancementService>(TYPES.IEnhancementService).to(EnhancementService).inTransientScope();
+container.bind<EnhancementController>(TYPES.EnhancementController).to(EnhancementController).inTransientScope();
 
 export { container };
