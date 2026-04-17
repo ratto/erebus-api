@@ -15,6 +15,8 @@ import { WeaponRepository } from '../../repositories/weapon.repository.ts';
 import type { IWeaponService } from '../../services/weapon.service.ts';
 import { WeaponService } from '../../services/weapon.service.ts';
 import { WeaponController } from '../../controllers/weapon.controller.ts';
+import { LogsService } from '../../services/logs.service.ts';
+import { LogsController } from '../../controllers/logs.controller.ts';
 
 const container = new Container();
 
@@ -34,5 +36,9 @@ container.bind<SkillController>(TYPES.SkillController).to(SkillController).inTra
 container.bind<IWeaponRepository>(TYPES.IWeaponRepository).to(WeaponRepository).inSingletonScope();
 container.bind<IWeaponService>(TYPES.IWeaponService).to(WeaponService).inTransientScope();
 container.bind<WeaponController>(TYPES.WeaponController).to(WeaponController).inTransientScope();
+
+// Logs / SSE
+container.bind<LogsService>(TYPES.LogsService).to(LogsService).inSingletonScope();
+container.bind<LogsController>(TYPES.LogsController).to(LogsController).inTransientScope();
 
 export { container };

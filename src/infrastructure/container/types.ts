@@ -9,4 +9,6 @@ export const TYPES = {
   IWeaponRepository: Symbol.for('IWeaponRepository'),
   IWeaponService:    Symbol.for('IWeaponService'),
   WeaponController:  Symbol.for('WeaponController'),
+  LogsService:       Symbol.for('LogsService'),
+  LogsController:    Symbol.for('LogsController'),
 };

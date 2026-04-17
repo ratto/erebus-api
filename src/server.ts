@@ -7,6 +7,7 @@ import { container } from './infrastructure/container/container.ts';
 import { DiceController } from './controllers/dice.controller.ts';
 import { SkillController } from './controllers/skill.controller.ts';
 import { WeaponController } from './controllers/weapon.controller.ts';
+import { LogsController } from './controllers/logs.controller.ts';
 import { TYPES } from './infrastructure/container/types.ts';
 import dotenv from 'dotenv';
 
@@ -28,11 +29,14 @@ app.get('/api/v1/skills', (req, res) => skillController.list(req, res));
 const weaponController = container.get<WeaponController>(TYPES.WeaponController);
 app.get('/api/v1/weapons', (req, res) => weaponController.list(req, res));
 
+const logsController = container.get<LogsController>(TYPES.LogsController);
+app.get('/api/v1/logs/stream', (req, res) => logsController.stream(req, res));
+
 // Swagger UI
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(port, () => {
-  console.log(`Erebus API listening on port ${port}`);
+  process.stdout.write(`Erebus API listening on port ${port}\n`);
 });
 
 export { app };
