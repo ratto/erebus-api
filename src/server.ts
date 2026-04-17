@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import morgan from 'morgan';
+import cors from 'cors';
 import { swaggerSpec } from './infrastructure/swagger/swaggerOptions.ts';
 import { container } from './infrastructure/container/container.ts';
 import { DiceController } from './controllers/dice.controller.ts';
@@ -18,6 +19,8 @@ const port = Number(process.env['EREBUS_SERVER_PORT'] ?? 3000);
 
 app.use(express.json());
 app.use(morgan('dev'));
+// const allowedOrigins = process.env['CORS_ORIGIN']?.split(',') ?? ['http://localhost:9000'];
+app.use(cors({ origin: '*', optionsSuccessStatus: 200 }));
 
 // Routes
 const diceController = container.get<DiceController>(TYPES.DiceController);
