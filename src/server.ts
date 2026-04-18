@@ -17,9 +17,9 @@ dotenv.config({ path: '.env.local', override: true });
 
 const app = express();
 const port = Number(process.env['EREBUS_SERVER_PORT'] ?? 3000);
-const allowedOrigins = process.env['CORS_ORIGIN']?.split(',') ?? ['http://localhost:9000'];
+// const allowedOrigins = process.env['CORS_ORIGIN']?.split(',') ?? ['http://localhost:9000'];
 
-app.use(cors({ origin: allowedOrigins, optionsSuccessStatus: 200 }));
+app.use(cors({ origin: '*', optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(morgan('dev'));
 

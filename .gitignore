@@ -132,4 +132,4 @@ dist
 package-lock.json
 #yarn.lock
 
-data/
+data

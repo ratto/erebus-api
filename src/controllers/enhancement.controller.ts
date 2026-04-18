@@ -9,7 +9,7 @@ export class EnhancementController {
   constructor(@inject(TYPES.IEnhancementService) private readonly enhancementService: IEnhancementService) {}
 
   async list(req: Request, res: Response): Promise<void> {
-    const enhancement = await this.enhancementService.getAll();
-    res.status(200).json({ enhancement });
+    const enhancements = await this.enhancementService.getAll();
+    res.status(200).json({ enhancements });
   }
 }
