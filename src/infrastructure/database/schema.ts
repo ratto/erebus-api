@@ -1,5 +1,13 @@
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
+export const enhancements = sqliteTable('enhancements', {
+  id:        integer('id').primaryKey({ autoIncrement: true }),
+  nome:      text('nome').notNull(),
+  descricao: text('descricao').notNull(),
+  tipo:      text('tipo').notNull(),
+  custo:     integer('custo').notNull(),
+});
+
 export const skills = sqliteTable('skills', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   nome: text('nome').notNull(),

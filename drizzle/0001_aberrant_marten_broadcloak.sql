@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `weapons`;
+
 CREATE TABLE `weapons` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`nome` text NOT NULL,
