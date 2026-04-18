@@ -20,6 +20,8 @@ import { EnhancementRepository } from '../../repositories/enhancement.repository
 import type { IEnhancementService } from '../../services/enhancement.service.ts';
 import { EnhancementService } from '../../services/enhancement.service.ts';
 import { EnhancementController } from '../../controllers/enhancement.controller.ts';
+import { LogsService } from '../../services/logs.service.ts';
+import { LogsController } from '../../controllers/logs.controller.ts';
 
 const container = new Container();
 
@@ -44,5 +46,9 @@ container.bind<WeaponController>(TYPES.WeaponController).to(WeaponController).in
 container.bind<IEnhancementRepository>(TYPES.IEnhancementRepository).to(EnhancementRepository).inSingletonScope();
 container.bind<IEnhancementService>(TYPES.IEnhancementService).to(EnhancementService).inTransientScope();
 container.bind<EnhancementController>(TYPES.EnhancementController).to(EnhancementController).inTransientScope();
+
+// Logs / SSE
+container.bind<LogsService>(TYPES.LogsService).to(LogsService).inSingletonScope();
+container.bind<LogsController>(TYPES.LogsController).to(LogsController).inTransientScope();
 
 export { container };

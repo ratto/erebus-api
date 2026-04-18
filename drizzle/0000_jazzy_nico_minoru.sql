@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `skills`;
+
 CREATE TABLE `skills` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`nome` text NOT NULL,
