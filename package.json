@@ -9,6 +9,9 @@
   "scripts": {
     "start": "tsx src/server.ts",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test:watch": "NODE_OPTIONS='--experimental-vm-modules' jest --watch",
+    "test:coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage",
+    "test:ui": "NODE_OPTIONS='--experimental-vm-modules' jest --ui=tdd",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "tsc",
