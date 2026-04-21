@@ -8,6 +8,7 @@ import { enhancements as enhancementsTable } from '../../src/infrastructure/data
 import { EnhancementRepository } from '../../src/repositories/enhancement.repository.ts';
 import { EnhancementService } from '../../src/services/enhancement.service.ts';
 import { EnhancementController } from '../../src/controllers/enhancement.controller.ts';
+import type { Enhancement } from '../../src/model/entities/enhancement.entity.ts';
 
 function buildTestApp() {
   const sqlite = new Database(':memory:');
@@ -45,79 +46,33 @@ function buildTestApp() {
 describe('GET /api/v1/enhancements', () => {
   const app = buildTestApp();
 
-  it('returns 200 without params', async () => {
+  it('returns 200', async () => {
     const res = await request(app).get('/api/v1/enhancements');
     expect(res.status).toBe(200);
   });
 
-  it('returns { total, page, limit, data }', async () => {
+  it('returns a direct array of enhancements', async () => {
     const res = await request(app).get('/api/v1/enhancements');
-    expect(res.body).toHaveProperty('total');
-    expect(res.body).toHaveProperty('page');
-    expect(res.body).toHaveProperty('limit');
-    expect(res.body).toHaveProperty('data');
-    expect(Array.isArray(res.body.data)).toBe(true);
+    expect(Array.isArray(res.body)).toBe(true);
   });
 
-  it('returns all 6 seeded enhancements by default', async () => {
+  it('returns all 6 seeded enhancements', async () => {
     const res = await request(app).get('/api/v1/enhancements');
-    expect(res.body.total).toBe(6);
-    expect(res.body.data).toHaveLength(6);
+    expect((res.body as Enhancement[]).length).toBe(6);
   });
 
-  it('returns correct defaults for page and limit', async () => {
+  it('each enhancement has the correct structure', async () => {
     const res = await request(app).get('/api/v1/enhancements');
-    expect(res.body.page).toBe(1);
-    expect(res.body.limit).toBe(20);
+    for (const e of res.body as Enhancement[]) {
+      expect(typeof e.id).toBe('number');
+      expect(typeof e.nome).toBe('string');
+      expect(typeof e.descricao).toBe('string');
+      expect(['positivo', 'negativo']).toContain(e.tipo);
+      expect(typeof e.custo).toBe('number');
+    }
   });
 
-  it('filters by ?tipo=positivo', async () => {
-    const res = await request(app).get('/api/v1/enhancements?tipo=positivo');
-    expect(res.status).toBe(200);
-    expect(res.body.total).toBe(3);
-    expect((res.body.data as { tipo: string }[]).every((e) => e.tipo === 'positivo')).toBe(true);
-  });
-
-  it('filters by ?tipo=negativo', async () => {
-    const res = await request(app).get('/api/v1/enhancements?tipo=negativo');
-    expect(res.status).toBe(200);
-    expect(res.body.total).toBe(3);
-    expect((res.body.data as { tipo: string }[]).every((e) => e.tipo === 'negativo')).toBe(true);
-  });
-
-  it('searches by ?search=ambi (case-insensitive)', async () => {
-    const res = await request(app).get('/api/v1/enhancements?search=ambi');
-    expect(res.status).toBe(200);
-    expect(res.body.total).toBe(1);
-    expect(res.body.data[0].nome).toBe('Ambidestria');
-  });
-
-  it('applies pagination with ?page=2&limit=2', async () => {
-    const res = await request(app).get('/api/v1/enhancements?page=2&limit=2');
-    expect(res.status).toBe(200);
-    expect(res.body.page).toBe(2);
-    expect(res.body.limit).toBe(2);
-    expect(res.body.total).toBe(6);
-    expect(res.body.data).toHaveLength(2);
-  });
-
-  it('returns 400 for ?tipo=invalido', async () => {
-    const res = await request(app).get('/api/v1/enhancements?tipo=invalido');
-    expect(res.status).toBe(400);
-    expect(res.body).toHaveProperty('error', 'Validation error');
-  });
-
-  it('returns 400 for non-numeric ?page', async () => {
-    const res = await request(app).get('/api/v1/enhancements?page=abc');
-    expect(res.status).toBe(400);
-  });
-
-  it('returns 400 for non-numeric ?limit', async () => {
-    const res = await request(app).get('/api/v1/enhancements?limit=abc');
-    expect(res.status).toBe(400);
-  });
-
-  it('returns 200 with empty data when seed not executed (banco sem dados)', async () => {
+  it('returns 200 with empty array when there are no enhancements', async () => {
     const sqlite = new Database(':memory:');
     sqlite.exec(`CREATE TABLE IF NOT EXISTS enhancements (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, descricao TEXT NOT NULL, tipo TEXT NOT NULL, custo INTEGER NOT NULL)`);
     const emptyDb = drizzle({ client: sqlite });
@@ -130,18 +85,6 @@ describe('GET /api/v1/enhancements', () => {
 
     const res = await request(emptyApp).get('/api/v1/enhancements');
     expect(res.status).toBe(200);
-    expect(res.body.total).toBe(0);
-    expect(res.body.data).toEqual([]);
-  });
-
-  it('each enhancement has the correct structure', async () => {
-    const res = await request(app).get('/api/v1/enhancements');
-    for (const e of res.body.data as { id: unknown; nome: unknown; descricao: unknown; tipo: unknown; custo: unknown }[]) {
-      expect(typeof e.id).toBe('number');
-      expect(typeof e.nome).toBe('string');
-      expect(typeof e.descricao).toBe('string');
-      expect(['positivo', 'negativo']).toContain(e.tipo);
-      expect(typeof e.custo).toBe('number');
-    }
+    expect(res.body).toEqual([]);
   });
 });

@@ -10,6 +10,6 @@ export class SkillController {
 
   async list(_req: Request, res: Response): Promise<void> {
     const skills = await this.skillService.getAll();
-    res.status(200).json({ skills });
+    res.status(200).json(skills);
   }
 }

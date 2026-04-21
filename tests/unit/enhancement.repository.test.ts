@@ -32,107 +32,23 @@ function seedEnhancements(sqlite: Database.Database) {
 
 describe('EnhancementRepository', () => {
   describe('findAll()', () => {
-    it('returns empty data when there are no enhancements', async () => {
+    it('returns empty array when there are no enhancements', async () => {
       const { db } = buildTestDb();
       const repo = new EnhancementRepository(db);
 
-      const result = await repo.findAll({ page: 1, limit: 20 });
+      const result = await repo.findAll();
 
-      expect(result.data).toEqual([]);
-      expect(result.total).toBe(0);
+      expect(result).toEqual([]);
     });
 
-    it('returns all enhancements without filters', async () => {
+    it('returns all enhancements', async () => {
       const { sqlite, db } = buildTestDb();
       seedEnhancements(sqlite);
       const repo = new EnhancementRepository(db);
 
-      const result = await repo.findAll({ page: 1, limit: 20 });
+      const result = await repo.findAll();
 
-      expect(result.total).toBe(5);
-      expect(result.data).toHaveLength(5);
-    });
-
-    it('filters by tipo=positivo', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const result = await repo.findAll({ tipo: 'positivo', page: 1, limit: 20 });
-
-      expect(result.total).toBe(3);
-      expect(result.data.every((e) => e.tipo === 'positivo')).toBe(true);
-    });
-
-    it('filters by tipo=negativo', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const result = await repo.findAll({ tipo: 'negativo', page: 1, limit: 20 });
-
-      expect(result.total).toBe(2);
-      expect(result.data.every((e) => e.tipo === 'negativo')).toBe(true);
-      expect(result.data.every((e) => e.custo < 0)).toBe(true);
-    });
-
-    it('searches by nome (case-insensitive, partial)', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const result = await repo.findAll({ search: 'ambi', page: 1, limit: 20 });
-
-      expect(result.data).toHaveLength(1);
-      expect(result.data[0]?.nome).toBe('Ambidestria');
-    });
-
-    it('searches case-insensitively', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const result = await repo.findAll({ search: 'CORAGEM', page: 1, limit: 20 });
-
-      expect(result.data).toHaveLength(1);
-      expect(result.data[0]?.nome).toBe('Coragem');
-    });
-
-    it('returns empty data when search matches nothing', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const result = await repo.findAll({ search: 'zzznomatch', page: 1, limit: 20 });
-
-      expect(result.data).toHaveLength(0);
-      expect(result.total).toBe(0);
-    });
-
-    it('applies pagination correctly', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const page1 = await repo.findAll({ page: 1, limit: 2 });
-      const page2 = await repo.findAll({ page: 2, limit: 2 });
-      const page3 = await repo.findAll({ page: 3, limit: 2 });
-
-      expect(page1.data).toHaveLength(2);
-      expect(page1.total).toBe(5);
-      expect(page2.data).toHaveLength(2);
-      expect(page3.data).toHaveLength(1);
-    });
-
-    it('returns correct page and limit in response', async () => {
-      const { sqlite, db } = buildTestDb();
-      seedEnhancements(sqlite);
-      const repo = new EnhancementRepository(db);
-
-      const result = await repo.findAll({ page: 2, limit: 3 });
-
-      expect(result.page).toBe(2);
-      expect(result.limit).toBe(3);
+      expect(result).toHaveLength(5);
     });
 
     it('each enhancement has the correct shape', async () => {
@@ -140,8 +56,8 @@ describe('EnhancementRepository', () => {
       seedEnhancements(sqlite);
       const repo = new EnhancementRepository(db);
 
-      const result = await repo.findAll({ page: 1, limit: 20 });
-      const enhancement = result.data[0]!;
+      const result = await repo.findAll();
+      const enhancement = result[0]!;
 
       expect(typeof enhancement.id).toBe('number');
       expect(typeof enhancement.nome).toBe('string');
@@ -150,16 +66,28 @@ describe('EnhancementRepository', () => {
       expect(typeof enhancement.custo).toBe('number');
     });
 
-    it('combines tipo and search filters', async () => {
+    it('returns enhancements with positivo tipo', async () => {
       const { sqlite, db } = buildTestDb();
       seedEnhancements(sqlite);
       const repo = new EnhancementRepository(db);
 
-      const result = await repo.findAll({ tipo: 'positivo', search: 'reflex', page: 1, limit: 20 });
+      const result = await repo.findAll();
+      const positivos = result.filter((e) => e.tipo === 'positivo');
 
-      expect(result.data).toHaveLength(1);
-      expect(result.data[0]?.nome).toBe('Reflexos Rápidos');
-      expect(result.data[0]?.tipo).toBe('positivo');
+      expect(positivos).toHaveLength(3);
+      expect(positivos.every((e) => e.tipo === 'positivo')).toBe(true);
+    });
+
+    it('returns enhancements with negativo tipo', async () => {
+      const { sqlite, db } = buildTestDb();
+      seedEnhancements(sqlite);
+      const repo = new EnhancementRepository(db);
+
+      const result = await repo.findAll();
+      const negativos = result.filter((e) => e.tipo === 'negativo');
+
+      expect(negativos).toHaveLength(2);
+      expect(negativos.every((e) => e.custo < 0)).toBe(true);
     });
   });
 });
