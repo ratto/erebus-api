@@ -106,16 +106,16 @@ describe('GET /api/v1/weapons', () => {
     expect(res.status).toBe(200);
   });
 
-  it('returns a body with a "weapons" key containing all weapons', async () => {
+  it('returns a direct array containing all weapons', async () => {
     const res = await request(app).get('/api/v1/weapons');
-    expect(res.body).toHaveProperty('weapons');
-    expect((res.body.weapons as unknown[]).length).toBe(3);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect((res.body as unknown[]).length).toBe(3);
   });
 
   it('filters by tipo=branca', async () => {
     const res = await request(app).get('/api/v1/weapons?tipo=branca');
     expect(res.status).toBe(200);
-    const weapons = res.body.weapons as Weapon[];
+    const weapons = res.body as Weapon[];
     expect(weapons).toHaveLength(1);
     expect(weapons[0]!.nome).toBe('Faca');
   });
@@ -123,7 +123,7 @@ describe('GET /api/v1/weapons', () => {
   it('filters by tipo=branca_distancia', async () => {
     const res = await request(app).get('/api/v1/weapons?tipo=branca_distancia');
     expect(res.status).toBe(200);
-    const weapons = res.body.weapons as Weapon[];
+    const weapons = res.body as Weapon[];
     expect(weapons).toHaveLength(1);
     expect(weapons[0]!.nome).toBe('Arco Curto');
   });
@@ -131,7 +131,7 @@ describe('GET /api/v1/weapons', () => {
   it('filters by tipo=fogo', async () => {
     const res = await request(app).get('/api/v1/weapons?tipo=fogo');
     expect(res.status).toBe(200);
-    const weapons = res.body.weapons as Weapon[];
+    const weapons = res.body as Weapon[];
     expect(weapons).toHaveLength(1);
     expect(weapons[0]!.nome).toBe('Pistola 9mm');
   });
@@ -144,7 +144,7 @@ describe('GET /api/v1/weapons', () => {
 
   it('each weapon has all required fields', async () => {
     const res = await request(app).get('/api/v1/weapons');
-    const weapons = res.body.weapons as Weapon[];
+    const weapons = res.body as Weapon[];
     for (const weapon of weapons) {
       expect(typeof weapon.id).toBe('number');
       expect(typeof weapon.nome).toBe('string');
@@ -186,6 +186,6 @@ describe('GET /api/v1/weapons', () => {
 
     const res = await request(emptyApp).get('/api/v1/weapons');
     expect(res.status).toBe(200);
-    expect(res.body.weapons).toEqual([]);
+    expect(res.body).toEqual([]);
   });
 });

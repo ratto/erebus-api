@@ -53,20 +53,15 @@ describe('GET /api/v1/skills', () => {
     expect(res.status).toBe(200);
   });
 
-  it('returns a body with a "skills" key', async () => {
+  it('returns a direct array of skills', async () => {
     const res = await request(app).get('/api/v1/skills');
-    expect(res.body).toHaveProperty('skills');
-  });
-
-  it('returns a non-empty array of skills', async () => {
-    const res = await request(app).get('/api/v1/skills');
-    expect(Array.isArray(res.body.skills)).toBe(true);
-    expect((res.body.skills as Skill[]).length).toBeGreaterThan(0);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect((res.body as Skill[]).length).toBeGreaterThan(0);
   });
 
   it('each skill has the correct structure', async () => {
     const res = await request(app).get('/api/v1/skills');
-    const skills = res.body.skills as Skill[];
+    const skills = res.body as Skill[];
 
     for (const skill of skills) {
       expect(typeof skill.id).toBe('number');
@@ -81,12 +76,12 @@ describe('GET /api/v1/skills', () => {
 
   it('returns exactly the 3 seeded skills', async () => {
     const res = await request(app).get('/api/v1/skills');
-    expect((res.body.skills as Skill[]).length).toBe(3);
+    expect((res.body as Skill[]).length).toBe(3);
   });
 
   it('returns skills with correct field values', async () => {
     const res = await request(app).get('/api/v1/skills');
-    const skills = res.body.skills as Skill[];
+    const skills = res.body as Skill[];
     const espada = skills.find((s) => s.nome === 'Espada');
 
     expect(espada).toBeDefined();
@@ -99,7 +94,7 @@ describe('GET /api/v1/skills', () => {
 
   it('skills with null grupo are returned correctly', async () => {
     const res = await request(app).get('/api/v1/skills');
-    const skills = res.body.skills as Skill[];
+    const skills = res.body as Skill[];
     const corrida = skills.find((s) => s.nome === 'Corrida');
 
     expect(corrida).toBeDefined();

@@ -21,6 +21,6 @@ export class WeaponController {
     }
 
     const weapons = await this.weaponService.getAll(parsed.data);
-    res.status(200).json({ weapons });
+    res.status(200).json(weapons);
   }
 }
