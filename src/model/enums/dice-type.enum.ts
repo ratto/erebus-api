@@ -7,5 +7,3 @@ export enum DiceType {
   d12  = 'd12',
   d100 = 'd100',
 }
-
-export const VALID_DICE_TYPES = Object.values(DiceType) as [string, ...string[]];

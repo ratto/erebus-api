@@ -10,6 +10,6 @@ export class EnhancementController {
 
   async list(req: Request, res: Response): Promise<void> {
     const enhancements = await this.enhancementService.getAll();
-    res.status(200).json({ enhancements });
+    res.status(200).json(enhancements);
   }
 }
