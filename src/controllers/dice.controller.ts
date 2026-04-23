@@ -4,10 +4,10 @@ import { inject, injectable } from 'inversify';
 import { z } from 'zod';
 import { TYPES } from '../infrastructure/container/types.ts';
 import { DiceService } from '../services/dice.service.ts';
-import { VALID_DICE_TYPES } from '../model/enums/dice-type.enum.ts';
+import { DiceType } from '../model/enums/dice-type.enum.ts';
 
 const rollSchema = z.object({
-  diceType: z.enum(VALID_DICE_TYPES, {
+  diceType: z.enum(DiceType, {
     error: 'diceType must be one of: d3, d4, d6, d8, d10, d12, d100',
   }),
   count: z
