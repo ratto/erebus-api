@@ -14,4 +14,6 @@ export const TYPES = {
   EnhancementController: Symbol.for('EnhancementController'),
   LogsService: Symbol.for('LogsService'),
   LogsController: Symbol.for('LogsController'),
+  ICharacterService: Symbol.for('ICharacterService'),
+  CharacterController: Symbol.for('CharacterController'),
 };

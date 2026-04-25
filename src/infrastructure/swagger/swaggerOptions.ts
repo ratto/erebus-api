@@ -265,6 +265,150 @@ const swaggerOptions: swaggerJSDoc.Options = {
           },
         },
       },
+      '/api/v1/characters/validate': {
+        post: {
+          summary: 'Validar ficha de personagem',
+          description: 'Valida uma ficha de personagem no modo Aventura/Fantasia do Sistema Daemon. As regras de dominio sao verificadas pelo erebus-engine (SSOT).',
+          tags: ['Characters'],
+          requestBody: {
+            required: true,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  required: ['name', 'age', 'level', 'attributes'],
+                  properties: {
+                    name:  { type: 'string', minLength: 1, maxLength: 80, example: 'Thomas Ferguson' },
+                    age:   { type: 'integer', minimum: 6, maximum: 90, example: 30 },
+                    level: { type: 'integer', minimum: 1, maximum: 15, example: 1 },
+                    attributes: {
+                      type: 'object',
+                      required: ['FR', 'DEX', 'AGI', 'CON', 'INT', 'WILL', 'CAR', 'PER'],
+                      properties: {
+                        FR:   { type: 'integer', minimum: 5, maximum: 20, example: 11 },
+                        DEX:  { type: 'integer', minimum: 5, maximum: 20, example: 14 },
+                        AGI:  { type: 'integer', minimum: 5, maximum: 20, example: 12 },
+                        CON:  { type: 'integer', minimum: 5, maximum: 20, example: 10 },
+                        INT:  { type: 'integer', minimum: 5, maximum: 20, example: 17 },
+                        WILL: { type: 'integer', minimum: 5, maximum: 20, example: 15 },
+                        CAR:  { type: 'integer', minimum: 5, maximum: 20, example: 16 },
+                        PER:  { type: 'integer', minimum: 5, maximum: 20, example: 16 },
+                      },
+                    },
+                    enhancements: {
+                      type: 'array',
+                      default: [],
+                      items: {
+                        type: 'object',
+                        required: ['id', 'nome', 'custo'],
+                        properties: {
+                          id:    { type: 'integer', example: 1 },
+                          nome:  { type: 'string', example: 'Ambidestria' },
+                          custo: { type: 'integer', example: 5, description: 'Negativo para desvantagens' },
+                        },
+                      },
+                    },
+                    skills: {
+                      type: 'array',
+                      default: [],
+                      items: {
+                        type: 'object',
+                        required: ['id', 'nome', 'pontos'],
+                        properties: {
+                          id:     { type: 'integer', example: 12 },
+                          nome:   { type: 'string', example: 'Espada' },
+                          pontos: { type: 'integer', minimum: 10, maximum: 50, example: 30 },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          responses: {
+            '200': {
+              description: 'Ficha valida — regras do Sistema Daemon satisfeitas',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      valid:      { type: 'boolean', example: true },
+                      character:  { type: 'object', description: 'Mesmo payload enviado' },
+                      computed: {
+                        type: 'object',
+                        properties: {
+                          pv:                    { type: 'integer', example: 12 },
+                          iniciativa:            { type: 'integer', example: 12 },
+                          skillBudget:           { type: 'integer', example: 385 },
+                          skillBudgetUsed:       { type: 'integer', example: 50 },
+                          attributeBudget:       { type: 'integer', example: 111 },
+                          attributeBudgetUsed:   { type: 'integer', example: 111 },
+                          enhancementBudget:     { type: 'integer', example: 6 },
+                          enhancementBudgetUsed: { type: 'integer', example: 6 },
+                        },
+                      },
+                      errors: { type: 'array', items: { type: 'object' }, example: [] },
+                    },
+                  },
+                },
+              },
+            },
+            '400': {
+              description: 'Payload malformado (falha Zod)',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      errors: { type: 'object', example: { 'attributes.FR': ['Number must be >= 5'] } },
+                    },
+                  },
+                },
+              },
+            },
+            '422': {
+              description: 'Regras do Sistema Daemon violadas',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      valid: { type: 'boolean', example: false },
+                      computed: { type: 'object' },
+                      errors: {
+                        type: 'array',
+                        items: {
+                          type: 'object',
+                          properties: {
+                            code:    { type: 'string', example: 'ATTRIBUTE_BUDGET' },
+                            message: { type: 'string', example: 'Sum of attributes must equal 111 (got 113)' },
+                            skillId: { type: 'integer', description: 'Presente apenas para erros SKILL_POINTS_MIN/MAX' },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            '500': {
+              description: 'Erro interno — binario do engine indisponivel',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      error: { type: 'string', example: 'Internal server error: engine unavailable' },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
     },
   },
   apis: [],

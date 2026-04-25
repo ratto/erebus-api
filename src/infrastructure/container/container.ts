@@ -2,6 +2,9 @@ import 'reflect-metadata';
 import { Container } from 'inversify';
 import { TYPES } from './types.ts';
 import { type ICoreAdapter, CoreAdapter } from '../../adapters/core.adapter.ts';
+import type { ICharacterService } from '../../services/character.service.ts';
+import { CharacterService } from '../../services/character.service.ts';
+import { CharacterController } from '../../controllers/character.controller.ts';
 import { DiceService } from '../../services/dice.service.ts';
 import { DiceController } from '../../controllers/dice.controller.ts';
 import { db } from '../database/db.ts';
@@ -50,5 +53,9 @@ container.bind<EnhancementController>(TYPES.EnhancementController).to(Enhancemen
 // Logs / SSE
 container.bind<LogsService>(TYPES.LogsService).to(LogsService).inSingletonScope();
 container.bind<LogsController>(TYPES.LogsController).to(LogsController).inTransientScope();
+
+// Character
+container.bind<ICharacterService>(TYPES.ICharacterService).to(CharacterService).inTransientScope();
+container.bind<CharacterController>(TYPES.CharacterController).to(CharacterController).inTransientScope();
 
 export { container };

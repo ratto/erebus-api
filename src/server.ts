@@ -10,6 +10,7 @@ import { LogsController } from './controllers/logs.controller.ts';
 import { SkillController } from './controllers/skill.controller.ts';
 import { WeaponController } from './controllers/weapon.controller.ts';
 import { EnhancementController } from './controllers/enhancement.controller.ts';
+import { CharacterController } from './controllers/character.controller.ts';
 import { TYPES } from './infrastructure/container/types.ts';
 import dotenv from 'dotenv';
 
@@ -38,6 +39,9 @@ app.get('/api/v1/weapons', (req, res) => weaponController.list(req, res));
 
 const enhancementController = container.get<EnhancementController>(TYPES.EnhancementController);
 app.get('/api/v1/enhancements', (req, res) => enhancementController.list(req, res));
+
+const characterController = container.get<CharacterController>(TYPES.CharacterController);
+app.post('/api/v1/characters/validate', (req, res) => characterController.validate(req, res));
 
 // Swagger UI
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
