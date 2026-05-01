@@ -22,6 +22,11 @@ import { EnhancementService } from '../../services/enhancement.service.ts';
 import { EnhancementController } from '../../controllers/enhancement.controller.ts';
 import { LogsService } from '../../services/logs.service.ts';
 import { LogsController } from '../../controllers/logs.controller.ts';
+import type { IProtectiveEquipmentRepository } from '../../repositories/protective-equipment.repository.ts';
+import { ProtectiveEquipmentRepository } from '../../repositories/protective-equipment.repository.ts';
+import type { IProtectiveEquipmentService } from '../../services/protective-equipment.service.ts';
+import { ProtectiveEquipmentService } from '../../services/protective-equipment.service.ts';
+import { ProtectiveEquipmentController } from '../../controllers/protective-equipment.controller.ts';
 
 const container = new Container();
 
@@ -50,5 +55,10 @@ container.bind<EnhancementController>(TYPES.EnhancementController).to(Enhancemen
 // Logs / SSE
 container.bind<LogsService>(TYPES.LogsService).to(LogsService).inSingletonScope();
 container.bind<LogsController>(TYPES.LogsController).to(LogsController).inTransientScope();
+
+// Protective Equipment
+container.bind<IProtectiveEquipmentRepository>(TYPES.IProtectiveEquipmentRepository).to(ProtectiveEquipmentRepository).inSingletonScope();
+container.bind<IProtectiveEquipmentService>(TYPES.IProtectiveEquipmentService).to(ProtectiveEquipmentService).inTransientScope();
+container.bind<ProtectiveEquipmentController>(TYPES.ProtectiveEquipmentController).to(ProtectiveEquipmentController).inTransientScope();
 
 export { container };

@@ -265,6 +265,183 @@ const swaggerOptions: swaggerJSDoc.Options = {
           },
         },
       },
+      '/api/v1/protective-equipment': {
+        get: {
+          summary: 'Listar equipamentos de proteção',
+          description: 'Retorna todos os equipamentos de proteção com seus Índices de Proteção (IP) por tipo de dano. Suporta internacionalização via cabeçalho Accept-Language (pt-BR ou en-US).',
+          tags: ['Protective Equipment'],
+          parameters: [
+            {
+              name: 'Accept-Language',
+              in: 'header',
+              required: false,
+              description: 'Idioma da resposta. pt-BR retorna nomes e descrições em português; qualquer outro valor usa inglês (en-US).',
+              schema: {
+                type: 'string',
+                example: 'pt-BR',
+              },
+            },
+          ],
+          responses: {
+            '200': {
+              description: 'Lista de equipamentos de proteção retornada com sucesso',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    required: ['locale', 'protectiveEquipment'],
+                    properties: {
+                      locale: {
+                        type: 'string',
+                        example: 'en-US',
+                        description: 'Idioma resolvido da resposta',
+                      },
+                      protectiveEquipment: {
+                        type: 'array',
+                        items: {
+                          $ref: '#/components/schemas/ProtectiveEquipment',
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      '/api/v1/protective-equipment/search': {
+        get: {
+          summary: 'Buscar equipamentos de proteção',
+          description: 'Busca equipamentos de proteção com filtros opcionais por nome, tipo de dano e valor mínimo de IP.',
+          tags: ['Protective Equipment'],
+          parameters: [
+            {
+              name: 'Accept-Language',
+              in: 'header',
+              required: false,
+              description: 'Idioma da resposta (pt-BR ou en-US).',
+              schema: { type: 'string', example: 'pt-BR' },
+            },
+            {
+              name: 'name',
+              in: 'query',
+              required: false,
+              description: 'Busca parcial case-insensitive no nome do equipamento (no idioma resolvido).',
+              schema: { type: 'string', example: 'kevlar' },
+            },
+            {
+              name: 'damageType',
+              in: 'query',
+              required: false,
+              description: 'Filtra equipamentos que possuem IP > 0 para este tipo de dano.',
+              schema: {
+                type: 'string',
+                enum: ['KINETIC', 'BALLISTIC', 'FIRE', 'COLD', 'GAS', 'ACID', 'VACUUM', 'ELECTRIC'],
+                example: 'BALLISTIC',
+              },
+            },
+            {
+              name: 'minIp',
+              in: 'query',
+              required: false,
+              description: 'Combinado com damageType: filtra equipamentos com ipValue >= minIp. Ignorado se damageType não for fornecido. Padrão: 1.',
+              schema: { type: 'integer', minimum: 0, example: 10 },
+            },
+          ],
+          responses: {
+            '200': {
+              description: 'Lista de equipamentos filtrada com sucesso',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    required: ['locale', 'protectiveEquipment'],
+                    properties: {
+                      locale: { type: 'string', example: 'en-US' },
+                      protectiveEquipment: {
+                        type: 'array',
+                        items: { $ref: '#/components/schemas/ProtectiveEquipment' },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            '400': {
+              description: 'Parâmetros inválidos',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      errors: {
+                        type: 'object',
+                        properties: {
+                          fieldErrors: {
+                            type: 'object',
+                            example: {
+                              damageType: ["Invalid enum value. Expected 'KINETIC' | 'BALLISTIC' | 'FIRE' | 'COLD' | 'GAS' | 'ACID' | 'VACUUM' | 'ELECTRIC', received 'FOGO'"],
+                            },
+                          },
+                          formErrors: { type: 'array', items: { type: 'string' } },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    components: {
+      schemas: {
+        DamageType: {
+          type: 'string',
+          description: 'Tipo de dano do Sistema Daemon',
+          enum: ['KINETIC', 'BALLISTIC', 'FIRE', 'COLD', 'GAS', 'ACID', 'VACUUM', 'ELECTRIC'],
+        },
+        ProtectiveIndexEntry: {
+          type: 'object',
+          required: ['damageType', 'ipValue'],
+          properties: {
+            damageType: {
+              $ref: '#/components/schemas/DamageType',
+              description: 'Tipo de dano ao qual este IP se aplica',
+            },
+            ipValue: {
+              type: 'integer',
+              minimum: 0,
+              example: 6,
+              description: 'Valor do Índice de Proteção (0 = sem proteção para este tipo)',
+            },
+          },
+        },
+        ProtectiveEquipment: {
+          type: 'object',
+          required: ['id', 'name', 'dexPenalty', 'agiPenalty', 'description', 'source', 'protectiveIndex'],
+          properties: {
+            id: { type: 'integer', example: 6 },
+            name: { type: 'string', example: 'Chainmail', description: 'Nome do equipamento no idioma resolvido' },
+            cost: { type: 'string', nullable: true, example: null, description: 'Custo (pode ser null se não disponível)' },
+            availability: { type: 'string', nullable: true, example: null, description: 'Disponibilidade (pode ser null)' },
+            weightKg: { type: 'number', nullable: true, example: null, description: 'Peso em kg (pode ser null)' },
+            dexPenalty: { type: 'integer', minimum: 0, example: 3, description: 'Penalidade de DEX enquanto vestido (valor positivo = quanto é subtraído)' },
+            agiPenalty: { type: 'integer', minimum: 0, example: 2, description: 'Penalidade de AGI enquanto vestido' },
+            description: { type: 'string', example: 'Interlocked metal rings covering torso, shoulders and arms.' },
+            source: { type: 'string', example: 'TREVAS, 3rd ed. (Daemon Editora, 2004)' },
+            protectiveIndex: {
+              type: 'array',
+              description: 'Índices de Proteção por tipo de dano — sempre 8 entradas (uma por tipo), zeros incluídos',
+              items: { $ref: '#/components/schemas/ProtectiveIndexEntry' },
+              minItems: 8,
+              maxItems: 8,
+            },
+          },
+        },
+      },
     },
   },
   apis: [],

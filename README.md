@@ -145,10 +145,14 @@ A documentação interativa completa está disponível em `/api/v1/docs` (Swagge
 
 ### Implementados
 
-| Método | Rota                  | Descrição                                         |
-| ------ | --------------------- | ------------------------------------------------- |
-| `POST` | `/api/v1/dice/roll`   | Rola dados via erebus-engine (d3, d4, d6... d100) |
-| `GET`  | `/api/v1/docs`        | Swagger UI — documentação interativa da API       |
+| Método | Rota                                       | Descrição                                                                 |
+| ------ | ------------------------------------------ | ------------------------------------------------------------------------- |
+| `POST` | `/api/v1/dice/roll`                        | Rola dados via erebus-engine (d3, d4, d6... d100)                         |
+| `GET`  | `/api/v1/skills`                           | Lista as 195 perícias do Sistema Daemon (SQLite)                          |
+| `GET`  | `/api/v1/weapons`                          | Lista armamentos com filtros por tipo/alcance                             |
+| `GET`  | `/api/v1/protective-equipment`             | Lista equipamentos de proteção com IPs por tipo de dano (i18n pt-BR/en-US)|
+| `GET`  | `/api/v1/protective-equipment/search`      | Busca equipamentos por nome, tipo de dano e IP mínimo                     |
+| `GET`  | `/api/v1/docs`                             | Swagger UI — documentação interativa da API                               |
 
 ### Planejados (MVP)
 
@@ -156,7 +160,6 @@ A documentação interativa completa está disponível em `/api/v1/docs` (Swagge
 | ------ | --------------------------- | -------------------------------------------------- |
 | `GET`  | `/api/v1/characters/create` | Gerar personagem aleatório (`?mode=adventure\|realistic`) |
 | `GET`  | `/api/v1/attributes`        | Listar os 8 atributos do Sistema Daemon            |
-| `GET`  | `/api/v1/skills`            | Listar perícias (paginado, filtrável)              |
 | `POST` | `/api/v1/skills/test`       | Resolver teste de perícia para um personagem       |
 | `POST` | `/api/v1/combat/resolve`    | Resolver um turno de combate entre dois personagens|
 | `GET`  | `/api/v1/spells`            | Listar magias (paginado)                           |
@@ -181,6 +184,26 @@ tests/
 ├── unit/          # Testes unitários de services e utilitários
 └── integration/   # Testes de integração com Supertest (endpoints HTTP)
 ```
+
+---
+
+# 🌱 Banco de Dados e Seeds
+
+```bash
+# Rodar migrações Drizzle (aplicar schema ao SQLite)
+npm run db:migrate
+
+# Popular tabela de perícias (195 registros)
+npm run db:seed
+
+# Popular tabela de armas
+npm run db:seed:weapons
+
+# Popular tabela de equipamentos de proteção (19 itens, 3 tabelas — idempotente)
+npm run db:seed:protective-equipment
+```
+
+Os seeds são **idempotentes** — executar duas vezes não duplica registros.
 
 ---
 

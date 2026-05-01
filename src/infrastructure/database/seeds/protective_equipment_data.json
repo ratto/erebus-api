@@ -1,0 +1,192 @@
+[
+  {
+    "name":        "Heavy Clothing / Leather Jacket",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  0,
+    "agiPenalty":  0,
+    "description": "Heavy clothing or leather jacket. Provides minimal protection against light slashing and bludgeoning; no attribute penalty.",
+    "source":      "Daemon System 2.x — Basic Module (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Hardened Leather",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  1,
+    "agiPenalty":  0,
+    "description": "Light armor made of tanned and hardened leather over vital points. Used in medieval and adventure campaigns.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "name":        "Studded Leather",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  1,
+    "agiPenalty":  1,
+    "description": "Hardened leather reinforced with metal studs or small plates. Enhanced protection against slashing and bludgeoning.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "name":        "Rubber Suit",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  1,
+    "agiPenalty":  1,
+    "description": "Insulating vulcanized rubber garment. Specific protection against electric shocks; used by technicians facing electrical attacks.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Ring Armor",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  2,
+    "agiPenalty":  1,
+    "description": "Metal rings sewn over leather lining. Intermediate between leather and chainmail.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "name":        "Chainmail",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  3,
+    "agiPenalty":  2,
+    "description": "Interlocked metal rings covering torso, shoulders and arms. Solid protection against slashing and piercing.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "name":        "Full Chainmail",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  4,
+    "agiPenalty":  3,
+    "description": "Chainmail covering the entire body including legs and coif. High protection but greatly reduced mobility.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Partial Plate Armor (Brigandine)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  4,
+    "agiPenalty":  3,
+    "description": "Metal plates covering vital points over leather lining. High protection with good upper-body coverage.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); Medieval Arms Guide — Daemon Editora"
+  },
+  {
+    "name":        "Full Medieval Plate Armor",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  6,
+    "agiPenalty":  5,
+    "description": "Steel plate armor covering the entire body. Maximum medieval protection; severe penalty to initiative and mobility.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "name":        "Kevlar Vest (4 layers)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  1,
+    "agiPenalty":  0,
+    "description": "Ballistic Kevlar vest with 4 overlapping layers. Basic protection against low-power firearms and knife attacks.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "name":        "Kevlar Vest (8 layers)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  2,
+    "agiPenalty":  1,
+    "description": "Reinforced ballistic vest with 8 Kevlar layers. Moderate protection against handguns and bladed weapons.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "name":        "Kevlar Vest (14 layers)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  3,
+    "agiPenalty":  2,
+    "description": "Heavy ballistic vest with 14 Kevlar layers. High protection against handguns and submachine guns.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004); trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "name":        "Ballistic Vest with Ceramic Plates",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  4,
+    "agiPenalty":  3,
+    "description": "Kevlar vest reinforced with rigid ceramic or steel plates over vital areas. Protection against rifles.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Full Tactical Ballistic Vest (Interceptor)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  5,
+    "agiPenalty":  4,
+    "description": "Complete system with Kevlar vest, ballistic plates and additional protectors. Modern military standard (special forces).",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Flame-Resistant Suit (Nomex/Kevlar)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  2,
+    "agiPenalty":  2,
+    "description": "Fire-resistant garment made of Nomex and Kevlar fabric. Used by firefighters and racing drivers.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "NBC Suit (Nuclear, Biological, Chemical)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  3,
+    "agiPenalty":  3,
+    "description": "Hermetic protective suit against chemical, biological and radiological agents. Virtually no kinetic protection.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Reinforced Wetsuit / Diving Suit",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  1,
+    "agiPenalty":  1,
+    "description": "Thick neoprene suit. Light protection against cuts and aquatic hypothermia.",
+    "source":      "TREVAS, 3rd ed. (Daemon Editora, 2004)"
+  },
+  {
+    "name":        "Small Shield (Buckler)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  0,
+    "agiPenalty":  1,
+    "description": "Round shield worn on the forearm. Grants extra PI on successful Shield test (+2 PI on active block).",
+    "source":      "trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "name":        "Large Shield (Pavise)",
+    "cost":        null,
+    "availability": null,
+    "weightKg":    null,
+    "dexPenalty":  0,
+    "agiPenalty":  2,
+    "description": "Tall reinforced shield covering most of the body. High extra PI on active block (+5 PI); moderate agility penalty.",
+    "source":      "trevasbrasilrpg.directorioforuns.com"
+  }
+]
