@@ -1,0 +1,62 @@
+[
+  { "equipmentName": "Heavy Clothing / Leather Jacket", "damageType": "KINETIC",   "ipValue": 1 },
+  { "equipmentName": "Heavy Clothing / Leather Jacket", "damageType": "COLD",      "ipValue": 1 },
+
+  { "equipmentName": "Hardened Leather",                "damageType": "KINETIC",   "ipValue": 2 },
+
+  { "equipmentName": "Studded Leather",                 "damageType": "KINETIC",   "ipValue": 3 },
+
+  { "equipmentName": "Rubber Suit",                     "damageType": "KINETIC",   "ipValue": 1 },
+  { "equipmentName": "Rubber Suit",                     "damageType": "ELECTRIC",  "ipValue": 6 },
+  { "equipmentName": "Rubber Suit",                     "damageType": "COLD",      "ipValue": 1 },
+
+  { "equipmentName": "Ring Armor",                      "damageType": "KINETIC",   "ipValue": 4 },
+
+  { "equipmentName": "Chainmail",                       "damageType": "KINETIC",   "ipValue": 6 },
+  { "equipmentName": "Chainmail",                       "damageType": "BALLISTIC", "ipValue": 2 },
+
+  { "equipmentName": "Full Chainmail",                  "damageType": "KINETIC",   "ipValue": 8 },
+  { "equipmentName": "Full Chainmail",                  "damageType": "BALLISTIC", "ipValue": 2 },
+
+  { "equipmentName": "Partial Plate Armor (Brigandine)", "damageType": "KINETIC",   "ipValue": 8 },
+  { "equipmentName": "Partial Plate Armor (Brigandine)", "damageType": "BALLISTIC", "ipValue": 2 },
+
+  { "equipmentName": "Full Medieval Plate Armor",       "damageType": "KINETIC",   "ipValue": 12 },
+  { "equipmentName": "Full Medieval Plate Armor",       "damageType": "BALLISTIC", "ipValue": 4 },
+  { "equipmentName": "Full Medieval Plate Armor",       "damageType": "FIRE",      "ipValue": 2 },
+  { "equipmentName": "Full Medieval Plate Armor",       "damageType": "COLD",      "ipValue": 2 },
+
+  { "equipmentName": "Kevlar Vest (4 layers)",          "damageType": "KINETIC",   "ipValue": 1 },
+  { "equipmentName": "Kevlar Vest (4 layers)",          "damageType": "BALLISTIC", "ipValue": 4 },
+
+  { "equipmentName": "Kevlar Vest (8 layers)",          "damageType": "KINETIC",   "ipValue": 2 },
+  { "equipmentName": "Kevlar Vest (8 layers)",          "damageType": "BALLISTIC", "ipValue": 6 },
+
+  { "equipmentName": "Kevlar Vest (14 layers)",         "damageType": "KINETIC",   "ipValue": 3 },
+  { "equipmentName": "Kevlar Vest (14 layers)",         "damageType": "BALLISTIC", "ipValue": 8 },
+
+  { "equipmentName": "Ballistic Vest with Ceramic Plates",         "damageType": "KINETIC",   "ipValue": 4 },
+  { "equipmentName": "Ballistic Vest with Ceramic Plates",         "damageType": "BALLISTIC", "ipValue": 12 },
+
+  { "equipmentName": "Full Tactical Ballistic Vest (Interceptor)", "damageType": "KINETIC",   "ipValue": 6 },
+  { "equipmentName": "Full Tactical Ballistic Vest (Interceptor)", "damageType": "BALLISTIC", "ipValue": 14 },
+
+  { "equipmentName": "Flame-Resistant Suit (Nomex/Kevlar)",        "damageType": "KINETIC",   "ipValue": 1 },
+  { "equipmentName": "Flame-Resistant Suit (Nomex/Kevlar)",        "damageType": "BALLISTIC", "ipValue": 2 },
+  { "equipmentName": "Flame-Resistant Suit (Nomex/Kevlar)",        "damageType": "FIRE",      "ipValue": 10 },
+  { "equipmentName": "Flame-Resistant Suit (Nomex/Kevlar)",        "damageType": "GAS",       "ipValue": 2 },
+  { "equipmentName": "Flame-Resistant Suit (Nomex/Kevlar)",        "damageType": "ACID",      "ipValue": 2 },
+
+  { "equipmentName": "NBC Suit (Nuclear, Biological, Chemical)",   "damageType": "FIRE",      "ipValue": 4 },
+  { "equipmentName": "NBC Suit (Nuclear, Biological, Chemical)",   "damageType": "ELECTRIC",  "ipValue": 2 },
+  { "equipmentName": "NBC Suit (Nuclear, Biological, Chemical)",   "damageType": "GAS",       "ipValue": 12 },
+  { "equipmentName": "NBC Suit (Nuclear, Biological, Chemical)",   "damageType": "ACID",      "ipValue": 12 },
+  { "equipmentName": "NBC Suit (Nuclear, Biological, Chemical)",   "damageType": "COLD",      "ipValue": 4 },
+
+  { "equipmentName": "Reinforced Wetsuit / Diving Suit",           "damageType": "KINETIC",   "ipValue": 2 },
+  { "equipmentName": "Reinforced Wetsuit / Diving Suit",           "damageType": "COLD",      "ipValue": 4 },
+  { "equipmentName": "Reinforced Wetsuit / Diving Suit",           "damageType": "VACUUM",    "ipValue": 6 },
+
+  { "equipmentName": "Small Shield (Buckler)",                     "damageType": "KINETIC",   "ipValue": 2 },
+  { "equipmentName": "Large Shield (Pavise)",                      "damageType": "KINETIC",   "ipValue": 5 }
+]

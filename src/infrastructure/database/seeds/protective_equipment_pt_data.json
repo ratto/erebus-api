@@ -1,0 +1,116 @@
+[
+  {
+    "equipmentName": "Heavy Clothing / Leather Jacket",
+    "name":          "Roupas Pesadas / Jaqueta de Couro",
+    "description":   "Roupas pesadas ou jaqueta de couro. Fornece proteção mínima contra golpes leves de corte e contusão; sem penalidade de atributo.",
+    "source":        "Sistema Daemon 2.x — Módulo Básico (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Hardened Leather",
+    "name":          "Couro Endurecido",
+    "description":   "Armadura leve feita de couro curtido e endurecido sobre pontos vitais. Utilizada em campanhas medievais e de aventura.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "equipmentName": "Studded Leather",
+    "name":          "Couro Cravejado",
+    "description":   "Couro endurecido reforçado com tachas metálicas ou pequenas placas. Proteção aprimorada contra golpes cortantes e de contusão.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "equipmentName": "Rubber Suit",
+    "name":          "Traje de Borracha",
+    "description":   "Vestimenta isolante de borracha vulcanizada. Proteção específica contra choques elétricos; usado por técnicos que enfrentam ataques elétricos.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Ring Armor",
+    "name":          "Armadura de Anéis",
+    "description":   "Anéis metálicos costurados sobre forro de couro. Proteção intermediária entre couro e cota de malha.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "equipmentName": "Chainmail",
+    "name":          "Cota de Malha",
+    "description":   "Anéis metálicos entrelaçados cobrindo torso, ombros e braços. Proteção sólida contra cortes e perfurações; o peso significativo reduz a agilidade.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "equipmentName": "Full Chainmail",
+    "name":          "Cota de Malha Completa",
+    "description":   "Cota de malha cobrindo o corpo inteiro, incluindo pernas e coifa. Alta proteção, mas mobilidade muito reduzida.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Partial Plate Armor (Brigandine)",
+    "name":          "Armadura de Placas Parcial (Brigantina)",
+    "description":   "Placas metálicas cobrindo pontos vitais sobre forro de couro. Alta proteção com boa cobertura da parte superior do corpo.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); Guia de Armas Medievais — Daemon Editora"
+  },
+  {
+    "equipmentName": "Full Medieval Plate Armor",
+    "name":          "Armadura Medieval Completa",
+    "description":   "Armadura de placas de aço cobrindo o corpo inteiro. Proteção medieval máxima; penalidade severa à iniciativa e mobilidade.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); wiki.daemon.com.br"
+  },
+  {
+    "equipmentName": "Kevlar Vest (4 layers)",
+    "name":          "Colete de Kevlar (4 camadas)",
+    "description":   "Colete balístico de Kevlar com 4 camadas sobrepostas. Proteção básica contra armas de fogo de baixo calibre e ataques com faca.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "equipmentName": "Kevlar Vest (8 layers)",
+    "name":          "Colete de Kevlar (8 camadas)",
+    "description":   "Colete balístico reforçado com 8 camadas de Kevlar. Proteção moderada contra pistolas e armas brancas.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "equipmentName": "Kevlar Vest (14 layers)",
+    "name":          "Colete de Kevlar (14 camadas)",
+    "description":   "Colete balístico pesado com 14 camadas de Kevlar. Alta proteção contra pistolas e submetralhadoras.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004); trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "equipmentName": "Ballistic Vest with Ceramic Plates",
+    "name":          "Colete Balístico com Placas de Cerâmica",
+    "description":   "Colete de Kevlar reforçado com placas rígidas de cerâmica ou aço sobre áreas vitais. Proteção contra rifles.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Full Tactical Ballistic Vest (Interceptor)",
+    "name":          "Colete Balístico Tático Completo (Interceptor)",
+    "description":   "Sistema completo com colete de Kevlar, placas balísticas e protetores adicionais. Padrão militar moderno (forças especiais).",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Flame-Resistant Suit (Nomex/Kevlar)",
+    "name":          "Traje Anti-Chamas (Nomex/Kevlar)",
+    "description":   "Vestimenta resistente ao fogo feita de tecido Nomex e Kevlar. Utilizada por bombeiros e pilotos de corrida.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "NBC Suit (Nuclear, Biological, Chemical)",
+    "name":          "Traje NBQ (Nuclear, Biológico, Químico)",
+    "description":   "Traje hermético de proteção contra agentes químicos, biológicos e radiológicos. Praticamente sem proteção cinética.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Reinforced Wetsuit / Diving Suit",
+    "name":          "Traje de Mergulho Reforçado",
+    "description":   "Traje espesso de neoprene. Proteção leve contra cortes e hipotermia aquática.",
+    "source":        "TREVAS, 3ª ed. (Daemon Editora, 2004)"
+  },
+  {
+    "equipmentName": "Small Shield (Buckler)",
+    "name":          "Escudo Pequeno (Broquel)",
+    "description":   "Escudo redondo usado no antebraço. Concede IP extra em teste de Escudo bem-sucedido (+2 IP no bloqueio ativo).",
+    "source":        "trevasbrasilrpg.directorioforuns.com"
+  },
+  {
+    "equipmentName": "Large Shield (Pavise)",
+    "name":          "Escudo Grande (Pavês)",
+    "description":   "Escudo alto e reforçado cobrindo a maior parte do corpo. Alto IP extra no bloqueio ativo (+5 IP); penalidade moderada de agilidade.",
+    "source":        "trevasbrasilrpg.directorioforuns.com"
+  }
+]
