@@ -27,6 +27,11 @@ import { ProtectiveEquipmentRepository } from '../../repositories/protective-equ
 import type { IProtectiveEquipmentService } from '../../services/protective-equipment.service.ts';
 import { ProtectiveEquipmentService } from '../../services/protective-equipment.service.ts';
 import { ProtectiveEquipmentController } from '../../controllers/protective-equipment.controller.ts';
+import type { ICombatSkillRepository } from '../../repositories/combat-skill.repository.ts';
+import { CombatSkillRepository } from '../../repositories/combat-skill.repository.ts';
+import type { ICombatSkillService } from '../../services/combat-skill.service.ts';
+import { CombatSkillService } from '../../services/combat-skill.service.ts';
+import { CombatSkillController } from '../../controllers/combat-skill.controller.ts';
 
 const container = new Container();
 
@@ -57,8 +62,22 @@ container.bind<LogsService>(TYPES.LogsService).to(LogsService).inSingletonScope(
 container.bind<LogsController>(TYPES.LogsController).to(LogsController).inTransientScope();
 
 // Protective Equipment
-container.bind<IProtectiveEquipmentRepository>(TYPES.IProtectiveEquipmentRepository).to(ProtectiveEquipmentRepository).inSingletonScope();
-container.bind<IProtectiveEquipmentService>(TYPES.IProtectiveEquipmentService).to(ProtectiveEquipmentService).inTransientScope();
-container.bind<ProtectiveEquipmentController>(TYPES.ProtectiveEquipmentController).to(ProtectiveEquipmentController).inTransientScope();
+container
+  .bind<IProtectiveEquipmentRepository>(TYPES.IProtectiveEquipmentRepository)
+  .to(ProtectiveEquipmentRepository)
+  .inSingletonScope();
+container
+  .bind<IProtectiveEquipmentService>(TYPES.IProtectiveEquipmentService)
+  .to(ProtectiveEquipmentService)
+  .inTransientScope();
+container
+  .bind<ProtectiveEquipmentController>(TYPES.ProtectiveEquipmentController)
+  .to(ProtectiveEquipmentController)
+  .inTransientScope();
+
+// Combat Skills
+container.bind<ICombatSkillRepository>(TYPES.ICombatSkillRepository).to(CombatSkillRepository).inSingletonScope();
+container.bind<ICombatSkillService>(TYPES.ICombatSkillService).to(CombatSkillService).inTransientScope();
+container.bind<CombatSkillController>(TYPES.CombatSkillController).to(CombatSkillController).inTransientScope();
 
 export { container };

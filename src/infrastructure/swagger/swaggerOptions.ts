@@ -192,6 +192,59 @@ const swaggerOptions: swaggerJSDoc.Options = {
           },
         },
       },
+      '/api/v1/combat-skills': {
+        get: {
+          summary: 'Listar perícias de combate',
+          description: 'Retorna todas as Perícias de Combate do Sistema Daemon com seus atributos base e tipo (melee, ranged, shield).',
+          tags: ['Combat Skills'],
+          responses: {
+            '200': {
+              description: 'Lista de perícias de combate retornada com sucesso',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'array',
+                    items: {
+                      type: 'object',
+                      required: ['id', 'nome', 'tipo', 'descricao'],
+                      properties: {
+                        id: { type: 'integer', example: 1 },
+                        nome: { type: 'string', example: 'Espada' },
+                        tipo: {
+                          type: 'string',
+                          enum: ['melee', 'ranged', 'shield'],
+                          example: 'melee',
+                        },
+                        atributoAtaque: {
+                          type: 'string',
+                          nullable: true,
+                          enum: ['FR', 'DEX', 'AGI', 'CON', 'INT', 'PER', 'CAR', 'WILL'],
+                          example: 'DEX',
+                        },
+                        atributoDefesa: {
+                          type: 'string',
+                          nullable: true,
+                          enum: ['FR', 'DEX', 'AGI', 'CON', 'INT', 'PER', 'CAR', 'WILL'],
+                          example: 'DEX',
+                        },
+                        aprimoramentoRequerido: {
+                          type: 'string',
+                          nullable: true,
+                          example: 'Armas de Fogo',
+                        },
+                        descricao: {
+                          type: 'string',
+                          example: 'Uso de espadas e similares em combate.',
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       '/api/v1/dice/roll': {
         post: {
           summary: 'Rolar dados',

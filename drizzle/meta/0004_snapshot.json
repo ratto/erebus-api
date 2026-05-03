@@ -1,9 +1,68 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "103a08b7-0359-4b0f-bf56-2b86c826f313",
-  "prevId": "066d7320-9bd5-46b4-896a-5ef45e0805de",
+  "id": "c7d2e891-f4a3-4b56-9012-3456789abcde",
+  "prevId": "103a08b7-0359-4b0f-bf56-2b86c826f313",
   "tables": {
+    "combat_skills": {
+      "name": "combat_skills",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "atributo_ataque": {
+          "name": "atributo_ataque",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "atributo_defesa": {
+          "name": "atributo_defesa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "aprimoramento_requerido": {
+          "name": "aprimoramento_requerido",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "descricao": {
+          "name": "descricao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
     "enhancements": {
       "name": "enhancements",
       "columns": {
