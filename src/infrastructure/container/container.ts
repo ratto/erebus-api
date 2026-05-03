@@ -22,6 +22,11 @@ import { EnhancementService } from '../../services/enhancement.service.ts';
 import { EnhancementController } from '../../controllers/enhancement.controller.ts';
 import { LogsService } from '../../services/logs.service.ts';
 import { LogsController } from '../../controllers/logs.controller.ts';
+import type { ICombatSkillRepository } from '../../repositories/combat-skill.repository.ts';
+import { CombatSkillRepository } from '../../repositories/combat-skill.repository.ts';
+import type { ICombatSkillService } from '../../services/combat-skill.service.ts';
+import { CombatSkillService } from '../../services/combat-skill.service.ts';
+import { CombatSkillController } from '../../controllers/combat-skill.controller.ts';
 
 const container = new Container();
 
@@ -50,5 +55,10 @@ container.bind<EnhancementController>(TYPES.EnhancementController).to(Enhancemen
 // Logs / SSE
 container.bind<LogsService>(TYPES.LogsService).to(LogsService).inSingletonScope();
 container.bind<LogsController>(TYPES.LogsController).to(LogsController).inTransientScope();
+
+// Combat Skills
+container.bind<ICombatSkillRepository>(TYPES.ICombatSkillRepository).to(CombatSkillRepository).inSingletonScope();
+container.bind<ICombatSkillService>(TYPES.ICombatSkillService).to(CombatSkillService).inTransientScope();
+container.bind<CombatSkillController>(TYPES.CombatSkillController).to(CombatSkillController).inTransientScope();
 
 export { container };

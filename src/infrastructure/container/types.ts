@@ -14,4 +14,7 @@ export const TYPES = {
   EnhancementController: Symbol.for('EnhancementController'),
   LogsService: Symbol.for('LogsService'),
   LogsController: Symbol.for('LogsController'),
+  ICombatSkillRepository: Symbol.for('ICombatSkillRepository'),
+  ICombatSkillService: Symbol.for('ICombatSkillService'),
+  CombatSkillController: Symbol.for('CombatSkillController'),
 };

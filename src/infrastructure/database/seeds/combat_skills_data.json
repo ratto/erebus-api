@@ -1,0 +1,106 @@
+[
+  {
+    "nome": "Briga",
+    "tipo": "melee",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": "DEX",
+    "aprimoramentoRequerido": null,
+    "descricao": "Luta sem armas. Todo personagem começa com esta perícia gratuitamente (Ataque e Defesa iguais ao atributo DEX base)."
+  },
+  {
+    "nome": "Boxe",
+    "tipo": "melee",
+    "atributoAtaque": "AGI",
+    "atributoDefesa": "AGI",
+    "aprimoramentoRequerido": null,
+    "descricao": "Arte marcial ocidental de combate com socos. Utiliza movimentação e combinações de golpes rápidos."
+  },
+  {
+    "nome": "Artes Marciais",
+    "tipo": "melee",
+    "atributoAtaque": "AGI",
+    "atributoDefesa": "AGI",
+    "aprimoramentoRequerido": null,
+    "descricao": "Sistemas orientais de combate sem armas, como Karatê, Kung Fu e Judô. Permite socos, chutes e projeções."
+  },
+  {
+    "nome": "Espada",
+    "tipo": "melee",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": "DEX",
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de espadas de uma ou duas mãos, sabres e cimitarras em combate corpo a corpo."
+  },
+  {
+    "nome": "Facas",
+    "tipo": "melee",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": "DEX",
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de facas e adagas em combate corpo a corpo, incluindo técnicas de guarda com lâmina curta."
+  },
+  {
+    "nome": "Machado",
+    "tipo": "melee",
+    "atributoAtaque": "FR",
+    "atributoDefesa": "FR",
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de machados de uma ou duas mãos em combate. Arma poderosa que favorece personagens com alta Força."
+  },
+  {
+    "nome": "Lança",
+    "tipo": "melee",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": "DEX",
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de lanças e alabardas em combate. Possui alcance maior que outras armas brancas."
+  },
+  {
+    "nome": "Pistolas",
+    "tipo": "ranged",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": null,
+    "aprimoramentoRequerido": "Armas de Fogo",
+    "descricao": "Uso de pistolas e revólveres em combate à distância. Armas de médio alcance e alta mobilidade."
+  },
+  {
+    "nome": "Escopetas",
+    "tipo": "ranged",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": null,
+    "aprimoramentoRequerido": "Armas de Fogo",
+    "descricao": "Uso de escopetas e rifles de cano curto. Alta capacidade de dano em curto alcance."
+  },
+  {
+    "nome": "Fuzis",
+    "tipo": "ranged",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": null,
+    "aprimoramentoRequerido": "Armas de Fogo",
+    "descricao": "Uso de fuzis e rifles de assalto. Armas de longo alcance e alta cadência de tiro."
+  },
+  {
+    "nome": "Arco",
+    "tipo": "ranged",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": null,
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de arcos simples e compostos. Arma silenciosa de médio alcance utilizada desde a Antiguidade."
+  },
+  {
+    "nome": "Besta",
+    "tipo": "ranged",
+    "atributoAtaque": "DEX",
+    "atributoDefesa": null,
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de bestas (crossbows). Mais fácil de operar que o arco, com menor cadência de fogo."
+  },
+  {
+    "nome": "Escudo",
+    "tipo": "shield",
+    "atributoAtaque": null,
+    "atributoDefesa": "DEX",
+    "aprimoramentoRequerido": null,
+    "descricao": "Uso de escudos para defesa em combate. Não permite ataque — cada 2 PP gastos concedem 1 ponto de Defesa."
+  }
+]
