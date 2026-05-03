@@ -53,6 +53,17 @@ export const protectiveIndex = sqliteTable(
   }),
 );
 
+export const combatSkills = sqliteTable('combat_skills', {
+  id:                     integer('id').primaryKey({ autoIncrement: true }),
+  nome:                   text('nome').notNull(),
+  tipo:                   text('tipo').notNull(),          // 'melee' | 'ranged' | 'shield'
+  atributoAtaque:         text('atributo_ataque'),         // null para shield
+  atributoDefesa:         text('atributo_defesa'),         // null para ranged
+  aprimoramentoRequerido: text('aprimoramento_requerido'), // ex: 'Armas de Fogo' | null
+  descricao:              text('descricao').notNull(),
+});
+
+
 export const weapons = sqliteTable('weapons', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   nome: text('nome').notNull(),

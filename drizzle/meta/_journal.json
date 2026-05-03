@@ -29,6 +29,13 @@
       "when": 1777648345147,
       "tag": "0003_cool_purifiers",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1777769206282,
+      "tag": "0004_simple_mandroid",
+      "breakpoints": true
     }
   ]
 }

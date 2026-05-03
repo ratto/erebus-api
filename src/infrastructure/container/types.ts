@@ -17,4 +17,7 @@ export const TYPES = {
   IProtectiveEquipmentRepository: Symbol.for('IProtectiveEquipmentRepository'),
   IProtectiveEquipmentService: Symbol.for('IProtectiveEquipmentService'),
   ProtectiveEquipmentController: Symbol.for('ProtectiveEquipmentController'),
+  ICombatSkillRepository: Symbol.for('ICombatSkillRepository'),
+  ICombatSkillService: Symbol.for('ICombatSkillService'),
+  CombatSkillController: Symbol.for('CombatSkillController'),
 };
