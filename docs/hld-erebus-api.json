@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "system": "erebus-api",
+    "hld_owner": "rattopedro@gmail.com",
+    "version": "1.0",
+    "date": "2026-09-09"
+  },
+  "objective": {
+    "technical_goal": "Construir um serviço somente-leitura que consulta um banco SQLite (populado a partir de dados versionados do Sistema Daemon) e expõe as entidades de armas brancas, armas de fogo, proteções, perícias e aprimoramentos via API REST, seguindo Clean Architecture (Controller, Service, Repository), sem duplicar a fonte de dados entre os consumidores atuais e futuros.",
+    "problems_addressed": [
+      "Scaffold Express atual sem lógica de domínio, sem banco de dados e sem camadas definidas",
+      "Ausência de fonte de dados única, versionada e consultável programaticamente sobre as regras do Sistema Daemon"
+    ],
+    "linked_systems": [
+      "erebus-app (consumidor REST/JSON atual)",
+      "erebus-engine (Fase 2, consumidor futuro dos mesmos contratos REST)"
+    ]
+  },
+  "architecture": {
+    "topology_overview": "Serviço serverless hospedado no Netlify Functions. O aplicativo Express é empacotado através de um adapter serverless e mantém internamente as camadas de Clean Architecture (Controller, Service, Repository), acessadas por interface e resolvidas via injeção de dependência. O banco SQLite é gerado em build time e embarcado como asset somente-leitura junto ao pacote da function.",
+    "technologies": [
+      "Node.js + TypeScript + Express",
+      "Knex sobre better-sqlite3",
+      "Inversify (injeção de dependência)",
+      "swagger-jsdoc + swagger-ui-express",
+      "Vitest"
+    ],
+    "deployment": "cloud",
+    "patterns": [
+      "Clean Architecture (Controller, Service, Repository, isolamento por interface)",
+      "REST convencional somente leitura",
+      "Dependency Inversion via injeção de dependência"
+    ]
+  },
+  "components": [
+    {
+      "name": "Controllers",
+      "responsibilities": [
+        "Receber requisição HTTP",
+        "Validar parâmetros de entrada",
+        "Chamar Service",
+        "Formatar resposta/erro"
+      ],
+      "dependencies": ["Service (via interface)", "Model"]
+    },
+    {
+      "name": "Services",
+      "responsibilities": [
+        "Aplicar regras de aplicação (normalização de filtro, validações)",
+        "Orquestrar Repository",
+        "Não conhecer Express"
+      ],
+      "dependencies": ["Repository (via interface)", "Model"]
+    },
+    {
+      "name": "Repositories",
+      "responsibilities": [
+        "Único ponto de acesso ao SQLite via Knex",
+        "Construir queries",
+        "Mapear linhas para entidades"
+      ],
+      "dependencies": ["Knex", "better-sqlite3", "Model"]
+    },
+    {
+      "name": "Model",
+      "responsibilities": [
+        "Classes, DTOs e enums que representam as entidades de domínio e seus formatos de transporte"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "Seed/Migration module",
+      "responsibilities": [
+        "Ler JSONs de origem e arquivo de curadoria",
+        "Popular o SQLite em build time de forma idempotente"
+      ],
+      "dependencies": ["JSONs de origem", "better-sqlite3"]
+    },
+    {
+      "name": "Swagger module",
+      "responsibilities": [
+        "Gerar spec OpenAPI via swagger-jsdoc a partir de anotações nas rotas",
+        "Servir UI via swagger-ui-express"
+      ],
+      "dependencies": ["Controllers (anotações)"]
+    },
+    {
+      "name": "Error handling middleware",
+      "responsibilities": [
+        "Padronizar respostas de erro (400/404) em toda a API"
+      ],
+      "dependencies": ["Express"]
+    },
+    {
+      "name": "Netlify Function adapter",
+      "responsibilities": [
+        "Entrypoint serverless que envelopa o app Express"
+      ],
+      "dependencies": ["Express", "serverless-http"]
+    }
+  ],
+  "flows": {
+    "request_flow": [
+      "Netlify recebe a requisição HTTP e invoca a Function",
+      "O adapter serverless repassa a requisição ao app Express",
+      "Middleware de erro/validação inicial intercepta a rota",
+      "Controller valida os query params e monta um DTO de filtro (Model)",
+      "Controller chama o Service correspondente (resolvido por interface via Inversify)",
+      "Service aplica regras de negócio e chama o Repository (via interface)",
+      "Repository monta a query via Knex e executa contra o SQLite embarcado",
+      "Repository mapeia as linhas retornadas para entidades/DTOs de Model",
+      "Service retorna as entidades ao Controller",
+      "Controller serializa a resposta em JSON (200) ou aciona o middleware de erro (400/404)"
+    ],
+    "data_flow": [
+      "JSONs versionados em docs/sistema daemon/data/ (Nível 1) e arquivo de curadoria estruturado (Nível 2/3) → Seed/Migration module → popula SQLite em build time → arquivo .sqlite empacotado como asset read-only da Netlify Function no deploy"
+    ]
+  },
+  "data_model": {
+    "entities": [
+      "ArmaBranca",
+      "ArmaDeFogo",
+      "Protecao",
+      "Pericia (auto-relacionamento grupo/subgrupo)",
+      "Aprimoramento",
+      "AprimoramentoNivel"
+    ],
+    "relationships": [
+      "Pericia 1:N Pericia (auto-relacionamento grupo → subgrupos via periciaPaiId nullable; grupo não é comprável isoladamente; constraint única em periciaPaiId + nome)",
+      "Aprimoramento 1:N AprimoramentoNivel"
+    ],
+    "source_of_truth": "JSONs versionados em git (Nível 1 canônico) mais arquivo de curadoria estruturado (Nível 2/3); o SQLite é um artefato derivado, recriável via seed a qualquer momento"
+  },
+  "interfaces": [
+    {
+      "name": "GET /armas, /armas/:id",
+      "kind": "api",
+      "protocol": "REST/JSON",
+      "exposure": "external",
+      "sla_limits": "p95 < 200ms (exceto cold start)"
+    },
+    {
+      "name": "GET /armas-de-fogo, /armas-de-fogo/:id",
+      "kind": "api",
+      "protocol": "REST/JSON",
+      "exposure": "external",
+      "sla_limits": "p95 < 200ms (exceto cold start)"
+    },
+    {
+      "name": "GET /protecoes, /protecoes/:id",
+      "kind": "api",
+      "protocol": "REST/JSON",
+      "exposure": "external",
+      "sla_limits": "p95 < 200ms (exceto cold start)"
+    },
+    {
+      "name": "GET /pericias, /pericias/:id",
+      "kind": "api",
+      "protocol": "REST/JSON",
+      "exposure": "external",
+      "sla_limits": "p95 < 200ms (exceto cold start)"
+    },
+    {
+      "name": "GET /aprimoramentos, /aprimoramentos/:id",
+      "kind": "api",
+      "protocol": "REST/JSON",
+      "exposure": "external",
+      "sla_limits": "p95 < 200ms (exceto cold start)"
+    },
+    {
+      "name": "GET /docs (Swagger UI)",
+      "kind": "api",
+      "protocol": "HTTP/HTML",
+      "exposure": "external",
+      "sla_limits": "Sem SLA formal"
+    }
+  ],
+  "scalability_availability": {
+    "strategies": [
+      "Escalonamento horizontal automático gerenciado pela plataforma Netlify",
+      "Sem particionamento/sharding (dataset pequeno)"
+    ],
+    "caching": "Cache HTTP em nível de CDN/edge para respostas de GET; sem cache em memória na aplicação nesta fase",
+    "partitioning": "Não aplicável nesta fase",
+    "sla_target": "99.9% para os endpoints externos (hipótese, dependente do SLA da plataforma Netlify)"
+  },
+  "security": {
+    "authentication": "Nenhuma nesta fase; API pública de dados somente-leitura, sem login de usuário final",
+    "authorization": "Não aplicável nesta fase (sem papéis de usuário, sem dados privados)",
+    "secrets_management": "Variáveis de ambiente gerenciadas pelo Netlify (env vars do site); sem credenciais de banco",
+    "encryption_in_transit": "HTTPS obrigatório (padrão da plataforma Netlify)",
+    "encryption_at_rest": "Não aplicável (sem dados sensíveis em repouso)",
+    "pii_policy": "Não há PII; conteúdo é regra de jogo pública, sem necessidade de anonimização"
+  },
+  "observability": {
+    "logs": "Logs estruturados (JSON) emitidos pela aplicação via logger (ex.: pino), coletados pelos logs de function nativos do Netlify",
+    "metrics": [
+      "Taxa de erro (4xx/5xx) por endpoint",
+      "Latência por endpoint"
+    ],
+    "tracing": "Fora de escopo nesta fase; sem múltiplos serviços internos a rastrear",
+    "dashboards_alerts": [
+      "Painel nativo do Netlify (invocações, erros, duração de function)"
+    ]
+  },
+  "risks": [
+    {
+      "risk": "Módulo nativo (better-sqlite3) incompatível com o runtime do Netlify Functions",
+      "probability": "medium",
+      "impact": "Build falha ou function quebra em runtime por binário nativo compilado para arquitetura errada",
+      "mitigation": [
+        "Garantir rebuild do módulo nativo no ambiente de build do Netlify",
+        "Testar deploy cedo no cronograma, não só na semana prevista de deploy"
+      ],
+      "contingency_plan": "Trocar para driver SQLite puro-JS (ex.: sql.js) ou migrar para banco gerenciado compatível com serverless (ex.: Turso/libSQL)"
+    },
+    {
+      "risk": "Cold start do Netlify Function impacta a meta de latência (p95 < 200ms)",
+      "probability": "medium",
+      "impact": "Primeira requisição após período ocioso pode violar a meta de latência",
+      "mitigation": [
+        "Manter o arquivo .sqlite pequeno (dataset enxuto por design)",
+        "Avaliar ping periódico de warmup se necessário"
+      ],
+      "contingency_plan": "Aceitar SLA de latência apenas para requisições quentes, documentando a exceção de cold start"
+    },
+    {
+      "risk": "Contratos REST definidos nesta fase não servirem bem à Erebus Engine (C++) na Fase 2",
+      "probability": "low",
+      "impact": "Retrabalho nos endpoints ao iniciar a Fase 2",
+      "mitigation": [
+        "Manter endpoints REST convencionais por entidade, evitando acoplamento a detalhes de implementação"
+      ],
+      "contingency_plan": "Versionar a API (/v1) desde já para permitir evolução sem quebrar consumidores existentes"
+    },
+    {
+      "risk": "Dados de Nível 2/3 confundidos com regra canônica (Nível 1)",
+      "probability": "medium",
+      "impact": "Erro de regra em mesa de jogo, perda de confiança na base de dados",
+      "mitigation": [
+        "Campo nivelFonte/fonte obrigatório em schema e DTO, validado no Service",
+        "Exposto em todo endpoint de detalhe"
+      ],
+      "contingency_plan": "Endpoint/filtro dedicado para consultar apenas Nível 1, caso confusão persista na UI"
+    }
+  ],
+  "adrs_next_steps": {
+    "pending_decisions": [
+      "Viabilidade real de better-sqlite3 em Netlify Functions, a validar por spike técnico antes de comprometer a arquitetura de dados"
+    ],
+    "next_steps": [
+      "Spike de viabilidade técnica do better-sqlite3 (ou driver alternativo) no ambiente Netlify Functions",
+      "Modelagem de schema Knex/migrations conduzida junto à implementação, como parte da mesma feature",
+      "FDD/LLD detalhando contratos de cada endpoint, DTOs e regras de validação por Service"
+    ]
+  }
+}
