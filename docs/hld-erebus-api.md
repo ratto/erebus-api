@@ -1,13 +1,15 @@
 ### HLD: erebus-api
 
-Version: 1.0
-Date: 2026-09-09
+Version: 1.1
+Date: 2026-09-10 (v1.0: 2026-09-09)
 Owner: rattopedro@gmail.com
+
+Changes in 1.1: weapon entities and endpoints re-split into melee / ranged / firearms per ADR-001.
 
 ---
 
 ### Technical Objective
-Build a read-only service that queries an SQLite database (populated from versioned Daemon System data) and exposes melee weapons, firearms, protections, skills, and enhancements entities via REST API, following Clean Architecture (Controller, Service, Repository). The technical objective is to move from an Express scaffold without domain logic, without database, and without defined layers, to a functional, testable, and consumable data service by multiple clients (app and, in the future, C++ engine), without duplicating the data source between them.
+Build a read-only service that queries an SQLite database (populated from versioned Daemon System data) and exposes melee weapons, ranged weapons, firearms, protections, skills, and enhancements entities via REST API, following Clean Architecture (Controller, Service, Repository). The technical objective is to move from an Express scaffold without domain logic, without database, and without defined layers, to a functional, testable, and consumable data service by multiple clients (app and, in the future, C++ engine), without duplicating the data source between them.
 
 Dependencies with other Systems
 - erebus-app (current REST/JSON consumer, displays listing, search, and detail of entities)
@@ -70,8 +72,7 @@ Adopted Patterns
 
 ### Data Model (High Level)
 Main Entities
-- MeleeWeapon (provenance: sourceLevel, source, editionOrVersion)
-- Firearm (own provenance)
+- Weapon (single table; discriminator `category` ∈ {melee, ranged, firearm}, `isThrown` boolean, mandatory `skillGroup` carrying the canonical governing skill; provenance: sourceLevel, source, editionOrVersion). Exposed as three read models — MeleeWeapon, RangedWeapon, Firearm — per ADR-001
 - Protection (own provenance)
 - Skill (group/subgroup self-relation, own provenance)
 - Enhancement (own provenance)
@@ -80,6 +81,7 @@ Main Entities
 Relations
 - Skill 1:N Skill (self-relation: group → subgroups, via parentSkillId nullable; group is not purchasable in isolation, only the leaf; unique constraint on parentSkillId + name)
 - Enhancement 1:N EnhancementLevel
+- Weapon N:1 Skill (via curated explicit mapping column — weapon names do not match skill subgroup names, so string matching is not viable; `category` never overrides this association)
 
 Source of Truth
 - Versioned JSONs in git (canonical Level 1) plus structured curation file (Level 2/3); SQLite is a derived artifact, recreatable via seed anytime
@@ -89,7 +91,8 @@ Source of Truth
 ### Public Interfaces
 | Name | Type | Protocol | Exposure | SLAs/Limits |
 | ---- | ---- | ---------- | --------- | ------------- |
-| GET /weapons, /weapons/:id | API | REST/JSON | External | p95 < 200ms (except cold start) |
+| GET /melee-weapons, /melee-weapons/:id | API | REST/JSON | External | p95 < 200ms (except cold start) |
+| GET /ranged-weapons, /ranged-weapons/:id | API | REST/JSON | External | p95 < 200ms (except cold start) |
 | GET /firearms, /firearms/:id | API | REST/JSON | External | p95 < 200ms (except cold start) |
 | GET /protections, /protections/:id | API | REST/JSON | External | p95 < 200ms (except cold start) |
 | GET /skills, /skills/:id | API | REST/JSON | External | p95 < 200ms (except cold start) |
@@ -166,6 +169,14 @@ Dashboards and Alerts
   - Keep conventional REST endpoints per entity, avoiding coupling to implementation details
 - **Contingency Plan:** version API (/v1) from the start to allow evolution without breaking existing consumers
 
+#### Product Weapon Taxonomy Diverges from Canonical Daemon Categorization
+- **Probability:** medium
+- **Impact:** consumer infers a "ranged weapons" skill that does not exist in the Daemon System and tests the wrong skill
+- **Mitigation:**
+  - `skillGroup` is a mandatory, non-nullable column and is returned by every weapon DTO, list and detail alike
+  - `GET /ranged-weapons` is documented in OpenAPI as a product-facing view over `category = 'ranged' OR isThrown = true`, with an explicit note that bows and crossbows are canonically *armas brancas*
+- **Contingency Plan:** expose a `canonicalCategory` field (armaBranca/armaDeFogo) alongside `category`, should the distinction still be lost by consumers
+
 #### Level 2/3 Data Confused with Canonical Rule (Level 1)
 - **Probability:** medium
 - **Impact:** game rule error at table, loss of database trust
@@ -178,7 +189,8 @@ Dashboards and Alerts
 
 ### ADRs and Next Steps
 Associated ADRs
-- No formal ADR registered yet; decisions from this phase (Knex, Inversify, Netlify, better-sqlite3, Swagger, Vitest) emerged from this interview and still need formalization
+- ADR-001 — Three-way weapon taxonomy (melee / ranged / firearms) as the product-facing category (`docs/decisions/ADR-001-weapon-taxonomy-melee-ranged-firearms.md`)
+- Remaining decisions from this phase (Knex, Inversify, Netlify, better-sqlite3, Swagger, Vitest) emerged from the HLD interview and still need formalization as ADRs
 
 Pending Decisions
 - Real viability of better-sqlite3 in Netlify Functions, to be validated by technical spike before committing to data architecture

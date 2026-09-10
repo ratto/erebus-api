@@ -2,11 +2,17 @@
   "meta": {
     "system": "erebus-api",
     "hld_owner": "rattopedro@gmail.com",
-    "version": "1.0",
-    "date": "2026-09-09"
+    "version": "1.1",
+    "date": "2026-09-10",
+    "previous_versions": [
+      { "version": "1.0", "date": "2026-09-09" }
+    ],
+    "changelog": [
+      "1.1 — Entidades e endpoints de armas re-divididos em corpo a corpo / à distância / de fogo, conforme ADR-001"
+    ]
   },
   "objective": {
-    "technical_goal": "Construir um serviço somente-leitura que consulta um banco SQLite (populado a partir de dados versionados do Sistema Daemon) e expõe as entidades de armas brancas, armas de fogo, proteções, perícias e aprimoramentos via API REST, seguindo Clean Architecture (Controller, Service, Repository), sem duplicar a fonte de dados entre os consumidores atuais e futuros.",
+    "technical_goal": "Construir um serviço somente-leitura que consulta um banco SQLite (populado a partir de dados versionados do Sistema Daemon) e expõe as entidades de armas corpo a corpo, armas à distância, armas de fogo, proteções, perícias e aprimoramentos via API REST, seguindo Clean Architecture (Controller, Service, Repository), sem duplicar a fonte de dados entre os consumidores atuais e futuros.",
     "problems_addressed": [
       "Scaffold Express atual sem lógica de domínio, sem banco de dados e sem camadas definidas",
       "Ausência de fonte de dados única, versionada e consultável programaticamente sobre as regras do Sistema Daemon"
@@ -118,8 +124,7 @@
   },
   "data_model": {
     "entities": [
-      "ArmaBranca",
-      "ArmaDeFogo",
+      "Arma (tabela única; discriminador categoria ∈ {melee, ranged, firearm}, booleano isThrown, e campo obrigatório skillGroup com a perícia canônica regente — Armas Brancas* ou Armas de Fogo*). Exposta como três read models: ArmaCorpoACorpo, ArmaADistancia, ArmaDeFogo (ver ADR-001)",
       "Protecao",
       "Pericia (auto-relacionamento grupo/subgrupo)",
       "Aprimoramento",
@@ -127,41 +132,49 @@
     ],
     "relationships": [
       "Pericia 1:N Pericia (auto-relacionamento grupo → subgrupos via periciaPaiId nullable; grupo não é comprável isoladamente; constraint única em periciaPaiId + nome)",
-      "Aprimoramento 1:N AprimoramentoNivel"
+      "Aprimoramento 1:N AprimoramentoNivel",
+      "Arma N:1 Pericia (via coluna de mapeamento explícita e curada — nome de arma não coincide com nome de subgrupo de perícia, então string matching não é viável; a categoria de produto nunca sobrepõe essa associação)"
     ],
     "source_of_truth": "JSONs versionados em git (Nível 1 canônico) mais arquivo de curadoria estruturado (Nível 2/3); o SQLite é um artefato derivado, recriável via seed a qualquer momento"
   },
   "interfaces": [
     {
-      "name": "GET /armas, /armas/:id",
+      "name": "GET /melee-weapons, /melee-weapons/:id",
       "kind": "api",
       "protocol": "REST/JSON",
       "exposure": "external",
       "sla_limits": "p95 < 200ms (exceto cold start)"
     },
     {
-      "name": "GET /armas-de-fogo, /armas-de-fogo/:id",
+      "name": "GET /ranged-weapons, /ranged-weapons/:id",
+      "kind": "api",
+      "protocol": "REST/JSON",
+      "exposure": "external",
+      "sla_limits": "p95 < 200ms (exceto cold start); retorna categoria 'ranged' OU isThrown = true"
+    },
+    {
+      "name": "GET /firearms, /firearms/:id",
       "kind": "api",
       "protocol": "REST/JSON",
       "exposure": "external",
       "sla_limits": "p95 < 200ms (exceto cold start)"
     },
     {
-      "name": "GET /protecoes, /protecoes/:id",
+      "name": "GET /protections, /protections/:id",
       "kind": "api",
       "protocol": "REST/JSON",
       "exposure": "external",
       "sla_limits": "p95 < 200ms (exceto cold start)"
     },
     {
-      "name": "GET /pericias, /pericias/:id",
+      "name": "GET /skills, /skills/:id",
       "kind": "api",
       "protocol": "REST/JSON",
       "exposure": "external",
       "sla_limits": "p95 < 200ms (exceto cold start)"
     },
     {
-      "name": "GET /aprimoramentos, /aprimoramentos/:id",
+      "name": "GET /enhancements, /enhancements/:id",
       "kind": "api",
       "protocol": "REST/JSON",
       "exposure": "external",
@@ -234,6 +247,16 @@
       "contingency_plan": "Versionar a API (/v1) desde já para permitir evolução sem quebrar consumidores existentes"
     },
     {
+      "risk": "Taxonomia de produto de armas (melee/ranged/firearms) diverge da categorização canônica do Daemon, que só tem armas brancas e armas de fogo",
+      "probability": "medium",
+      "impact": "Consumidor infere a existência de uma perícia de 'armas à distância', que não existe, e testa a perícia errada",
+      "mitigation": [
+        "Campo skillGroup obrigatório (não nulável) e retornado em todo DTO de arma, em listagem e detalhe",
+        "GET /ranged-weapons documentado no OpenAPI como visão de produto sobre categoria = 'ranged' OU isThrown = true, com nota explícita de que arcos e bestas são canonicamente armas brancas"
+      ],
+      "contingency_plan": "Expor campo canonicalCategory (armaBranca/armaDeFogo) ao lado de categoria, caso a distinção continue se perdendo para os consumidores"
+    },
+    {
       "risk": "Dados de Nível 2/3 confundidos com regra canônica (Nível 1)",
       "probability": "medium",
       "impact": "Erro de regra em mesa de jogo, perda de confiança na base de dados",
@@ -245,6 +268,9 @@
     }
   ],
   "adrs_next_steps": {
+    "associated_adrs": [
+      "ADR-001 — Taxonomia de armas em três categorias (melee/ranged/firearms) como categoria voltada ao produto (docs/decisions/ADR-001-weapon-taxonomy-melee-ranged-firearms.md)"
+    ],
     "pending_decisions": [
       "Viabilidade real de better-sqlite3 em Netlify Functions, a validar por spike técnico antes de comprometer a arquitetura de dados"
     ],
