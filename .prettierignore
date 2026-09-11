@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+data
+package-lock.json
+docs
+LICENSE
+DaemonLicense-en.md
+DaemonLicense-pt.md

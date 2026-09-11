@@ -5,11 +5,14 @@ Mermaid fences become <pre class="mermaid"> blocks rendered client-side;
 PlantUML fences are kept as highlighted source plus a link to render them.
 """
 import html
+import os
 import re
 import markdown
 
-SRC = "/home/ratto/Workspace/ErebusProject/erebus-project/erebus-api/docs/lld-erebus-api.md"
-DST = "/home/ratto/Workspace/ErebusProject/erebus-project/erebus-api/docs/lld-erebus-api.html"
+# Paths are resolved relative to this script so the build runs on any machine.
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, "lld-erebus-api.md")
+DST = os.path.join(HERE, "lld-erebus-api.html")
 
 text = open(SRC, encoding="utf-8").read()
 
