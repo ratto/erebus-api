@@ -29,6 +29,96 @@ const openApiSpecification: object = swaggerJsdoc({
             uptimeMs: { type: 'integer', minimum: 0, example: 41293 },
           },
         },
+        SkillResponse: {
+          type: 'object',
+          required: [
+            'id',
+            'name',
+            'parentSkillId',
+            'parentSkillName',
+            'hasSubgroups',
+            'baseAttribute',
+            'effectiveBaseAttribute',
+            'category',
+            'description',
+            'initialValueType',
+            'prerequisite',
+            'damage',
+            'notes',
+            'sourceLevel',
+            'source',
+            'editionOrVersion',
+          ],
+          properties: {
+            id: { type: 'integer', example: 41 },
+            name: { type: 'string', example: 'Automóvel' },
+            parentSkillId: {
+              type: 'integer',
+              nullable: true,
+              description: 'Group this skill belongs to; null for a group skill.',
+            },
+            parentSkillName: { type: 'string', nullable: true, example: 'Condução' },
+            hasSubgroups: {
+              type: 'boolean',
+              description: 'True for a navigation node, which is not purchasable on its own.',
+            },
+            baseAttribute: {
+              type: 'string',
+              nullable: true,
+              enum: ['AGI', 'CAR', 'CON', 'DEX', 'FR', 'INT', 'PER', 'WILL'],
+              description: 'Attribute the skill itself declares; null when it varies by subgroup.',
+            },
+            effectiveBaseAttribute: {
+              type: 'string',
+              nullable: true,
+              enum: ['AGI', 'CAR', 'CON', 'DEX', 'FR', 'INT', 'PER', 'WILL'],
+              description:
+                'The skill own attribute, or its group one when it declares none. Null is a valid canonical state.',
+            },
+            category: {
+              type: 'string',
+              nullable: true,
+              example: 'condução',
+              description: 'N3 classification; non-null only for the Condução subgroups.',
+            },
+            description: { type: 'string', nullable: true },
+            initialValueType: {
+              type: 'string',
+              nullable: true,
+              enum: ['instinctive', 'technical', 'related'],
+            },
+            prerequisite: { type: 'string', nullable: true },
+            damage: { type: 'string', nullable: true },
+            notes: { type: 'string', nullable: true },
+            sourceLevel: { type: 'integer', enum: [1, 2, 3] },
+            source: {
+              type: 'string',
+              example: 'pericias.json → Condução.subgrupos · manual l.809',
+            },
+            editionOrVersion: {
+              type: 'string',
+              nullable: true,
+              example: 'Manual Básico 1.04 (dez/2022)',
+            },
+          },
+        },
+        SkillDetailResponse: {
+          allOf: [
+            { $ref: '#/components/schemas/SkillResponse' },
+            {
+              type: 'object',
+              required: ['subgroups'],
+              properties: {
+                subgroups: {
+                  type: 'array',
+                  description:
+                    'Direct children, ordered by name. Always present; empty for a leaf skill.',
+                  items: { $ref: '#/components/schemas/SkillResponse' },
+                },
+              },
+            },
+          ],
+        },
         ProblemDetails: {
           type: 'object',
           required: ['type', 'title', 'status'],

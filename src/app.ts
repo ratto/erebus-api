@@ -4,15 +4,16 @@ import express, { type Express } from 'express';
 
 import { mountSwagger } from './infra/swagger/swagger';
 import { errorHandler } from './middlewares/error-handler.middleware';
+import { notFoundHandler } from './middlewares/not-found.middleware';
 import { requestLogger } from './middlewares/request-logger.middleware';
 import { registerRoutes } from './routes/index.routes';
 
 /**
  * Builds the Express application without binding it to a port.
  *
- * Middleware order is normative (LLD §7.10): logger → swagger → routes → error
- * handler. The 404 handler slots in between routes and the error handler once
- * the standardised error format US delivers its concrete error classes.
+ * Middleware order is normative (LLD §7.10): logger → swagger → routes → 404 →
+ * error handler. The error handler must stay last, or Express does not recognise
+ * it as one.
  * @returns The assembled application; the caller decides how to serve it.
  */
 export function createApp(): Express {
@@ -25,6 +26,7 @@ export function createApp(): Express {
   mountSwagger(app);
   registerRoutes(app);
 
+  app.use(notFoundHandler);
   app.use(errorHandler);
 
   return app;

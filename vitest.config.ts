@@ -4,7 +4,10 @@ export default defineConfig({
   test: {
     globals: false,
     environment: 'node',
-    include: ['src/**/*.spec.ts', 'tests/**/*.spec.ts'],
+    // `scripts/**` is included so the seed derivation rules — pure functions that
+    // decide what reaches the catalogue (ADR-003 §3) — are unit-tested like any
+    // mapper. They stay outside the coverage budget below, as LLD §10.4 requires.
+    include: ['src/**/*.spec.ts', 'tests/**/*.spec.ts', 'scripts/**/*.spec.ts'],
     setupFiles: ['./tests/setup.ts'],
     coverage: {
       provider: 'v8',
@@ -23,7 +26,12 @@ export default defineConfig({
         'src/infra/**',
         'src/repositories/**',
         'src/**/interfaces/**',
-        'src/models/**',
+        // Type-only domain files emit no runtime code. `src/models/mappers/**`
+        // is deliberately **not** excluded: LLD §10.4 budgets it at 100/100, and
+        // US-03 ships the first real mapper.
+        'src/models/rows/**',
+        'src/models/entities/**',
+        'src/models/dtos/**',
         'scripts/**',
         'netlify/**',
         '**/*.spec.ts',
@@ -38,6 +46,10 @@ export default defineConfig({
         'src/controllers/**': {
           statements: 90,
           branches: 85,
+        },
+        'src/models/mappers/**': {
+          statements: 100,
+          branches: 100,
         },
       },
     },

@@ -1,4 +1,5 @@
 import { AppError } from '../errors/app-error';
+import { ValidationError } from '../errors/validation.error';
 import { logger } from '../infra/logger/logger';
 
 import type { NextFunction, Request, Response } from 'express';
@@ -18,13 +19,19 @@ export function errorHandler(
   _next: NextFunction,
 ): void {
   if (error instanceof AppError) {
-    res.status(error.status).type('application/problem+json').json({
+    const body: Record<string, unknown> = {
       type: error.problemType,
       title: error.title,
       status: error.status,
       detail: error.message,
       instance: req.originalUrl,
-    });
+    };
+
+    if (error instanceof ValidationError) {
+      body.errors = error.issues;
+    }
+
+    res.status(error.status).type('application/problem+json').json(body);
     return;
   }
 

@@ -1,0 +1,2389 @@
+{
+  "skills": [
+    {
+      "id": "n1-animais",
+      "name": "Animais",
+      "group": "Animais",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.781",
+      "description": "Group skill covering the handling, raising and knowledge of animals; the player picks one subgroup."
+    },
+    {
+      "id": "n2-animais-treinamento-de-animais",
+      "name": "Treinamento de animais",
+      "group": "Animais",
+      "subgroup": "Treinamento de animais",
+      "attribute": null,
+      "source": "técnica · pericias.json → Animais.subgrupos · manual l.781",
+      "description": "Teach commands and tricks to already domesticated animals."
+    },
+    {
+      "id": "n2-animais-montaria",
+      "name": "Montaria",
+      "group": "Animais",
+      "subgroup": "Montaria",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Animais.subgrupos · manual l.781",
+      "description": "Ride and control mounts, including over rough ground or in combat."
+    },
+    {
+      "id": "n2-animais-doma",
+      "name": "Doma",
+      "group": "Animais",
+      "subgroup": "Doma",
+      "attribute": null,
+      "source": "técnica · pericias.json → Animais.subgrupos · manual l.781",
+      "description": "Break wild or skittish animals in and make them manageable."
+    },
+    {
+      "id": "n2-animais-veterinaria",
+      "name": "Veterinária",
+      "group": "Animais",
+      "subgroup": "Veterinária",
+      "attribute": null,
+      "source": "técnica · pericias.json → Animais.subgrupos · manual l.781",
+      "description": "Treat wounds and illnesses in animals."
+    },
+    {
+      "id": "n1-armadilhas",
+      "name": "Armadilhas",
+      "group": "Armadilhas",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.784",
+      "description": "Detect, build, set and disarm mechanical traps of every kind."
+    },
+    {
+      "id": "n1-armas-brancas",
+      "name": "Armas Brancas",
+      "group": "Armas Brancas",
+      "subgroup": null,
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → lista · manual l.786",
+      "description": "Group skill for melee combat (plus some thrown and mechanical missile weapons); each weapon type is a subgroup with its own attack and defence values."
+    },
+    {
+      "id": "n2-armas-brancas-facas",
+      "name": "Facas",
+      "group": "Armas Brancas",
+      "subgroup": "Facas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with knives; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-adagas",
+      "name": "Adagas",
+      "group": "Armas Brancas",
+      "subgroup": "Adagas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with daggers; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-punhais",
+      "name": "Punhais",
+      "group": "Armas Brancas",
+      "subgroup": "Punhais",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with dirks; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-espadas",
+      "name": "Espadas",
+      "group": "Armas Brancas",
+      "subgroup": "Espadas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with swords; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-machados",
+      "name": "Machados",
+      "group": "Armas Brancas",
+      "subgroup": "Machados",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with axes; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-chicotes",
+      "name": "Chicotes",
+      "group": "Armas Brancas",
+      "subgroup": "Chicotes",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with whips; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-manguais",
+      "name": "Manguais",
+      "group": "Armas Brancas",
+      "subgroup": "Manguais",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with flails; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-macas",
+      "name": "Maças",
+      "group": "Armas Brancas",
+      "subgroup": "Maças",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with maces; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-martelos",
+      "name": "Martelos",
+      "group": "Armas Brancas",
+      "subgroup": "Martelos",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Melee combat with hammers; a combat skill with separate attack and defence values (DEX-based)."
+    },
+    {
+      "id": "n2-armas-brancas-arcos",
+      "name": "Arcos",
+      "group": "Armas Brancas",
+      "subgroup": "Arcos",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Archery. Ranged weapon: defence 0 and each 1% of attack costs 2 points."
+    },
+    {
+      "id": "n2-armas-brancas-bestas",
+      "name": "Bestas",
+      "group": "Armas Brancas",
+      "subgroup": "Bestas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Crossbow shooting. Ranged weapon: defence 0 and each 1% of attack costs 2 points."
+    },
+    {
+      "id": "n2-armas-brancas-lancas",
+      "name": "Lanças",
+      "group": "Armas Brancas",
+      "subgroup": "Lanças",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas Brancas.subgrupos · manual l.786",
+      "description": "Combat with spears and polearms, in melee or thrown."
+    },
+    {
+      "id": "n1-armas-de-fogo",
+      "name": "Armas de Fogo",
+      "group": "Armas de Fogo",
+      "subgroup": null,
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → lista · manual l.789",
+      "description": "Group skill for firearms; requires the Armas de Fogo aprimoramento. Defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-revolveres",
+      "name": "Revólveres",
+      "group": "Armas de Fogo",
+      "subgroup": "Revólveres",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with revolvers. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-pistolas",
+      "name": "Pistolas",
+      "group": "Armas de Fogo",
+      "subgroup": "Pistolas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with pistols. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-armas-antigas",
+      "name": "Armas Antigas",
+      "group": "Armas de Fogo",
+      "subgroup": "Armas Antigas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Use of antique firearms (muskets, blunderbusses, flintlocks), which must be reloaded after each shot."
+    },
+    {
+      "id": "n2-armas-de-fogo-submetralhadoras",
+      "name": "Submetralhadoras",
+      "group": "Armas de Fogo",
+      "subgroup": "Submetralhadoras",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with submachine guns. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-escopetas",
+      "name": "Escopetas",
+      "group": "Armas de Fogo",
+      "subgroup": "Escopetas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with shotguns. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-rifles-de-caca-espingardas",
+      "name": "Rifles de Caça (Espingardas)",
+      "group": "Armas de Fogo",
+      "subgroup": "Rifles de Caça (Espingardas)",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with hunting rifles and shotguns. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-rifles-militares",
+      "name": "Rifles Militares",
+      "group": "Armas de Fogo",
+      "subgroup": "Rifles Militares",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with military rifles. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-metralhadoras",
+      "name": "Metralhadoras",
+      "group": "Armas de Fogo",
+      "subgroup": "Metralhadoras",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with machine guns. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-armas-pesadas",
+      "name": "Armas Pesadas",
+      "group": "Armas de Fogo",
+      "subgroup": "Armas Pesadas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Shooting with heavy weapons. Ranged weapon: defence is always 0 and each 1% of attack costs 2 skill points."
+    },
+    {
+      "id": "n2-armas-de-fogo-granadas",
+      "name": "Granadas",
+      "group": "Armas de Fogo",
+      "subgroup": "Granadas",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Throwing and using grenades and hand-held explosive devices."
+    },
+    {
+      "id": "n2-armas-de-fogo-armas-experimentais",
+      "name": "Armas Experimentais",
+      "group": "Armas de Fogo",
+      "subgroup": "Armas Experimentais",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Armas de Fogo.subgrupos · manual l.789",
+      "description": "Use of prototype or unconventional weaponry, including tech outside the era's standard."
+    },
+    {
+      "id": "n1-artes",
+      "name": "Artes",
+      "group": "Artes",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.793",
+      "description": "Group skill covering artistic expression and creative crafts; each subgroup declares its own base atributo."
+    },
+    {
+      "id": "n2-artes-arquitetura",
+      "name": "Arquitetura",
+      "group": "Artes",
+      "subgroup": "Arquitetura",
+      "attribute": null,
+      "source": "técnica · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Design and read building plans; evaluate structures and architectural styles."
+    },
+    {
+      "id": "n2-artes-atuacao",
+      "name": "Atuação",
+      "group": "Artes",
+      "subgroup": "Atuação",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Play a role convincingly, on stage or in real life."
+    },
+    {
+      "id": "n2-artes-canto",
+      "name": "Canto",
+      "group": "Artes",
+      "subgroup": "Canto",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Sing with technique and pitch, from choir to stage."
+    },
+    {
+      "id": "n2-artes-critica-de-arte",
+      "name": "Crítica de Arte",
+      "group": "Artes",
+      "subgroup": "Crítica de Arte",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Analyse and judge works of art, identifying school, authorship and quality."
+    },
+    {
+      "id": "n2-artes-culinaria",
+      "name": "Culinária",
+      "group": "Artes",
+      "subgroup": "Culinária",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Prepare dishes, balance seasoning and identify ingredients by taste."
+    },
+    {
+      "id": "n2-artes-danca",
+      "name": "Dança",
+      "group": "Artes",
+      "subgroup": "Dança",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Dance with technique, from social dancing to professional choreography."
+    },
+    {
+      "id": "n2-artes-desenho-e-pintura",
+      "name": "Desenho e Pintura",
+      "group": "Artes",
+      "subgroup": "Desenho e Pintura",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Draw and paint, including composite sketches and reproductions."
+    },
+    {
+      "id": "n2-artes-escapismo",
+      "name": "Escapismo",
+      "group": "Artes",
+      "subgroup": "Escapismo",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Escape from ropes, handcuffs and sealed containers."
+    },
+    {
+      "id": "n2-artes-escultura",
+      "name": "Escultura",
+      "group": "Artes",
+      "subgroup": "Escultura",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Model and carve in stone, wood, metal or clay."
+    },
+    {
+      "id": "n2-artes-fotografia",
+      "name": "Fotografia",
+      "group": "Artes",
+      "subgroup": "Fotografia",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Photograph with control of light, framing and developing."
+    },
+    {
+      "id": "n2-artes-ilusionismo",
+      "name": "Ilusionismo",
+      "group": "Artes",
+      "subgroup": "Ilusionismo",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Perform stage magic and illusion for an audience."
+    },
+    {
+      "id": "n2-artes-instrumentos-musicais",
+      "name": "Instrumentos Musicais",
+      "group": "Artes",
+      "subgroup": "Instrumentos Musicais",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Play a musical instrument; at the GM's discretion each instrument may be its own subgroup."
+    },
+    {
+      "id": "n2-artes-joalheria",
+      "name": "Joalheria",
+      "group": "Artes",
+      "subgroup": "Joalheria",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Make and repair jewellery, set gems and work precious metals."
+    },
+    {
+      "id": "n2-artes-prestidigitacao",
+      "name": "Prestidigitação",
+      "group": "Artes",
+      "subgroup": "Prestidigitação",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Sleight of hand: hiding, swapping and vanishing small objects."
+    },
+    {
+      "id": "n2-artes-redacao",
+      "name": "Redação",
+      "group": "Artes",
+      "subgroup": "Redação",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Artes.subgrupos · manual l.793",
+      "description": "Write clear, persuasive text, from news pieces to reports and fiction."
+    },
+    {
+      "id": "n1-artifice",
+      "name": "Artífice",
+      "group": "Artífice",
+      "subgroup": null,
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → lista · manual l.796",
+      "description": "Group skill for crafting trades. The canonical data lists no subgroups: they must be defined with the GM."
+    },
+    {
+      "id": "n1-avaliacao-de-objetos",
+      "name": "Avaliação de Objetos",
+      "group": "Avaliação de Objetos",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.798",
+      "description": "Group skill for appraisal: judging authenticity, provenance and market value of objects."
+    },
+    {
+      "id": "n2-avaliacao-de-objetos-antiguidades",
+      "name": "Antiguidades",
+      "group": "Avaliação de Objetos",
+      "subgroup": "Antiguidades",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Avaliação de Objetos.subgrupos · manual l.798",
+      "description": "Judge the authenticity, provenance and market value of antiques."
+    },
+    {
+      "id": "n2-avaliacao-de-objetos-gemas",
+      "name": "Gemas",
+      "group": "Avaliação de Objetos",
+      "subgroup": "Gemas",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Avaliação de Objetos.subgrupos · manual l.798",
+      "description": "Judge the authenticity, provenance and market value of gems."
+    },
+    {
+      "id": "n2-avaliacao-de-objetos-metais-valiosos-ourives",
+      "name": "Metais Valiosos (Ourives)",
+      "group": "Avaliação de Objetos",
+      "subgroup": "Metais Valiosos (Ourives)",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Avaliação de Objetos.subgrupos · manual l.798",
+      "description": "Judge the authenticity, provenance and market value of precious metals (goldsmithing)."
+    },
+    {
+      "id": "n2-avaliacao-de-objetos-obras-de-arte",
+      "name": "Obras de Arte",
+      "group": "Avaliação de Objetos",
+      "subgroup": "Obras de Arte",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Avaliação de Objetos.subgrupos · manual l.798",
+      "description": "Judge the authenticity, provenance and market value of works of art."
+    },
+    {
+      "id": "n1-camuflagem",
+      "name": "Camuflagem",
+      "group": "Camuflagem",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.801",
+      "description": "Conceal yourself or objects using terrain, vegetation and available materials."
+    },
+    {
+      "id": "n1-ciencias",
+      "name": "Ciências",
+      "group": "Ciências",
+      "subgroup": null,
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → lista · manual l.803",
+      "description": "Group skill for formal academic knowledge; each field of study is an INT-based subgroup."
+    },
+    {
+      "id": "n2-ciencias-agricultura",
+      "name": "Agricultura",
+      "group": "Ciências",
+      "subgroup": "Agricultura",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of agriculture."
+    },
+    {
+      "id": "n2-ciencias-anatomia",
+      "name": "Anatomia",
+      "group": "Ciências",
+      "subgroup": "Anatomia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of anatomy."
+    },
+    {
+      "id": "n2-ciencias-antropologia",
+      "name": "Antropologia",
+      "group": "Ciências",
+      "subgroup": "Antropologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of anthropology."
+    },
+    {
+      "id": "n2-ciencias-arqueologia",
+      "name": "Arqueologia",
+      "group": "Ciências",
+      "subgroup": "Arqueologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of archaeology."
+    },
+    {
+      "id": "n2-ciencias-astronomia",
+      "name": "Astronomia",
+      "group": "Ciências",
+      "subgroup": "Astronomia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of astronomy."
+    },
+    {
+      "id": "n2-ciencias-botanica",
+      "name": "Botânica",
+      "group": "Ciências",
+      "subgroup": "Botânica",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of botany."
+    },
+    {
+      "id": "n2-ciencias-direito-ou-jurisprudencia",
+      "name": "Direito ou Jurisprudência",
+      "group": "Ciências",
+      "subgroup": "Direito ou Jurisprudência",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of law and jurisprudence."
+    },
+    {
+      "id": "n2-ciencias-ecologia",
+      "name": "Ecologia",
+      "group": "Ciências",
+      "subgroup": "Ecologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of ecology."
+    },
+    {
+      "id": "n2-ciencias-filosofia",
+      "name": "Filosofia",
+      "group": "Ciências",
+      "subgroup": "Filosofia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of philosophy."
+    },
+    {
+      "id": "n2-ciencias-fisica",
+      "name": "Física",
+      "group": "Ciências",
+      "subgroup": "Física",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of physics."
+    },
+    {
+      "id": "n2-ciencias-genetica",
+      "name": "Genética",
+      "group": "Ciências",
+      "subgroup": "Genética",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of genetics."
+    },
+    {
+      "id": "n2-ciencias-geografia",
+      "name": "Geografia",
+      "group": "Ciências",
+      "subgroup": "Geografia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of geography."
+    },
+    {
+      "id": "n2-ciencias-geologia",
+      "name": "Geologia",
+      "group": "Ciências",
+      "subgroup": "Geologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of geology."
+    },
+    {
+      "id": "n2-ciencias-heraldica",
+      "name": "Heráldica",
+      "group": "Ciências",
+      "subgroup": "Heráldica",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of heraldry."
+    },
+    {
+      "id": "n2-ciencias-herbalismo",
+      "name": "Herbalismo",
+      "group": "Ciências",
+      "subgroup": "Herbalismo",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of herbalism."
+    },
+    {
+      "id": "n2-ciencias-historia",
+      "name": "História",
+      "group": "Ciências",
+      "subgroup": "História",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of history."
+    },
+    {
+      "id": "n2-ciencias-literatura",
+      "name": "Literatura",
+      "group": "Ciências",
+      "subgroup": "Literatura",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of literature."
+    },
+    {
+      "id": "n2-ciencias-matematica",
+      "name": "Matemática",
+      "group": "Ciências",
+      "subgroup": "Matemática",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of mathematics."
+    },
+    {
+      "id": "n2-ciencias-meteorologia",
+      "name": "Meteorologia",
+      "group": "Ciências",
+      "subgroup": "Meteorologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of meteorology."
+    },
+    {
+      "id": "n2-ciencias-pedagogia",
+      "name": "Pedagogia",
+      "group": "Ciências",
+      "subgroup": "Pedagogia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of pedagogy."
+    },
+    {
+      "id": "n2-ciencias-psicologia",
+      "name": "Psicologia",
+      "group": "Ciências",
+      "subgroup": "Psicologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of psychology."
+    },
+    {
+      "id": "n2-ciencias-quimica",
+      "name": "Química",
+      "group": "Ciências",
+      "subgroup": "Química",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of chemistry."
+    },
+    {
+      "id": "n2-ciencias-sociologia",
+      "name": "Sociologia",
+      "group": "Ciências",
+      "subgroup": "Sociologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of sociology."
+    },
+    {
+      "id": "n2-ciencias-teologia-ou-religiao",
+      "name": "Teologia ou Religião",
+      "group": "Ciências",
+      "subgroup": "Teologia ou Religião",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of theology and religion."
+    },
+    {
+      "id": "n2-ciencias-ufologia",
+      "name": "Ufologia",
+      "group": "Ciências",
+      "subgroup": "Ufologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of ufology."
+    },
+    {
+      "id": "n2-ciencias-zoologia",
+      "name": "Zoologia",
+      "group": "Ciências",
+      "subgroup": "Zoologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Ciências.subgrupos · manual l.803",
+      "description": "Academic knowledge and practical application of zoology."
+    },
+    {
+      "id": "n1-ciencias-proibidas-ou-alternativas",
+      "name": "Ciências Proibidas ou Alternativas",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.806",
+      "description": "Group skill for occult and para-scientific lore; highly technical, always starting at 0%."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-alquimia",
+      "name": "Alquimia",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Alquimia",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about alchemy; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-anjos",
+      "name": "Anjos",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Anjos",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about angels; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-astrologia",
+      "name": "Astrologia",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Astrologia",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about astrology; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-buzios",
+      "name": "Búzios",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Búzios",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about cowrie-shell divination; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-demonios",
+      "name": "Demônios",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Demônios",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about demons; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-oculto",
+      "name": "Oculto",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Oculto",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about the occult; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-psionicismo",
+      "name": "Psionicismo",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Psionicismo",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about psionics; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-rituais",
+      "name": "Rituais",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Rituais",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about rituals; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-tarot",
+      "name": "Tarot",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Tarot",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about tarot; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-teoria-da-magia",
+      "name": "Teoria da Magia",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Teoria da Magia",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about magic theory; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-vampiros",
+      "name": "Vampiros",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Vampiros",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about vampires; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n2-ciencias-proibidas-ou-alternativas-viagem-astral",
+      "name": "Viagem Astral",
+      "group": "Ciências Proibidas ou Alternativas",
+      "subgroup": "Viagem Astral",
+      "attribute": null,
+      "source": "técnica · pericias.json → Ciências Proibidas ou Alternativas.subgrupos · manual l.806",
+      "description": "Theoretical and practical lore about astral travel; occult knowledge with no instinctive base (starts at 0%)."
+    },
+    {
+      "id": "n1-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": null,
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → lista · manual l.809",
+      "description": "Group skill for operating vehicles; its subgroups split between ordinary driving and specialised piloting."
+    },
+    {
+      "id": "n2-conducao-automovel",
+      "name": "Automóvel",
+      "group": "Condução",
+      "subgroup": "Automóvel",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a car under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-automovel-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Automóvel",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Automóvel subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-onibus",
+      "name": "Ônibus",
+      "group": "Condução",
+      "subgroup": "Ônibus",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a bus under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-onibus-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Ônibus",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Ônibus subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-caminhao",
+      "name": "Caminhão",
+      "group": "Condução",
+      "subgroup": "Caminhão",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a truck under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-caminhao-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Caminhão",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Caminhão subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-empilhadeira",
+      "name": "Empilhadeira",
+      "group": "Condução",
+      "subgroup": "Empilhadeira",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a forklift under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-empilhadeira-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Empilhadeira",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Empilhadeira subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-guindaste",
+      "name": "Guindaste",
+      "group": "Condução",
+      "subgroup": "Guindaste",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a crane under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-guindaste-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Guindaste",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Guindaste subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-carruagem",
+      "name": "Carruagem",
+      "group": "Condução",
+      "subgroup": "Carruagem",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a carriage under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-carruagem-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Carruagem",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Carruagem subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-motocicleta",
+      "name": "Motocicleta",
+      "group": "Condução",
+      "subgroup": "Motocicleta",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Drive a motorcycle under ordinary traffic and operating conditions."
+    },
+    {
+      "id": "n3-conducao-motocicleta-conducao",
+      "name": "Condução",
+      "group": "Condução",
+      "subgroup": "Motocicleta",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Motocicleta subgroup as an ordinary-driving vehicle (ground vehicle in common civilian use)."
+    },
+    {
+      "id": "n2-conducao-carro-de-corrida",
+      "name": "Carro de Corrida",
+      "group": "Condução",
+      "subgroup": "Carro de Corrida",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a racing car; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-carro-de-corrida-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Carro de Corrida",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Carro de Corrida subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-motocicleta-de-corrida",
+      "name": "Motocicleta de Corrida",
+      "group": "Condução",
+      "subgroup": "Motocicleta de Corrida",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a racing motorcycle; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-motocicleta-de-corrida-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Motocicleta de Corrida",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Motocicleta de Corrida subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-helicoptero",
+      "name": "Helicóptero",
+      "group": "Condução",
+      "subgroup": "Helicóptero",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a helicopter; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-helicoptero-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Helicóptero",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Helicóptero subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-aviao-comercial",
+      "name": "Avião Comercial",
+      "group": "Condução",
+      "subgroup": "Avião Comercial",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a commercial aeroplane; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-aviao-comercial-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Avião Comercial",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Avião Comercial subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-aviao-militar",
+      "name": "Avião Militar",
+      "group": "Condução",
+      "subgroup": "Avião Militar",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a military aeroplane; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-aviao-militar-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Avião Militar",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Avião Militar subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-onibus-espacial",
+      "name": "Ônibus Espacial",
+      "group": "Condução",
+      "subgroup": "Ônibus Espacial",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a space shuttle; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-onibus-espacial-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Ônibus Espacial",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Ônibus Espacial subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-lancha",
+      "name": "Lancha",
+      "group": "Condução",
+      "subgroup": "Lancha",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a speedboat; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-lancha-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Lancha",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Lancha subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-iate",
+      "name": "Iate",
+      "group": "Condução",
+      "subgroup": "Iate",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a yacht; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-iate-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Iate",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Iate subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-veleiro",
+      "name": "Veleiro",
+      "group": "Condução",
+      "subgroup": "Veleiro",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a sailboat; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-veleiro-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Veleiro",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Veleiro subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-navio-cargueiro",
+      "name": "Navio Cargueiro",
+      "group": "Condução",
+      "subgroup": "Navio Cargueiro",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a cargo ship; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-navio-cargueiro-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Navio Cargueiro",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Navio Cargueiro subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-ultraleve",
+      "name": "Ultraleve",
+      "group": "Condução",
+      "subgroup": "Ultraleve",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a ultralight; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-ultraleve-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Ultraleve",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Ultraleve subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n2-conducao-asa-delta",
+      "name": "Asa Delta",
+      "group": "Condução",
+      "subgroup": "Asa Delta",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos · manual l.809",
+      "description": "Pilot a hang glider; requires specialised training."
+    },
+    {
+      "id": "n3-conducao-asa-delta-pilotagem",
+      "name": "Pilotagem",
+      "group": "Condução",
+      "subgroup": "Asa Delta",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Condução.subgrupos.categoria · manual l.810-811",
+      "description": "Classifies the Asa Delta subgroup as a specialised-piloting vehicle (racing, aircraft or watercraft)."
+    },
+    {
+      "id": "n1-disfarce",
+      "name": "Disfarce",
+      "group": "Disfarce",
+      "subgroup": null,
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → lista · manual l.813",
+      "description": "Alter your own or someone else's appearance to pass as another person or social type."
+    },
+    {
+      "id": "n1-eletronica",
+      "name": "Eletrônica",
+      "group": "Eletrônica",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.815",
+      "description": "Build, repair and tamper with electronic circuits and devices. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n1-engenharia",
+      "name": "Engenharia",
+      "group": "Engenharia",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.817",
+      "description": "Group skill for the engineering disciplines: design, calculation and execution of works and systems. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-aeronautica",
+      "name": "Aeronáutica",
+      "group": "Engenharia",
+      "subgroup": "Aeronáutica",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in aeronautical engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-alimentos",
+      "name": "Alimentos",
+      "group": "Engenharia",
+      "subgroup": "Alimentos",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design and control of food production and preservation processes. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-civil",
+      "name": "Civil",
+      "group": "Engenharia",
+      "subgroup": "Civil",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in civil engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-computacao",
+      "name": "Computação",
+      "group": "Engenharia",
+      "subgroup": "Computação",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Computer systems engineering: hardware and software architecture."
+    },
+    {
+      "id": "n2-engenharia-demolicoes",
+      "name": "Demolições",
+      "group": "Engenharia",
+      "subgroup": "Demolições",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Calculating and carrying out controlled demolitions with explosive charges."
+    },
+    {
+      "id": "n2-engenharia-eletrica",
+      "name": "Elétrica",
+      "group": "Engenharia",
+      "subgroup": "Elétrica",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in electrical engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-eletronica",
+      "name": "Eletrônica",
+      "group": "Engenharia",
+      "subgroup": "Eletrônica",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in electronic engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-materiais",
+      "name": "Materiais",
+      "group": "Engenharia",
+      "subgroup": "Materiais",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, testing and selection of materials according to their properties. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-mecanica",
+      "name": "Mecânica",
+      "group": "Engenharia",
+      "subgroup": "Mecânica",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in mechanical engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-mecatronica",
+      "name": "Mecatrônica",
+      "group": "Engenharia",
+      "subgroup": "Mecatrônica",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in mechatronic engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-naval",
+      "name": "Naval",
+      "group": "Engenharia",
+      "subgroup": "Naval",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in naval engineering. Starts at 0%."
+    },
+    {
+      "id": "n2-engenharia-quimica",
+      "name": "Química",
+      "group": "Engenharia",
+      "subgroup": "Química",
+      "attribute": null,
+      "source": "técnica · pericias.json → Engenharia.subgrupos · manual l.817",
+      "description": "Design, calculation and execution in chemistry engineering. Starts at 0%."
+    },
+    {
+      "id": "n1-escutar",
+      "name": "Escutar",
+      "group": "Escutar",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.820",
+      "description": "Notice and interpret sounds: muffled conversation, footsteps, noises out of place."
+    },
+    {
+      "id": "n1-esquiva",
+      "name": "Esquiva",
+      "group": "Esquiva",
+      "subgroup": null,
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → lista · manual l.822",
+      "description": "Dodging blows. Used as the defence value when the character merely evades; it can NEVER be used against arrows or ranged weapons."
+    },
+    {
+      "id": "n1-esportes",
+      "name": "Esportes",
+      "group": "Esportes",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.824",
+      "description": "Group skill for athletic and sporting practice; each discipline is a subgroup with its own base atributo."
+    },
+    {
+      "id": "n2-esportes-acrobacia",
+      "name": "Acrobacia",
+      "group": "Esportes",
+      "subgroup": "Acrobacia",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Jumps, tumbles, balance and acrobatic movement."
+    },
+    {
+      "id": "n2-esportes-alpinismo",
+      "name": "Alpinismo",
+      "group": "Esportes",
+      "subgroup": "Alpinismo",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Climb mountains, walls and vertical surfaces with or without gear."
+    },
+    {
+      "id": "n2-esportes-arremesso",
+      "name": "Arremesso",
+      "group": "Esportes",
+      "subgroup": "Arremesso",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Throw objects accurately, from stones to improvised spears."
+    },
+    {
+      "id": "n2-esportes-artes-marciais",
+      "name": "Artes Marciais",
+      "group": "Esportes",
+      "subgroup": "Artes Marciais",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Trained unarmed combat (karate, judo, aikido, kung fu, jiu-jitsu, capoeira); a combat skill with separate attack and defence."
+    },
+    {
+      "id": "n2-esportes-basquete",
+      "name": "Basquete",
+      "group": "Esportes",
+      "subgroup": "Basquete",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Sporting practice of basketball."
+    },
+    {
+      "id": "n2-esportes-boxe",
+      "name": "Boxe",
+      "group": "Esportes",
+      "subgroup": "Boxe",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Boxing: punching, slipping and ring stamina."
+    },
+    {
+      "id": "n2-esportes-caca",
+      "name": "Caça",
+      "group": "Esportes",
+      "subgroup": "Caça",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Track, ambush and bring down game animals."
+    },
+    {
+      "id": "n2-esportes-canoagem",
+      "name": "Canoagem",
+      "group": "Esportes",
+      "subgroup": "Canoagem",
+      "attribute": "CON",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Paddle and manoeuvre canoes and kayaks, including in rapids."
+    },
+    {
+      "id": "n2-esportes-corrida",
+      "name": "Corrida",
+      "group": "Esportes",
+      "subgroup": "Corrida",
+      "attribute": "CON",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Run with stamina and pace, in sprints or long distance."
+    },
+    {
+      "id": "n2-esportes-esqui",
+      "name": "Esqui",
+      "group": "Esportes",
+      "subgroup": "Esqui",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Ski on snow, controlling speed and direction on slopes."
+    },
+    {
+      "id": "n2-esportes-futebol",
+      "name": "Futebol",
+      "group": "Esportes",
+      "subgroup": "Futebol",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Sporting practice of football."
+    },
+    {
+      "id": "n2-esportes-mergulho",
+      "name": "Mergulho",
+      "group": "Esportes",
+      "subgroup": "Mergulho",
+      "attribute": "CON",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Dive free or with gear, managing breath and pressure."
+    },
+    {
+      "id": "n2-esportes-paraquedismo",
+      "name": "Paraquedismo",
+      "group": "Esportes",
+      "subgroup": "Paraquedismo",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Skydive, controlling free fall and landing."
+    },
+    {
+      "id": "n2-esportes-pesca",
+      "name": "Pesca",
+      "group": "Esportes",
+      "subgroup": "Pesca",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Fish with rod, net or line, reading the water and the fish's behaviour."
+    },
+    {
+      "id": "n2-esportes-natacao",
+      "name": "Natação",
+      "group": "Esportes",
+      "subgroup": "Natação",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Swim with technique and stay afloat for long stretches."
+    },
+    {
+      "id": "n2-esportes-salto",
+      "name": "Salto",
+      "group": "Esportes",
+      "subgroup": "Salto",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Jump for distance and height with athletic technique."
+    },
+    {
+      "id": "n2-esportes-salto-ornamental",
+      "name": "Salto Ornamental",
+      "group": "Esportes",
+      "subgroup": "Salto Ornamental",
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Springboard and platform diving."
+    },
+    {
+      "id": "n2-esportes-tenis",
+      "name": "Tênis",
+      "group": "Esportes",
+      "subgroup": "Tênis",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Sporting practice of tennis."
+    },
+    {
+      "id": "n2-esportes-voleibol",
+      "name": "Voleibol",
+      "group": "Esportes",
+      "subgroup": "Voleibol",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Esportes.subgrupos · manual l.824",
+      "description": "Sporting practice of volleyball."
+    },
+    {
+      "id": "n1-etiqueta",
+      "name": "Etiqueta",
+      "group": "Etiqueta",
+      "subgroup": null,
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → lista · manual l.827",
+      "description": "Group skill for social protocol: knowing and applying the codes of conduct of a specific milieu."
+    },
+    {
+      "id": "n2-etiqueta-clero",
+      "name": "Clero",
+      "group": "Etiqueta",
+      "subgroup": "Clero",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Etiqueta.subgrupos · manual l.827",
+      "description": "Know and correctly apply the codes of conduct and vocabulary of the clergy milieu."
+    },
+    {
+      "id": "n2-etiqueta-comercial",
+      "name": "Comercial",
+      "group": "Etiqueta",
+      "subgroup": "Comercial",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Etiqueta.subgrupos · manual l.827",
+      "description": "Know and correctly apply the codes of conduct and vocabulary of the business milieu."
+    },
+    {
+      "id": "n2-etiqueta-diplomacia",
+      "name": "Diplomacia",
+      "group": "Etiqueta",
+      "subgroup": "Diplomacia",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Etiqueta.subgrupos · manual l.827",
+      "description": "Know and correctly apply the codes of conduct and vocabulary of the diplomatic milieu."
+    },
+    {
+      "id": "n2-etiqueta-mercado-negro",
+      "name": "Mercado Negro",
+      "group": "Etiqueta",
+      "subgroup": "Mercado Negro",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Etiqueta.subgrupos · manual l.827",
+      "description": "Know and correctly apply the codes of conduct and vocabulary of the black-market milieu."
+    },
+    {
+      "id": "n2-etiqueta-nobreza",
+      "name": "Nobreza",
+      "group": "Etiqueta",
+      "subgroup": "Nobreza",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Etiqueta.subgrupos · manual l.827",
+      "description": "Know and correctly apply the codes of conduct and vocabulary of the nobility milieu."
+    },
+    {
+      "id": "n2-etiqueta-submundo",
+      "name": "Submundo",
+      "group": "Etiqueta",
+      "subgroup": "Submundo",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Etiqueta.subgrupos · manual l.827",
+      "description": "Know and correctly apply the codes of conduct and vocabulary of the underworld milieu."
+    },
+    {
+      "id": "n1-explosivos",
+      "name": "Explosivos",
+      "group": "Explosivos",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.830",
+      "description": "Prepare, place and detonate explosive charges safely. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n1-falsificacao",
+      "name": "Falsificação",
+      "group": "Falsificação",
+      "subgroup": null,
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → lista · manual l.832",
+      "description": "Group skill for producing fraudulent copies able to pass as authentic."
+    },
+    {
+      "id": "n2-falsificacao-documentos",
+      "name": "Documentos",
+      "group": "Falsificação",
+      "subgroup": "Documentos",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Falsificação.subgrupos · manual l.832",
+      "description": "Produce fraudulent copies of documents able to pass as authentic."
+    },
+    {
+      "id": "n2-falsificacao-escultura",
+      "name": "Escultura",
+      "group": "Falsificação",
+      "subgroup": "Escultura",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Falsificação.subgrupos · manual l.832",
+      "description": "Produce fraudulent copies of sculpture able to pass as authentic."
+    },
+    {
+      "id": "n2-falsificacao-fotografia",
+      "name": "Fotografia",
+      "group": "Falsificação",
+      "subgroup": "Fotografia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Falsificação.subgrupos · manual l.832",
+      "description": "Produce fraudulent copies of photographs able to pass as authentic."
+    },
+    {
+      "id": "n2-falsificacao-joalheria",
+      "name": "Joalheria",
+      "group": "Falsificação",
+      "subgroup": "Joalheria",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Falsificação.subgrupos · manual l.832",
+      "description": "Produce fraudulent copies of jewellery able to pass as authentic."
+    },
+    {
+      "id": "n2-falsificacao-pinturas",
+      "name": "Pinturas",
+      "group": "Falsificação",
+      "subgroup": "Pinturas",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Falsificação.subgrupos · manual l.832",
+      "description": "Produce fraudulent copies of paintings able to pass as authentic."
+    },
+    {
+      "id": "n1-furtar",
+      "name": "Furtar",
+      "group": "Furtar",
+      "subgroup": null,
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → lista · manual l.835",
+      "description": "Lift objects from pockets, bags and displays unnoticed; also planting objects on someone else."
+    },
+    {
+      "id": "n1-furtividade",
+      "name": "Furtividade",
+      "group": "Furtividade",
+      "subgroup": null,
+      "attribute": "AGI",
+      "source": "instintiva · pericias.json → lista · manual l.837",
+      "description": "Move silently and remain unnoticed while on the move."
+    },
+    {
+      "id": "n1-idiomas-linguas",
+      "name": "Idiomas / Línguas",
+      "group": "Idiomas / Línguas",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.839",
+      "description": "Group skill for languages and communication systems; each language is a separate skill and the set is explicitly open-ended (5,000+ catalogued languages)."
+    },
+    {
+      "id": "n2-idiomas-linguas-chines",
+      "name": "Chinês",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Chinês",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write Chinese."
+    },
+    {
+      "id": "n2-idiomas-linguas-ingles",
+      "name": "Inglês",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Inglês",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write English."
+    },
+    {
+      "id": "n2-idiomas-linguas-espanhol",
+      "name": "Espanhol",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Espanhol",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write Spanish."
+    },
+    {
+      "id": "n2-idiomas-linguas-hindu",
+      "name": "Hindu",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Hindu",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write Hindi."
+    },
+    {
+      "id": "n2-idiomas-linguas-russo",
+      "name": "Russo",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Russo",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write Russian."
+    },
+    {
+      "id": "n2-idiomas-linguas-arabe",
+      "name": "Árabe",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Árabe",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write Arabic."
+    },
+    {
+      "id": "n2-idiomas-linguas-japones",
+      "name": "Japonês",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Japonês",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write Japanese."
+    },
+    {
+      "id": "n2-idiomas-linguas-alemao",
+      "name": "Alemão",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Alemão",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write German."
+    },
+    {
+      "id": "n2-idiomas-linguas-frances",
+      "name": "Francês",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Francês",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Speak, read and write French."
+    },
+    {
+      "id": "n2-idiomas-linguas-braile",
+      "name": "Braile",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Braile",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Read and write in the Braille tactile system."
+    },
+    {
+      "id": "n2-idiomas-linguas-codigo-morse",
+      "name": "Código Morse",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Código Morse",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Send and read messages in Morse code."
+    },
+    {
+      "id": "n2-idiomas-linguas-criptografia",
+      "name": "Criptografia",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Criptografia",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Encipher and decipher coded messages."
+    },
+    {
+      "id": "n2-idiomas-linguas-linguagem-de-sinais",
+      "name": "Linguagem de Sinais",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Linguagem de Sinais",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Communicate through sign language."
+    },
+    {
+      "id": "n2-idiomas-linguas-leitura-labial",
+      "name": "Leitura Labial",
+      "group": "Idiomas / Línguas",
+      "subgroup": "Leitura Labial",
+      "attribute": null,
+      "source": "técnica · pericias.json → Idiomas / Línguas.subgrupos · manual l.839",
+      "description": "Understand what someone is saying by watching their lips."
+    },
+    {
+      "id": "n1-informatica",
+      "name": "Informática",
+      "group": "Informática",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.843",
+      "description": "Group skill for computing and networks. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n2-informatica-computacao",
+      "name": "Computação",
+      "group": "Informática",
+      "subgroup": "Computação",
+      "attribute": null,
+      "source": "técnica · pericias.json → Informática.subgrupos · manual l.843",
+      "description": "Operate computers and general-purpose software proficiently."
+    },
+    {
+      "id": "n2-informatica-internet",
+      "name": "Internet",
+      "group": "Informática",
+      "subgroup": "Internet",
+      "attribute": null,
+      "source": "técnica · pericias.json → Informática.subgrupos · manual l.843",
+      "description": "Browse, search and locate information on public networks."
+    },
+    {
+      "id": "n2-informatica-hacker",
+      "name": "Hacker",
+      "group": "Informática",
+      "subgroup": "Hacker",
+      "attribute": null,
+      "source": "técnica · pericias.json → Informática.subgrupos · manual l.843",
+      "description": "Break into systems, bypass protections and exploit vulnerabilities."
+    },
+    {
+      "id": "n2-informatica-manutencao",
+      "name": "Manutenção",
+      "group": "Informática",
+      "subgroup": "Manutenção",
+      "attribute": null,
+      "source": "técnica · pericias.json → Informática.subgrupos · manual l.843",
+      "description": "Assemble, configure and repair hardware and systems."
+    },
+    {
+      "id": "n2-informatica-programacao",
+      "name": "Programação",
+      "group": "Informática",
+      "subgroup": "Programação",
+      "attribute": null,
+      "source": "técnica · pericias.json → Informática.subgrupos · manual l.843",
+      "description": "Write, debug and modify computer programs."
+    },
+    {
+      "id": "n1-jogos",
+      "name": "Jogos",
+      "group": "Jogos",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.846",
+      "description": "Group skill for games and competitive pastimes; each kind has its own base atributo."
+    },
+    {
+      "id": "n2-jogos-cartas",
+      "name": "Cartas",
+      "group": "Jogos",
+      "subgroup": "Cartas",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Jogos.subgrupos · manual l.846",
+      "description": "Card games, including reading opponents and cheating."
+    },
+    {
+      "id": "n2-jogos-tabuleiro",
+      "name": "Tabuleiro",
+      "group": "Jogos",
+      "subgroup": "Tabuleiro",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Jogos.subgrupos · manual l.846",
+      "description": "Board and strategy games such as chess and draughts."
+    },
+    {
+      "id": "n2-jogos-videogames",
+      "name": "Videogames",
+      "group": "Jogos",
+      "subgroup": "Videogames",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Jogos.subgrupos · manual l.846",
+      "description": "Video games, demanding reflexes and coordination."
+    },
+    {
+      "id": "n2-jogos-rpg",
+      "name": "RPG",
+      "group": "Jogos",
+      "subgroup": "RPG",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Jogos.subgrupos · manual l.846",
+      "description": "Tabletop role-playing games and their rule systems."
+    },
+    {
+      "id": "n1-manipulacao",
+      "name": "Manipulação",
+      "group": "Manipulação",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.849",
+      "description": "Group skill for influencing, convincing or bending someone else's will."
+    },
+    {
+      "id": "n2-manipulacao-empatia",
+      "name": "Empatia",
+      "group": "Manipulação",
+      "subgroup": "Empatia",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Sense someone's emotional state and true intentions."
+    },
+    {
+      "id": "n2-manipulacao-hipnose",
+      "name": "Hipnose",
+      "group": "Manipulação",
+      "subgroup": "Hipnose",
+      "attribute": null,
+      "source": "técnica · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Induce a hypnotic state for suggestion or memory recovery. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n2-manipulacao-impressionar",
+      "name": "Impressionar",
+      "group": "Manipulação",
+      "subgroup": "Impressionar",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Make a strong impression and project presence in a group."
+    },
+    {
+      "id": "n2-manipulacao-interrogatorio",
+      "name": "Interrogatório",
+      "group": "Manipulação",
+      "subgroup": "Interrogatório",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Extract information through methodical questioning."
+    },
+    {
+      "id": "n2-manipulacao-intimidacao",
+      "name": "Intimidação",
+      "group": "Manipulação",
+      "subgroup": "Intimidação",
+      "attribute": "WILL",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Bend someone through fear, threat or sheer presence. WILL-based."
+    },
+    {
+      "id": "n2-manipulacao-labia",
+      "name": "Lábia",
+      "group": "Manipulação",
+      "subgroup": "Lábia",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Talk someone round with fast talk, half-truths and charm."
+    },
+    {
+      "id": "n2-manipulacao-lideranca",
+      "name": "Liderança",
+      "group": "Manipulação",
+      "subgroup": "Liderança",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Command and coordinate a group, keeping morale and obedience."
+    },
+    {
+      "id": "n2-manipulacao-manha",
+      "name": "Manha",
+      "group": "Manipulação",
+      "subgroup": "Manha",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Street smarts and social savvy to get by in any milieu."
+    },
+    {
+      "id": "n2-manipulacao-seducao",
+      "name": "Sedução",
+      "group": "Manipulação",
+      "subgroup": "Sedução",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Attract and engage someone romantically or sexually."
+    },
+    {
+      "id": "n2-manipulacao-tortura",
+      "name": "Tortura",
+      "group": "Manipulação",
+      "subgroup": "Tortura",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Manipulação.subgrupos · manual l.849",
+      "description": "Inflict calculated suffering to break someone's resistance."
+    },
+    {
+      "id": "n1-manuseio-de-fechaduras",
+      "name": "Manuseio de Fechaduras",
+      "group": "Manuseio de Fechaduras",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.852",
+      "description": "Open locks, padlocks and safes without the key. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n1-mecanica",
+      "name": "Mecânica",
+      "group": "Mecânica",
+      "subgroup": null,
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → lista · manual l.854",
+      "description": "Diagnose, repair and improvise mechanical systems, engines and machinery."
+    },
+    {
+      "id": "n1-medicina",
+      "name": "Medicina",
+      "group": "Medicina",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.856",
+      "description": "Group skill for medical practice: diagnosis, treatment and intervention. Each specialty is an INT-based subgroup."
+    },
+    {
+      "id": "n2-medicina-cirurgia",
+      "name": "Cirurgia",
+      "group": "Medicina",
+      "subgroup": "Cirurgia",
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Perform surgical procedures; DEX-based."
+    },
+    {
+      "id": "n2-medicina-primeiros-socorros",
+      "name": "Primeiros Socorros",
+      "group": "Medicina",
+      "subgroup": "Primeiros Socorros",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Emergency care: stopping bleeding, immobilising and stabilising the wounded."
+    },
+    {
+      "id": "n2-medicina-oftalmologia",
+      "name": "Oftalmologia",
+      "group": "Medicina",
+      "subgroup": "Oftalmologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of ophthalmology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-dermatologia",
+      "name": "Dermatologia",
+      "group": "Medicina",
+      "subgroup": "Dermatologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of dermatology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-psiquiatria",
+      "name": "Psiquiatria",
+      "group": "Medicina",
+      "subgroup": "Psiquiatria",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of psychiatry: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-cardiologia",
+      "name": "Cardiologia",
+      "group": "Medicina",
+      "subgroup": "Cardiologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of cardiology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-neurologia",
+      "name": "Neurologia",
+      "group": "Medicina",
+      "subgroup": "Neurologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of neurology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-urologia",
+      "name": "Urologia",
+      "group": "Medicina",
+      "subgroup": "Urologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of urology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-ortopedia",
+      "name": "Ortopedia",
+      "group": "Medicina",
+      "subgroup": "Ortopedia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of orthopaedics: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-oncologia",
+      "name": "Oncologia",
+      "group": "Medicina",
+      "subgroup": "Oncologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of oncology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-gastrologia",
+      "name": "Gastrologia",
+      "group": "Medicina",
+      "subgroup": "Gastrologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of gastroenterology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-otorrinolaringologia",
+      "name": "Otorrinolaringologia",
+      "group": "Medicina",
+      "subgroup": "Otorrinolaringologia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of otorhinolaryngology: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n2-medicina-veterinaria",
+      "name": "Veterinária",
+      "group": "Medicina",
+      "subgroup": "Veterinária",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Medicina.subgrupos · manual l.856",
+      "description": "Medical specialty of veterinary medicine: diagnosis and treatment in that field (INT-based)."
+    },
+    {
+      "id": "n1-mineracao",
+      "name": "Mineração",
+      "group": "Mineração",
+      "subgroup": null,
+      "attribute": null,
+      "source": "técnica · pericias.json → lista · manual l.860",
+      "description": "Group skill for mineral prospecting and extraction. Highly technical: starts at 0%."
+    },
+    {
+      "id": "n2-mineracao-cristais",
+      "name": "Cristais",
+      "group": "Mineração",
+      "subgroup": "Cristais",
+      "attribute": null,
+      "source": "técnica · pericias.json → Mineração.subgrupos · manual l.860",
+      "description": "Prospect for, extract and process crystals. Starts at 0%."
+    },
+    {
+      "id": "n2-mineracao-gemas",
+      "name": "Gemas",
+      "group": "Mineração",
+      "subgroup": "Gemas",
+      "attribute": null,
+      "source": "técnica · pericias.json → Mineração.subgrupos · manual l.860",
+      "description": "Prospect for, extract and process gems. Starts at 0%."
+    },
+    {
+      "id": "n2-mineracao-metais",
+      "name": "Metais",
+      "group": "Mineração",
+      "subgroup": "Metais",
+      "attribute": null,
+      "source": "técnica · pericias.json → Mineração.subgrupos · manual l.860",
+      "description": "Prospect for, extract and process metals. Starts at 0%."
+    },
+    {
+      "id": "n1-negociacao",
+      "name": "Negociação",
+      "group": "Negociação",
+      "subgroup": null,
+      "attribute": null,
+      "source": "varia por subgrupo · pericias.json → lista · manual l.863",
+      "description": "Group skill for the commercial and administrative side of closing deals and managing resources."
+    },
+    {
+      "id": "n2-negociacao-barganha",
+      "name": "Barganha",
+      "group": "Negociação",
+      "subgroup": "Barganha",
+      "attribute": "CAR",
+      "source": "instintiva · pericias.json → Negociação.subgrupos · manual l.863",
+      "description": "Haggle over prices and terms to get the best trade."
+    },
+    {
+      "id": "n2-negociacao-burocracia",
+      "name": "Burocracia",
+      "group": "Negociação",
+      "subgroup": "Burocracia",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Negociação.subgrupos · manual l.863",
+      "description": "Navigate administrative procedure, paperwork and official bodies."
+    },
+    {
+      "id": "n2-negociacao-contabilidade",
+      "name": "Contabilidade",
+      "group": "Negociação",
+      "subgroup": "Contabilidade",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Negociação.subgrupos · manual l.863",
+      "description": "Keep, audit and interpret accounts and balance sheets."
+    },
+    {
+      "id": "n2-negociacao-marketing",
+      "name": "Marketing",
+      "group": "Negociação",
+      "subgroup": "Marketing",
+      "attribute": "INT",
+      "source": "instintiva · pericias.json → Negociação.subgrupos · manual l.863",
+      "description": "Plan the promotion, positioning and selling of a product or idea."
+    },
+    {
+      "id": "n1-pesquisa-ou-investigacao",
+      "name": "Pesquisa ou Investigação",
+      "group": "Pesquisa ou Investigação",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.866",
+      "description": "Systematically gather information from archives, sources and witnesses."
+    },
+    {
+      "id": "n1-procura",
+      "name": "Procura",
+      "group": "Procura",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.868",
+      "description": "Search a place or object for something hidden."
+    },
+    {
+      "id": "n1-rastreio",
+      "name": "Rastreio",
+      "group": "Rastreio",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.870",
+      "description": "Group skill for following and reading tracks; the subgroup defines the terrain mastered."
+    },
+    {
+      "id": "n2-rastreio-deserto",
+      "name": "Deserto",
+      "group": "Rastreio",
+      "subgroup": "Deserto",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Rastreio.subgrupos · manual l.870",
+      "description": "Follow and read tracks in desert terrain."
+    },
+    {
+      "id": "n2-rastreio-floresta",
+      "name": "Floresta",
+      "group": "Rastreio",
+      "subgroup": "Floresta",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Rastreio.subgrupos · manual l.870",
+      "description": "Follow and read tracks in forest terrain."
+    },
+    {
+      "id": "n2-rastreio-gelo",
+      "name": "Gelo",
+      "group": "Rastreio",
+      "subgroup": "Gelo",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Rastreio.subgrupos · manual l.870",
+      "description": "Follow and read tracks in ice terrain."
+    },
+    {
+      "id": "n2-rastreio-montanha",
+      "name": "Montanha",
+      "group": "Rastreio",
+      "subgroup": "Montanha",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Rastreio.subgrupos · manual l.870",
+      "description": "Follow and read tracks in mountain terrain."
+    },
+    {
+      "id": "n2-rastreio-planicie",
+      "name": "Planície",
+      "group": "Rastreio",
+      "subgroup": "Planície",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Rastreio.subgrupos · manual l.870",
+      "description": "Follow and read tracks in plains terrain."
+    },
+    {
+      "id": "n2-rastreio-selva",
+      "name": "Selva",
+      "group": "Rastreio",
+      "subgroup": "Selva",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Rastreio.subgrupos · manual l.870",
+      "description": "Follow and read tracks in jungle terrain."
+    },
+    {
+      "id": "n1-sobrevivencia",
+      "name": "Sobrevivência",
+      "group": "Sobrevivência",
+      "subgroup": null,
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → lista · manual l.873",
+      "description": "Group skill for staying alive in hostile environments; the subgroup defines the terrain mastered."
+    },
+    {
+      "id": "n2-sobrevivencia-deserto",
+      "name": "Deserto",
+      "group": "Sobrevivência",
+      "subgroup": "Deserto",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Sobrevivência.subgrupos · manual l.873",
+      "description": "Find shelter, water and food and endure the conditions of desert terrain."
+    },
+    {
+      "id": "n2-sobrevivencia-floresta",
+      "name": "Floresta",
+      "group": "Sobrevivência",
+      "subgroup": "Floresta",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Sobrevivência.subgrupos · manual l.873",
+      "description": "Find shelter, water and food and endure the conditions of forest terrain."
+    },
+    {
+      "id": "n2-sobrevivencia-gelo",
+      "name": "Gelo",
+      "group": "Sobrevivência",
+      "subgroup": "Gelo",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Sobrevivência.subgrupos · manual l.873",
+      "description": "Find shelter, water and food and endure the conditions of ice terrain."
+    },
+    {
+      "id": "n2-sobrevivencia-montanha",
+      "name": "Montanha",
+      "group": "Sobrevivência",
+      "subgroup": "Montanha",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Sobrevivência.subgrupos · manual l.873",
+      "description": "Find shelter, water and food and endure the conditions of mountain terrain."
+    },
+    {
+      "id": "n2-sobrevivencia-planicie",
+      "name": "Planície",
+      "group": "Sobrevivência",
+      "subgroup": "Planície",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Sobrevivência.subgrupos · manual l.873",
+      "description": "Find shelter, water and food and endure the conditions of plains terrain."
+    },
+    {
+      "id": "n2-sobrevivencia-selva",
+      "name": "Selva",
+      "group": "Sobrevivência",
+      "subgroup": "Selva",
+      "attribute": "PER",
+      "source": "instintiva · pericias.json → Sobrevivência.subgrupos · manual l.873",
+      "description": "Find shelter, water and food and endure the conditions of jungle terrain."
+    },
+    {
+      "id": "n1-briga",
+      "name": "Briga",
+      "group": "Briga",
+      "subgroup": null,
+      "attribute": "DEX",
+      "source": "instintiva · pericias.json → lista + periciasDeCombate · manual l.313 e l.1417",
+      "description": "Unarmed combat (punches, kicks, grapples). Every character starts with it at DEX/DEX; damage 1d3 + FR bonus. Attack and defence are raised separately."
+    }
+  ]
+}

@@ -10,10 +10,13 @@ export const TYPES = {
 
   // Repositories
   HealthRepository: Symbol.for('HealthRepository'),
+  SkillRepository: Symbol.for('SkillRepository'),
 
   // Services
   HealthService: Symbol.for('HealthService'),
+  SkillService: Symbol.for('SkillService'),
 
   // Controllers
   HealthController: Symbol.for('HealthController'),
+  SkillController: Symbol.for('SkillController'),
 } as const;
