@@ -3,15 +3,20 @@ import 'reflect-metadata';
 import { Container } from 'inversify';
 
 import { HealthController } from '../controllers/health.controller';
+import { SkillController } from '../controllers/skill.controller';
 import { knexClient } from '../infra/database/knex-client';
 import { logger } from '../infra/logger/logger';
 import { HealthRepository } from '../repositories/health.repository';
+import { SkillRepository } from '../repositories/skill.repository';
 import { HealthService } from '../services/health.service';
+import { SkillService } from '../services/skill.service';
 
 import { TYPES } from './types';
 
 import type { IHealthRepository } from '../repositories/interfaces/health.repository.interface';
+import type { ISkillRepository } from '../repositories/interfaces/skill.repository.interface';
 import type { IHealthService } from '../services/interfaces/health.service.interface';
+import type { ISkillService } from '../services/interfaces/skill.service.interface';
 import type { Logger } from 'pino';
 
 /**
@@ -30,3 +35,7 @@ container.bind<Logger>(TYPES.Logger).toConstantValue(logger);
 container.bind<IHealthRepository>(TYPES.HealthRepository).to(HealthRepository);
 container.bind<IHealthService>(TYPES.HealthService).to(HealthService);
 container.bind<HealthController>(TYPES.HealthController).to(HealthController);
+
+container.bind<ISkillRepository>(TYPES.SkillRepository).to(SkillRepository);
+container.bind<ISkillService>(TYPES.SkillService).to(SkillService);
+container.bind<SkillController>(TYPES.SkillController).to(SkillController);

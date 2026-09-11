@@ -1,6 +1,7 @@
 import { type Express, Router } from 'express';
 
 import { healthRoutes } from './health.routes';
+import { skillRoutes } from './skill.routes';
 
 /**
  * Mounts every router under the `/v1` prefix. The prefix is applied here and
@@ -12,6 +13,7 @@ export function registerRoutes(app: Express): void {
   const v1 = Router();
 
   v1.use('/health', healthRoutes);
+  v1.use('/skills', skillRoutes);
 
   app.use('/v1', v1);
 }

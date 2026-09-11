@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { AppError } from '../errors/app-error';
+import { ValidationError } from '../errors/validation.error';
 import { logger } from '../infra/logger/logger';
 
 import { errorHandler } from './error-handler.middleware';
@@ -61,6 +62,27 @@ describe('errorHandler', () => {
       errorHandler(new TeapotError('Short and stout.'), request, response, next);
 
       expect(logger.error).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('when the error is a ValidationError', () => {
+    it('adds the per-field issues to the problem body', () => {
+      errorHandler(
+        new ValidationError([{ field: 'sourceLevel', message: 'Expected 1, 2 or 3.' }]),
+        request,
+        response,
+        next,
+      );
+
+      expect(response.status).toHaveBeenCalledWith(400);
+      expect(response.json).toHaveBeenCalledWith({
+        type: 'https://erebus.dev/problems/validation-error',
+        title: 'Invalid request parameters',
+        status: 400,
+        detail: 'One or more request parameters are invalid.',
+        instance: '/v1/health',
+        errors: [{ field: 'sourceLevel', message: 'Expected 1, 2 or 3.' }],
+      });
     });
   });
 
