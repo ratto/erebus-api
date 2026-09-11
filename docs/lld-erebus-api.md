@@ -1,7 +1,7 @@
 # LLD: erebus-api
 
-**Version:** 1.1
-**Date:** 2026-09-10
+**Version:** 1.2
+**Date:** 2026-09-11
 **Owner:** rattopedro@gmail.com
 **Parent documents:** `docs/prd.md` (Phase 1 PRD), `erebus-api/docs/hld-erebus-api.md` (HLD v1.1)
 **Status:** Normative — binding for all code written in `erebus-api`
@@ -110,6 +110,9 @@ single typed config module (§13.4).
   "build": "tsup",
   "start": "node dist/server.js",
   "db:bootstrap": "tsx scripts/bootstrap-database.ts",
+  "db:migrate": "knex --knexfile knexfile.ts migrate:latest",
+  "db:seed": "tsx scripts/seed-database.ts",
+  "db:build": "npm run db:bootstrap && npm run db:migrate && npm run db:seed",
   "test": "vitest run",
   "test:watch": "vitest",
   "test:coverage": "vitest run --coverage",
@@ -194,8 +197,9 @@ erebus-api/
 │  │  └─ container.ts              # bindings
 │  ├─ infra/
 │  │  ├─ database/
-│  │  │  ├─ knexfile.ts
-│  │  │  └─ knex-client.ts         # single Knex instance provider
+│  │  │  ├─ knexfile.ts            # knexConfig (read-only) + knexMigrationConfig (writable)
+│  │  │  ├─ knex-client.ts         # single read-only Knex instance provider
+│  │  │  └─ migrations/            # Knex migrations, YYYYMMDDHHMMSS_<verb>_<subject>.ts (ADR-003)
 │  │  ├─ logger/
 │  │  │  └─ logger.ts              # pino instance
 │  │  └─ swagger/
@@ -212,7 +216,10 @@ erebus-api/
 │  │     └─ fixtures/
 │  └─ setup.ts
 ├─ scripts/
-│  └─ bootstrap-database.ts        # creates the empty local SQLite file; NOT a migration pipeline
+│  ├─ bootstrap-database.ts        # creates the empty local SQLite file; NOT a migration pipeline
+│  └─ seed-database.ts             # truncate-and-reload seeders over the writable config (ADR-003)
+├─ seeds/
+│  └─ skills.level1.json           # curated catalogue source, committed (ADR-003 §3)
 ├─ data/
 │  └─ erebus.sqlite                # build artefact, gitignored, never edited by hand
 ├─ knexfile.ts                     # re-export of src/infra/database/knexfile.ts
@@ -576,7 +583,8 @@ await knex.schema.createTable('skills', (table) => {
   table.boolean('has_subgroups').notNullable().defaultTo(false);
   table.text('base_attribute').nullable();       // 'AGI'|'CAR'|'CON'|'DEX'|'FR'|'INT'|'PER'|'WILL'
   table.text('initial_value_type').nullable();   // 'instinctive'|'technical'|'related'
-  table.text('category').nullable();             // only meaningful for 'Condução'
+  table.text('category').nullable();             // N3 classification; only meaningful for 'Condução'
+  table.text('description').nullable();          // one-sentence canonical description
   table.text('prerequisite').nullable();
   table.text('damage').nullable();               // unarmed combat skills
   table.text('notes').nullable();
@@ -601,6 +609,16 @@ Modelling rules for `skills`, derived from the Daemon System (game-designer repo
    That resolution happens in the **service**, and the DTO exposes the resolved
    value as `effectiveBaseAttribute` alongside the raw `baseAttribute`.
 4. Uniqueness is `(parent_skill_id, name)` — **never** `name` alone.
+5. The hierarchy is **exactly two levels deep**: a root (`parent_skill_id IS
+   NULL`) and its subgroups. A subgroup MUST NOT itself have children. The
+   Daemon System's only third-level construct — Condução's `categoria`
+   (`condução` vs. `pilotagem`) — is a **classification attribute of the
+   subgroup row**, carried in `category`, not a synthetic third self-reference.
+   `category` is NULL for every skill outside Condução.
+6. A skill with no group/subgroup and no base attribute is a **valid canonical
+   state**, not missing data (`Explosivos`: a root leaf, `base_attribute` NULL,
+   highly technical, always starts at 0%). Consumers render "no base attribute",
+   never an error or an empty-looking field.
 
 Tables `enhancements` and `enhancement_levels` (1:N):
 
@@ -734,12 +752,38 @@ it emits runtime code and does not narrow well against database strings.
 
 ### 6.6 Migrations and seed
 
-Deliberately **not specified in this LLD**. The schema DDL above is normative for
-column names, types and constraints; the migration file layout, the seed pipeline
-from `docs/sistema daemon/data/*.json`, and the Level 2/3 curation file format are
-specified in a separate document owned by `tech-lead` before the data increment
-starts. Until then: SQLite is a **derived, disposable artefact** — never commit
+Specified by **ADR-003** (`docs/decisions/ADR-003-migrations-and-seed-pipeline.md`),
+which closes what earlier versions of this section deferred. Normative summary:
+
+- **Schema** lives in Knex migrations under `src/infra/database/migrations/`,
+  named `YYYYMMDDHHMMSS_<verb>_<subject>.ts`, each exporting `up` and `down`.
+  The body of `up` MUST be a literal transcription of the DDL in §6.3. Changing
+  a column means editing §6.3 **and** adding a new migration in the same
+  increment — an already-shipped migration is never edited.
+- **Data** lives in committed, curated JSON under `seeds/` (e.g.
+  `seeds/skills.level1.json`) and is loaded by `scripts/seed-database.ts`
+  (`npm run db:seed`). Seeding is **idempotent by truncate-and-reload**, inside
+  one transaction per seeder. The derivation rules that turn a curated document
+  into rows are specified in the originating US's `CONTRACT.md` and MUST be pure,
+  unit-tested functions.
+- **Writes never touch the runtime connection.** `knex-client.ts` stays
+  read-only (§12.3). Migrations and seeds use `knexMigrationConfig` — the same
+  configuration with `options.readonly: false` — consumed **only** by the Knex
+  CLI and `scripts/**`. `scripts/**` MUST NOT import `knexClient`; `src/**` MUST
+  NOT import `knexMigrationConfig`.
+- **The artefact is rebuilt, never patched**: `npm run db:build`
+  (`db:bootstrap` → `db:migrate` → `db:seed`), chained from `prebuild`,
+  `predev` and `pretest`. Auto-increment ids are therefore **not stable across
+  rebuilds**; every cross-entity foreign key MUST be resolved by natural key
+  inside the same seed run, never hard-coded.
+- Integration tests are unchanged by this (§10.3): they still build their own
+  SQLite file with hand-written fixtures and MUST NOT run the production
+  seeders — but they SHOULD apply the schema by running the migrations, so a
+  migration that drifts from §6.3 fails the integration suite.
+
+SQLite remains a **derived, disposable artefact** — never commit
 `data/erebus.sqlite`, never hand-edit it, never treat it as a source of truth.
+The Level 2/3 curation file format remains open (§15 item 3).
 
 ---
 
@@ -1981,13 +2025,15 @@ implementation — raise them with `tech-lead` instead.
 | # | Item | Owner | Blocking |
 | --- | --- | --- | --- |
 | 1 | `better-sqlite3` viability on the Netlify Functions runtime (HLD top risk) | tech-lead | Deploy increment |
-| 2 | Migration file layout and idempotent seed pipeline (§6.6) | tech-lead | Data increment |
+| 2 | ~~Migration file layout and idempotent seed pipeline (§6.6)~~ **Closed by US-03 (2026-09-11), recorded as ADR-003 and written into §2.4, §3 and §6.6.** | tech-lead | — |
 | 3 | Level 2/3 curation file format (structured JSON/CSV) | business-analyst + game-designer | Data increment |
 | 4 | Formalising Knex, Inversify, Netlify, better-sqlite3, Swagger and Vitest as ADRs | tech-lead | No |
 | 5 | ~~Corrections to existing scaffold: `typescript@^7.0.2` → `^5.6.0`, `.editorconfig` 4-space/CRLF → 2-space/LF, `package.json` name `api` → `erebus-api`~~ **Closed by US-01 (2026-09-10).** | javascript-developer | — |
 | 7 | `swagger-jsdoc` reads `@openapi` annotations from source at runtime; after `tsup` bundles `src/` into `dist/`, the `apis` glob may match nothing and `/v1/docs` may serve an empty spec. Currently mitigated by globbing both `./src/routes/*.ts` and `./dist/**/*.js`. | tech-lead | Deploy increment |
 | 8 | ADR-002 (health check as a non-entity reference slice, justifying the §14 item 8 exemption and the `checkConnection` naming) is referenced by US-01's `PLAN.md`/`CONTRACT.md` but does not exist under `erebus-api/docs/decisions/`. | tech-lead | No |
 | 6 | Whether `canonicalCategory` (armaBranca/armaDeFogo) must be exposed alongside `category` (HLD contingency) | game-designer | No |
+| 9 | `Artífice` is flagged `temSubgrupos: true` in the canonical source but no subgroup is catalogued. US-03 seeds it as a leaf (`has_subgroups = false`, divergence recorded in `notes`) so it stays navigable. Confirm the definitive treatment — leaf, or a placeholder "define with the GM" subgroup — before any character-side purchase logic exists. | game-designer + tech-lead | No |
+| 10 | `initial_value_type` declares three values (`instinctive`/`technical`/`related`) but Level 1 skills data only exercises two. Confirm whether `related` is reachable at all, or drop it from the column's documented domain. | game-designer | No |
 
 ---
 
@@ -1996,4 +2042,5 @@ implementation — raise them with `tech-lead` instead.
 | Version | Date | Change |
 | --- | --- | --- |
 | 1.0 | 2026-09-10 | Initial LLD, derived from PRD (2026-09-09) and HLD v1.1 (2026-09-10) through a technical interview with the owner. |
+| 1.2 | 2026-09-11 | Applied during technical planning of US-03 (`feature/us03-consultar-pericias`), per `docs/user stories/us03-consultar-pericias/PLAN.md` §7.2, and recorded as **ADR-003**. §2.4: `db:migrate`, `db:seed` and `db:build` scripts added. §3: `src/infra/database/migrations/`, `scripts/seed-database.ts` and the committed `seeds/` directory added to the tree; `knexfile.ts` annotated with its two configurations. §6.3: `description` column added to `skills` (the catalogue carries a one-sentence description per skill and `notes` is already spoken for); modelling rules 5 and 6 added, fixing the two-level hierarchy with `category` as the N3 classification attribute, and declaring "no group, no attribute" a valid canonical state. §6.6: rewritten from "not specified" to the normative migration/seed pipeline of ADR-003. §15: item 2 closed; items 9 (`Artífice`) and 10 (`initial_value_type` third value) opened. |
 | 1.1 | 2026-09-10 | Applied during US-01 (`infra/us01-erebus-api-boilerplate`), per `docs/user stories/us01-erebus-api-boilerplate/PLAN.md` §7.2. §2.2: ESLint pinned to the 9.x line (plugin incompatibility with ESLint 10), `vite` and the ESLint companion packages listed, `typescript` pin note marked corrected. §2.4: `db:bootstrap` script added. §3: `scripts/bootstrap-database.ts` added to the tree. §10.4: coverage exclusion list extended to wiring and repositories, with the rationale. §14 item 8: provenance DoD scoped to catalogue entity DTOs, exempting operational endpoints. §15: item 5 closed; items 7 (swagger-jsdoc after bundling) and 8 (missing ADR-002) opened. |
